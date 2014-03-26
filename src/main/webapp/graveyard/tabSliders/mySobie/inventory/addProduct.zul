@@ -1,0 +1,20 @@
+<?page title="Add Product" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="addProductWin" position="center" title="Create New Message" border="0" stubonly="true"
+	 	closable="true" apply="biz.sobie.web.controllers.ProductController" width="735px">
+
+	<vlayout>
+			Product Name <textbox id="prodName" />
+			Product Type <textbox id="prodType"/>
+			Product Price <doublebox id="prodPrice"/>
+			Product Quantity <textbox id="prodeQty"/>
+			Product Image 
+	        <button id="uploadBtn" label="Upload"  
+	      							onUpload="processMedia(event.getMedias());"
+	      							onClick="Fileupload.get(-1);" />
+	  					<image id="image" />
+	  					<button label="Add Product" onClick="addProduct()" />
+	</vlayout>
+
+</window>
+</zk>

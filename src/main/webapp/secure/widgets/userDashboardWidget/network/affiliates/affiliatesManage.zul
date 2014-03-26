@@ -1,0 +1,31 @@
+<?page title="Manage Affiliates" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox width="100%">
+	<vlayout hflex="1">
+		<label style="font-weight: bold" value="Affiliate Stores"/>
+		<hbox width="100%" >
+			<cell hflex="2">
+				<label value="Use this page to manage your affiliate stores and groups."/>
+			</cell>
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%">
+		<tabs width="180px">
+			<tab label="Affiliates" />
+			<tab label="Affiliate Groups" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/network/affiliates/affiliatesList.zul" />
+					
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/network/affiliates/affiliatesGroups.zul" />
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</vbox>
+</zk>

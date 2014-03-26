@@ -1,0 +1,47 @@
+<?page title="Store Browser Widget" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+		.tabpanel{
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+border-bottom-right-radius: 4px;
+border-bottom-left-radius: 4px;
+}
+</style>
+
+	<div>
+		<hbox >
+			<hbox style="margin-right:3px" width="178px">
+				<include
+					src="/unsecure/widgets/storeMainLayoutWidget/storeBrowserWidget/widgetColumn.zul" />
+			</hbox >
+			<hbox  width="595px">
+				<div>
+					<hlayout style="float:right;" spacing="3px">
+						<image id="productListView" src="/resources/img/browserWidget/List_view.png"/>
+						<space/>
+					</hlayout>
+					<tabbox height="100%" width="595px">
+						<tabs>
+							<tab label="Products" />
+							<tab label="Services" />
+						</tabs>
+						<tabpanels>
+							<tabpanel sclass="tabpanel">
+								<include id="selectedProductView" src="/unsecure/widgets/browserWidget/productList.zul"/>
+							</tabpanel>
+							<tabpanel sclass="tabpanel">
+								<include id="" src=""/>
+							</tabpanel>
+						</tabpanels>
+					</tabbox>
+					<vbox align="center" >
+						<paging  totalSize="100" pageSize="20" mold="default"/>
+					</vbox>
+				</div>
+			</hbox>
+		</hbox>
+	</div>
+</zk>

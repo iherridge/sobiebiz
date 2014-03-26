@@ -1,0 +1,40 @@
+<?page title="Network Messages" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div apply="biz.sobie.web.controllers.ProductController">
+	<vbox id="addProductBox" visible="false">
+		<space/>
+		<hbox spacing="50px">
+			
+			<vbox spacing="10px">
+				Product Name <textbox id="prodName" />
+				Product Type <textbox id="prodType"/>
+				Product Price <doublebox id="prodPrice"/>
+				Product Quantity <textbox id="prodeQty"/>
+			</vbox>
+			<vbox width="500px">
+			 	<image id="productImage"
+					src="/resources/img/defaults/defaultProductImage200x200.png"
+					tooltip="true" tooltiptext="Click on image to upload your own."
+		   			onClick="Fileupload.get(-1);"
+		   			width="200px" height="200px"/>
+		   			<zscript><![CDATA[
+						Executions.getCurrent().getDesktop().setAttribute("org.zkoss.zul.Fileupload.target", productImage);
+				    ]]></zscript>
+			  	<hbox>
+			  		<button id="addProductBtn" label="Add product"/>
+					<button id="cancelBtn" label="Cancel"/>
+			  	</hbox>
+			</vbox>
+		</hbox>
+		<space/>
+ 	</vbox>	
+	<vbox id="myProductsTab">
+		<hbox id="myProductGridControls">
+			<combobox value="Filter" style="float:right"><comboitem label="No Filter"/><comboitem label="Unread"/><comboitem label="Read"/></combobox>
+			<button id="editSelectedProductsBtn" label="Edit selected products" style="float:left"/>
+			<button id="addProductsBtn" label="Add products" style="float:left"/>
+		</hbox>
+		<grid id="myProductGrid" height="250px" fixedLayout="true"/>
+	</vbox>
+</div>
+</zk>

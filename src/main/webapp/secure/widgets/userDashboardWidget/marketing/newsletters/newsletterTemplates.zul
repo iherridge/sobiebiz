@@ -1,0 +1,36 @@
+<?page title="Newsletter Templates" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox>
+		<hbox style="float:right">
+			<button zclass="sobie-button" label="New" />
+			<button zclass="sobie-button" label="Send" />
+		</hbox>						
+		<grid fixedLayout="true" width="810px">
+			<columns  hflex="1">
+				<column label="All" />			
+				<column label="Newsletter" />
+				<column label="Created"/>
+				<column label="Date Send" />
+				<column label="Published"/>
+				<column label="Action" />
+			</columns>
+			<rows>
+				<row>
+					<checkbox />
+					<label value="Newsletter"/>
+					<label value="dd/mm/yyyy"/>
+					<label value="dd/mm/yyyy"/>
+					<label value="yes/no"/>
+					<hbox>
+						<button sclass="sobie-buttonrnd"  tooltiptext="View Comment" label="" image="/resources/img/icons/sbe_view16.png" />
+						<button sclass="sobie-buttonrnd"  tooltiptext="Publish" label="" image="/resources/img/icons/sbe_wishlist16.png" />	
+						<button sclass="sobie-buttonrnd"  tooltiptext="Delete" label="" image="/resources/img/icons/sbe_delete16.png" />
+					</hbox>	
+				</row>
+			</rows>
+		</grid>
+		<vbox align="center" width="810px" >
+			<paging  totalSize="100" pageSize="20" mold="default"/>
+		</vbox>
+	</vbox>
+</zk>

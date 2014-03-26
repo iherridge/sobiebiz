@@ -1,0 +1,18 @@
+<?page title="Sales Orders Comment History" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox width="100%">
+	<div align="left" hflex="1">
+		<separator orient="horizontal" bar="true" />
+	<label value="Comments" />
+		<separator orient="horizontal" bar="true" />
+	</div>
+	<grid fixedLayout="true" hflex="1">
+		<columns hflex="1">
+			<column label="Comment #" />
+			<column label="Comment" />
+			<column label="Notification Sent" />
+			<column label="Action" />
+		</columns>
+	</grid>
+</vbox>
+</zk>

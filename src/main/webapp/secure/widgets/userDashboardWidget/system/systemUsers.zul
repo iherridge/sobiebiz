@@ -1,0 +1,25 @@
+<?page title="Staff Assistance" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<label style="font-weight: bold">Manage System Users</label>
+	<vbox align="start" width="100%">
+			Use this page to add staff members of your store and provide them with roles and permissions to edit content items in your store..
+		<hbox style="float:right;padding-right:1px">
+			<button label="Add User" />
+		</hbox>
+	</vbox>
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<grid width="100%" >
+		<columns hflex="1">
+			<column label="#"/>
+			<column label="First Name" />
+			<column label="Last Name" />
+			<column label="E-mail" />
+			<column label="Role" />
+			<column label="Permissions" />
+			<column label="Status" />
+			<column label="Action" />
+		</columns>
+	</grid>	
+</zk>

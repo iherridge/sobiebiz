@@ -1,0 +1,14 @@
+<?page title="System Messages" contentType="text/html;charset=UTF-8"?>
+<zk>
+<grid width="100%" >
+		<columns hflex="1">
+			<column label="#" />
+			<column label="From" />
+			<column label="Subject" />
+			<column label="Message" />
+			<column label="Date"/>
+			<column label="Status"/>
+			<column label="Action"/>
+		</columns>
+	</grid>
+</zk>

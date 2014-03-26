@@ -1,0 +1,34 @@
+<?page title="Newsletters" contentType="text/html;charset=UTF-8"?>
+<zk>
+<label style="font-weight: bold">Newsletters</label>
+	<vlayout  width="100%">
+		<hbox>
+			Use this page to create your newsletters.
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal"  bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%">
+		<tabs width="180px">
+			<tab label="Overview" />
+			<tab label="Templates" />	
+			<tab label="Subscribers" />
+			<tab label="Configuration" />			
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/marketing/newsletters/newsletterOverview.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/newsletters/newsletterTemplates.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/newsletters/newsletterSubscribers.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/newsletters/newsletterConfiguration.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

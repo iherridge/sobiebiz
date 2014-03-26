@@ -1,0 +1,106 @@
+<?page title="Network Products" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('networkProductsVm') @init('biz.sobie.web.userdashboard.inventory.InventoryNetworkProductsVm')">
+<vbox visible="@bind(networkProductsVm.editProductOpen" hflex="1">
+	<hbox hflex="1">
+		<button label="Save" onClick=""/>
+		<button label="Cancel" onClick=""/>
+	</hbox>
+	<tabbox hflex="1" id="tb" orient="vertical">
+	    <tabs width="180px">
+	        <tab label="Product Information" />
+	        <tab label="SEO Settings" />
+	        <tab label="Pricing" />
+	        <tab label="Inventory" />
+	        <tab label="Shipping" />
+	        <tab label="Product Images" />
+	        <tab label="Product Description" />
+	        <tab label="Product Video" />
+	    </tabs>
+	    <tabpanels hflex="1">
+	        <tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewInformation.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewSeo.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewPricing.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewInventory.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewShipping.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewImages.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewDescription.zul"/>
+	        </tabpanel>
+	        <tabpanel>
+	        	<include src="/secure/widgets/userDashboardWidget/inventory/networkProducts/networkProductsNewVideo.zul"/>
+	        </tabpanel>
+	    </tabpanels>
+	</tabbox>
+</vbox>
+	
+<vbox id="NetworkProductsTab" hflex="1">
+		<!-- <vbox hflex="1">
+			<label style="font-weight: bold" value="Network Products"/>
+			<cell hflex="1">
+				<label hflex="1" multiline="true">Network products are the products that you wish to resell your store including a mark-up. These products are normally procured through an agreement between you and the product supplier. Use this page to manage your network products in your store.</label>
+			</cell>
+		</vbox> -->
+		<div align="left" hflex="1">
+			<separator orient="horizontal"  bar="true" />
+			<label value="NETWORK PRODUCT LIST" />
+			<separator orient="horizontal"  bar="true" />
+		</div>
+		<hbox hflex="1">
+			<cell align="start" hflex="1" style="border: none;">
+				<paging mold="default" pageSize="10" style="background:none; border:none;"/>
+			</cell>
+		</hbox>
+		<!-- <hbox>
+			<combobox value="Filter" style="float:right">
+				<comboitem label="No Filter" />
+				<comboitem label="Unread" />
+				<comboitem label="Read" />
+			</combobox>
+		</hbox> -->
+		<grid id="myProductGrid" fixedLayout="true" hflex="1" model="@load(networkProductsVm.networkProducts)">
+			<columns hflex="1">
+				<column label="Image" hflex="min" />
+				<column label="Name" />
+				<column label="Retail Price"/>
+				<column label="Sale Price" />
+				<column label="Wholesale Price" />
+				<column label="In Stock" />
+				<column label="Enabled" />
+				<column label="Action" hflex="min"/>
+			</columns>
+			<rows hflex="1">
+				<template name="model" var="networkProduct">
+					<row>
+						<image content="@load(networkProduct.primaryImage)" width="50px"
+							height="50px" />
+						<label value="@load(networkProduct.prodName)" />
+						<label value="@load(networkProduct.prodRetailPrice)" />
+						<label value="@load(networkProduct.prodSalePrice)" />
+						<label value="@load(networkProduct.prodWholesalePrice)" />
+						<image src="@bind(networkProduct.prodInStockImage)" width="16px" height="16px"/>
+						<image src="@bind(networkProduct.prodStatusImage)" width="16px" height="16px" tooltiptext="@load(networkProduct.prodStatusName)"/>
+						<hbox>
+							<a label="@bind(networkProduct.prodStatusNetworkLinkName)" onClick="@command('activateProduct', product=networkProduct)"/> / 
+							<a label="edit" onClick="@command('editProduct', product=networkProduct)"/> / 
+							<a label="delete" onClick="@command('deleteProduct', product=networkProduct)"/>
+						</hbox>
+					</row>
+				</template>
+			</rows>
+		</grid>
+	</vbox>
+	</div>
+</zk>

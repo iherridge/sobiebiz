@@ -1,0 +1,57 @@
+<?page title="Overview" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div apply="biz.sobie.web.userdashboard.store.StoreCtrl">
+	<label style="font-weight: bold">Store Overview</label>
+	<vlayout>
+		<hbox>
+			Use the links on this page to edit your Sobie store front.
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" width="790px" bar="true" />
+	</div>
+	<space />
+	<a label="Store Settings" style="font-weight: bold; padding:8px" id="settingsBtn"/>
+	<vlayout>
+		<hbox style="padding:8px">
+			Use the links on this page to edit your Sobie store front.
+		</hbox>
+	</vlayout>
+	<space />
+	<a label="Store Locator" style="font-weight: bold; padding:8px" id="storeLocatorBtn"/>
+	<vlayout>
+		<hbox style="padding:8px">
+			Add and configure your store locations on google maps.
+		</hbox>
+	</vlayout>
+	<space />
+	<a label="Content Pages" style="font-weight: bold; padding:8px" id="contentPagesBtn"/>
+	<vlayout>
+		<hbox style="padding:8px">
+			Add custom html content pages to your store menu.
+		</hbox>
+	</vlayout>
+	<space />
+	<a label="Store Layout" style="font-weight: bold; padding:8px" id="storeLayoutBtn"/>
+	<vlayout>
+		<hbox style="padding:8px">
+			Add and configure widget to your store.
+		</hbox>
+	</vlayout>
+	<space />
+	<a label="Styles" style="font-weight: bold; padding:8px" id="stylesBtn"/>
+	<vlayout>
+		<hbox style="padding:8px">
+			Add and configure widget to your store..
+		</hbox>
+	</vlayout>
+	<space />
+	<a label="Store Widgets" style="font-weight: bold; padding:8px" id="storeWidgetsBtn"/>
+	<vlayout>
+		<hbox style="padding:8px">
+			Add and configure widget to your store.
+		</hbox>
+	</vlayout>
+	<space />
+	</div>
+</zk>

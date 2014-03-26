@@ -1,0 +1,38 @@
+<?page title="Network Overview" contentType="text/html;charset=UTF-8"?>
+<zk>
+<hbox style="color:white;background:#808080" width="950px">
+	<vbox>
+		<space/>
+		<space/>
+		<label value="My Sobie Network" style="color:orange"/>
+		<hbox><space/><space/><label value="Find and connect to your buyers/sellers/suppliers in your network list"/></hbox>
+		<hbox><space/><space/><label value="Rate and review products and services."/></hbox>
+		<space/>
+		<space/>
+		<space/>
+		<label id="myMessageCentreLbl" value="My Message Centre" style="color:orange" />
+		<hbox><space/><space/><label value="Check your message centre for new requests to join your network and other correspondence from your network."/></hbox>
+		<hbox><space/><space/><label value="You will also receive Sobie system messages."/></hbox>
+		<space/>
+	</vbox>
+	<space/>
+	<vbox>
+		<space/>	
+		<separator orient="vertical" bar="true" height="220px" style="background:white" width="1px"/>
+	</vbox>
+	<space/>
+	<vbox>
+		<space/>
+		<space/>
+		<label value="My Network Profile" style="color:orange"/>
+		<hbox><space/><space/><space/><label value="Each account holder has a network profile to promote themselves and their business within the Sobie Account Directory."/></hbox>
+		<hbox><space/><space/><space/><label value="Use your profile to its maximum potential with powerful keywords, some history of your"/></hbox>
+		<hbox><space/><space/><space/><label value="company, and your returns and shipping policies."/></hbox>
+		<space/>
+		<label value="Sobie Network Directory" style="color:orange"/>
+		<hbox><space/><space/><space/><label value="Search the Amount Directory for the other sellers, suppliers and shippers to connect with."/></hbox>
+		<hbox><space/><space/><space/><label value="You can connect to sellers / suppliers and ship their products/services or invite them to sell, supply or shp your roducts and services, or both!"/></hbox>
+		<space/>
+	</vbox>
+</hbox>
+</zk>

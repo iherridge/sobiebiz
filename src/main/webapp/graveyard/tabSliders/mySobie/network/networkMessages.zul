@@ -1,0 +1,55 @@
+<?page title="Network Messages" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div apply="biz.sobie.web.controllers.NetworkMessagesController">
+	<vbox>
+		<hbox>
+			<combobox value="Filter" style="float:right"><comboitem label="No Filter"/><comboitem label="Unread"/><comboitem label="Read"/></combobox>
+			<button id="createNewMessageBtn" label="Create new message" style="float:left"/>
+			<button label="Delete" style="float:left"/>
+			<button label="Refresh" style="float:left"/>
+		</hbox>
+		<tabbox id="networkMessagesTabbox" height="260px">
+			<tabs>
+				<tab id="AllMessagesTab" label="All"/>
+				<tab label="Orders"/>
+				<tab label="Products"/>
+				<tab label="Services"/>
+				<tab label="Classifieds"/>
+				<tab label="Dispute"/>
+				<tab label="Payment"/>
+				<tab label="Promotion"/>
+				<tab label="Other"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel>
+					<include id="allMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="ordersMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="productsMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="servicesMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="classifiedsMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="disputeMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="paymentMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="promotionMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+				<tabpanel>
+					<include id="otherMessageInboxInc" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</vbox>
+</div>
+</zk>

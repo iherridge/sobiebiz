@@ -1,0 +1,39 @@
+<?page title="Header" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+.icon {
+	width: 24px;
+	height: 24px;
+}
+
+.touchable {
+  	cursor: pointer;
+}
+</style>
+	<hbox width="100%" height="40px" style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;border:0px">
+		<cell align="left" width="10%" style="border: none;">
+		<image style="margin-top:9px;margin-right:9px;margin-left:3px"
+			src="/resources/img/icons/sbe_modal.png"
+			onClick="@global-command('showModel')" />
+		</cell>
+		<cell align="center" width="80%">
+			<image
+				style="margin-top:9px;margin-right:9px;margin-left:3px"
+				src="/resources/img/icons/sbe_networknotificatio.png"
+				sclass="touchable icon" />
+			<image
+				style="margin-top:9px;margin-right:9px;margin-left:3px"
+				src="/resources/img/icons/sbe_messagenotificatio.png" 
+				sclass="touchable icon"/>
+			<image
+				style="margin-top:9px;margin-right:9px;margin-left:3px"
+				src="/resources/img/icons/sbe_newsfeednotificatio.png" 
+				sclass="touchable icon"/>
+		</cell>
+		<cell align="right" width="10%" style="border: none;" >
+		<image style="margin-top:9px;margin-right:9px;margin-left:3px"
+			src="/resources/img/icons/sbe_modalnet.png" onClick="@global-command('showEastPanel')"
+			 />
+		</cell>
+	</hbox>
+</zk>

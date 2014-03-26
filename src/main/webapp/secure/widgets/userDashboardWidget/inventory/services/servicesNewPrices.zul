@@ -1,0 +1,98 @@
+<?page title="Service Prices and Rates" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none; margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Fixed Price:"/>
+				</cell>
+				<cell>
+					<textbox width="60%" value="@bind(inventoryServicesVm.selectedService.servFixedPrice)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Fiexed rate:"/>
+				</cell>
+				<cell>
+					<hbox>
+						<cell>
+							<combobox value="hour" width="40%" selectedItem="@bind(inventoryServicesVm.selectedService.servFixedRateType)">
+								<template name="model">
+									<comboitem label="hour"/>
+									<comboitem label="day" />
+									<comboitem label="week" />
+									<comboitem label="month" />
+									<comboitem label="year" />
+									<comboitem label="other" />
+								</template>
+							</combobox>
+						</cell>
+						<cell>
+							<textbox width="50%" value="@bind(inventoryServicesVm.selectedService.servFixedRateUnit)"/>
+						</cell>
+					</hbox>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Tax class:"/>
+				</cell>
+				<cell>
+					<combobox width="60%" value="@bind(inventoryServicesVm.selectedService.servTaxClassId)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enable quotation request:"/>
+				</cell>
+				<cell>
+					<checkbox label="" checked="@bind(inventoryServicesVm.selectedService.servQuatationReqEnabled)"/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	
+	<div align="left" hflex="1">
+		<separator orient="horizontal"  bar="true" />
+		<label value="Group Prices and Rates" />
+		<separator orient="horizontal"  bar="true" />
+	</div>
+	<grid fixedLayout="true" hflex="1">
+		<columns hflex="1">
+			<column label="All" hflex="min" />
+			<column label="Group Name" />
+			<column label="Price" />
+			<column label="Rate" />
+			<column label="Enabled"/>
+			<column label="Action" hflex="min"/>
+		</columns>
+	</grid>
+</vbox>
+</zk>

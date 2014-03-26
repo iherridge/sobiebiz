@@ -1,0 +1,50 @@
+<?page title="Product Video" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="100px">YouTube URL:</hbox>
+		<hbox>
+			<textbox width="300px"
+				value="@bind(networkProductsVm.selectedProduct.prodYouTubeUrl)" />
+		</hbox>
+		<hbox>
+			<progressmeter width="200px" />
+		</hbox>
+	</hlayout>
+	
+	<hlayout>
+		<hbox width="100px">Select Video:</hbox>
+		<hbox>
+			<button label="Update" />
+		</hbox>
+		<hbox width="100px">ALT Text:</hbox>
+		<hbox>
+			<textbox width="100px" />
+		</hbox>
+	</hlayout>
+	
+	<div align="center">
+		<separator orient="horizontal" width="785px"
+			bar="true" />
+	</div>
+	
+	<space />
+	<hlayout>
+		<hbox width="200px">
+			Enable Comments on this product:
+		</hbox>
+		<hbox>
+			<checkbox label="Yes / No"
+				checked="@bind(networkProductsVm.selectedProduct.prodCommentsEnabled)" />
+		</hbox>
+		<space />
+		<hbox width="200px">
+			Enable QnA on this product:
+		</hbox>
+		<hbox>
+			<checkbox label="Yes / No"
+				checked="@bind(networkProductsVm.selectedProduct.prodQnaEnabled)" />
+		</hbox>
+	</hlayout>
+</vbox>
+</zk>

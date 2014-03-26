@@ -1,0 +1,20 @@
+<?page title="File Upload" contentType="text/html;charset=UTF-8"?>
+<zk>
+<space />
+		<vbox >
+			<hbox>
+				<image width="584px" height="88px" /> 
+			</hbox>
+			<vbox width="584px">
+				<hbox>
+					<textbox width="200px" />
+					<button label="Select" />
+					<button label="Upload" />
+				</hbox>
+				<space />
+				<hbox>Size: 800x120 pixels</hbox>
+				<hbox>Format: (.jpg, .gif, .png, .pdf)</hbox>
+			</vbox>
+		</vbox>
+	<space />
+</zk>

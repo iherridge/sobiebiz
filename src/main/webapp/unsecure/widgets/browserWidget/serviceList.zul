@@ -1,0 +1,48 @@
+<?page title="Service List" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+.listbox{
+color: #373534;
+border-radius: 4px;
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+}
+</style>
+
+<vbox width="100%" height="100%">
+<cell hflex="1" vflex="min">
+	<hbox hflex="1" >
+		<cell align="start" width="90%" style="border: none;">
+			<paging mold="default" pageSize="10" style="background:none; border:none;"/>
+		</cell>
+		<cell align="end" width="10%" style="border: none;">
+			<image src="@bind(browserWidgetVm.productListView)" onClick="@command('changeBrowserViewLayout')"/>
+		</cell>
+	</hbox>
+</cell>
+<cell hflex="1">	
+	<listbox sclass="listbox" id="serviceListDisplay" hflex="1" model="@load(browserWidgetVm.serviceList)">
+		<template name="model" var="service">
+			<listitem hflex="1">
+				<listcell sclass="listbox" hflex="1" >
+					<hbox hflex="1">
+						<include hflex="1" src="/unsecure/widgets/browserWidget/serviceDisplayList.zul"/>
+					</hbox>
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+</cell>
+<cell hflex="1" vflex="min">	
+	<hbox hflex="1" height="30px">
+		<cell align="start" width="90%" style="border: none;">
+			<paging mold="default" pageSize="10" style="background:none; border:none;margin-top:6px"/>
+		</cell>
+		<cell align="end" width="10%" style="border: none;">
+			<image src="@bind(browserWidgetVm.productListView)" onClick="@command('changeBrowserViewLayout')"/>
+		</cell>
+	</hbox>
+</cell>
+</vbox>
+</zk>

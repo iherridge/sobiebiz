@@ -1,0 +1,199 @@
+<?page title="Customer View Account Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<vbox width="100%">
+	<cell align="right">
+		<label style="color:blue" value="edit"/>
+	</cell>
+	<cell>
+	<grid style="border:none;margin:0px;padding:0px;" hflex="1">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="2"/>
+		</columns>
+		<rows>
+			<row hflex="1">
+				<cell >
+					<label value="Customer group:"/>
+				</cell>
+				<cell  >
+					<label value="(Customer Group)" style="color:grey;"/>
+				</cell>
+			</row>
+			<row hflex="1">
+				<cell>
+					<label value="Customer name:"/>
+				</cell>
+				<cell  >
+					<label value="(Prefix)(Name)(Surname)" style="color:grey;"/>
+				</cell>
+			</row>
+			<row hflex="1">
+				<cell>
+					<label value="Postal Address:"/>
+				</cell>
+				<cell  >
+					<label value="(Postal Address)" style="color:grey;"/>
+				</cell>
+			</row>
+			<row hflex="1">
+				<cell>
+					<label value="E-mail Address:"/>
+				</cell>
+				<cell  >
+					<label value="(Email)" style="color:grey;"/>
+				</cell>
+			</row>
+			<row hflex="1">
+				<cell>
+					<label value="Contact Number:"/>
+				</cell>
+				<cell  >
+					<label value="(Number)" style="color:grey;"/>
+				</cell>
+			</row>
+			<row hflex="1">
+				<cell>
+					<label value="VAT Number:"/>
+				</cell>
+				<cell  >
+					<label value="(VAT number)" style="color:grey;"/>
+				</cell>
+			</row>
+			<row hflex="1">
+				<cell>
+					<label value="ID Number:"/>
+				</cell>
+				<cell  >
+					<label value="(ID number)" style="color:grey;"/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	</cell>
+</vbox>
+
+
+<!-- 	<space />
+	<hlayout>
+		<hbox width="250px">Customer Group:</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(group name)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Prefix:*</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(prefix)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">First Name:*</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(first name)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Middle Name / Initial:</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(middle name)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Last Name:*</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(last name)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">E-mail Address:*</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(email address)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Date of birth:*</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(dd/mm/yyyy)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">VAT / Tax number:</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(VAT number)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+		<hlayout>
+		<hbox width="250px">ID number:</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(identification number)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Gender:</hbox>
+		<hbox width="250px">
+			<label style="color:grey">(male/female)</label>
+		</hbox>
+		<hbox>
+			<label style="color:blue">edit</label>
+		</hbox>
+	</hlayout>
+	<space /> -->
+</zk>

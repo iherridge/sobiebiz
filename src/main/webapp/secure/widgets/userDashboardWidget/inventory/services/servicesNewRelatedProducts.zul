@@ -1,0 +1,6 @@
+<?page title="Related Products" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<label>Related Products</label>
+</vbox>
+</zk>

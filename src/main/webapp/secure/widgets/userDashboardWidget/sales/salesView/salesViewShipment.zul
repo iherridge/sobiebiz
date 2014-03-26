@@ -1,0 +1,487 @@
+<?page title="Sales Shipment" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<!-- Shipment View -->
+<vbox width="100%" style="border:none;padding:0px; margin:0px">
+	<hbox  hflex="1">
+		<cell hflex="2">
+			<label hflex="1" style="font-weight: bold;font-size:13px">Shipment # 0000000000 I (payment status) I dd/mm/yyyy hh:mm:ss </label>
+			<label hflex="1" style="font-weight: bold;font-size:13px">Notification Sent: </label><label value="Yes/No" style="color:grey;"/>
+		</cell>
+		<cell hflex="1" align="right">
+			<hbox style="float:right;padding-right:1px">
+				<button label="Back" />
+				<button label="Send as Email" />
+				<button label="Print" />
+			</hbox>
+		</cell>
+	</hbox>
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows hflex="1">
+			<row>
+				<cell hflex="1">
+					<grid hflex="1">
+						<columns hflex="1">
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+						</columns>
+						<rows hflex="1">
+							<row>
+							<!-- Order # -->
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Order # 0000000000 I (Notification Email Status)" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>	
+								<cell >
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Order date:"/>
+								</cell>
+								<cell>
+									<label value="dd/mm/yyyy hh:mm:ss" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Order status:"/>
+								</cell>
+								<cell>
+									<label value="(status)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Purchased from:"/>
+								</cell>
+								<cell>
+									<label value="(store name)" style="color:grey;"/>
+								</cell>
+							</row>
+							<!-- Delivery Address -->
+							<row>
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Pickup Address" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>	
+								<cell>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Address:"/>
+								</cell>
+								<cell>
+									<label value="(address)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Suburb:"/>
+								</cell>
+								<cell>
+									<label value="(suburb)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="City / Town:"/>
+								</cell>
+								<cell>
+									<label value="(city / town)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Region / Province:"/>
+								</cell>
+								<cell>
+									<label value="(country)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Country:"/>
+								</cell>
+								<cell>
+									<label value="(country)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Telephone:"/>
+								</cell>
+								<cell>
+									<label value="(000 000 00000000)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Payment Information" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>
+								<cell>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Payment type:"/>
+								</cell>
+								<cell>
+									<label value="(payment type)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Currency:"/>
+								</cell>
+								<cell>
+									<label value="(currency)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Status:"/>
+								</cell>
+								<cell>
+									<label value="(status)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Detail:"/>
+								</cell>
+								<cell>
+								<label value="(detail)" style="color:grey;"/>
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				</cell>
+				<cell hflex="1">
+					<grid hflex="1">
+						<columns hflex="1">
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+						</columns>
+						<rows hflex="1">
+							<row>
+							<!-- Account Info -->
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Account Information" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>	
+								<cell >
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Customer Name:"/>
+								</cell>
+								<cell>
+									<label value="(customer name)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="E-mail"/>
+								</cell>
+								<cell>
+									<label value="(email)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Customer group"/>
+								</cell>
+								<cell>
+									<label value="(group name)" style="color:grey;"/>
+								</cell>
+							</row>
+							<!-- Shipping Address -->
+							<row>
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Delivery Address" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>
+								<cell>
+								</cell>
+							</row>	
+							<row>
+								<cell>
+									<label value="Address:"/>
+								</cell>
+								<cell>
+									<label value="(address)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Suburb:"/>
+								</cell>
+								<cell>
+									<label value="(suburb)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="City / Town:"/>
+								</cell>
+								<cell>
+									<label value="(city / town)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Region / Province:"/>
+								</cell>
+								<cell>
+									<label value="(country)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Country:"/>
+								</cell>
+								<cell>
+									<label value="(country)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Telephone:"/>
+								</cell>
+								<cell>
+									<label value="(000 000 00000000)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Shipping and Handling" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>
+								<cell>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Shipper:"/>
+								</cell>
+								<cell>
+									<label value="(shipper)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Rate:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Handling fee:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Total:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				</cell>	
+			</row>
+			<row>
+				<cell colspan="2" hflex="1">
+					<vbox hflex="1">
+						<div align="left" hflex="1">
+							<separator orient="horizontal"  bar="true" />
+							<label value="Items Shipped" />
+							<separator orient="horizontal"  bar="true" />
+						</div>
+						<grid fixedLayout="true" hflex="1">
+							<columns hflex="1">
+								<column label="ID / SKU" />
+								<column label="Item Status" />
+								<column label="Price" />
+								<column label="Qty" />
+								<column label="Total" />
+								<column label="Tax %" />
+								<column label="Tax Incl" />
+								<column label="Line Total" />
+							</columns>
+						</grid>
+					</vbox>				
+				</cell>
+			</row>
+			<row>
+				<cell hflex="1" >
+					<grid hflex="1">
+						<columns hflex="1">
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+						</columns>
+						<rows hflex="1">
+							<row>
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Comments" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>	
+								<cell >
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Comments:"/>
+								</cell>
+								<cell>
+									<label value="" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell colspan="2">
+									<textbox hflex="1" rows="3"/>
+								</cell>
+							</row>
+							<row>
+								<cell colspan="2">
+									<radio /><label value="Notify customer by email"/>
+								</cell>
+								<cell>
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				</cell>
+				<cell>
+					<grid hflex="1">
+						<columns hflex="1">
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+						</columns>
+						<rows hflex="1">
+							<row>
+								<cell colspan="2">
+									<div align="left">
+										<separator orient="horizontal" bar="true" />
+										<label value="Shipping Totals" />
+										<separator orient="horizontal" bar="true" />
+									</div>
+								</cell>	
+								<cell >
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Total Cost:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Shipping and Handling:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Tax:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Import Tax:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+							<row>
+								<cell>
+									<label value="Sub-Total:"/>
+								</cell>
+								<cell>
+									<label value="(00.00)" style="color:grey;"/>
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2" hflex="1">
+					<label value="Terms and Conditions:"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2" hflex="1">
+					<textbox hflex="1" rows="10" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu lacus justo. Aenean auctor leo vel elit aliquet sit amet venenatis justo cursus. Ut ac sem quis tellus pretium feugiat. Proin semper mattis ligula consectetur elementum. Integer eget metus urna. Praesent porttitor tortor ac tortor interdum sagittis. Integer eros felis, porttitor sed pharetra vel, euismod at turpis.
+
+Nullam eleifend euismod rutrum. Ut tincidunt porttitor varius. Cras quis leo in erat adipiscing tempor. Phasellus ornare aliquam ipsum, ut tincidunt odio ullamcorper eget. Nam vitae urna non dolor tincidunt luctus rhoncus eu lacus. Sed quis laoreet nulla. Aenean suscipit laoreet lorem et fermentum. Sed quis ultrices diam. Curabitur ultricies, lorem quis elementum convallis, arcu tellus commodo tortor, a egestas purus enim nec tortor. Praesent placerat ligula vel enim gravida viverra. Cras sit amet nibh turpis. Mauris eget orci diam, id rutrum mi. Cras a euismod eros. Sed in odio neque. Proin sapien sem, bibendum vitae ultrices nec, fermentum quis sapien. Integer sit amet orci ipsum."/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+</zk>

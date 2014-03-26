@@ -1,0 +1,26 @@
+<?page title="Welcome to Sobie.biz" contentType="text/html;charset=UTF-8"?>
+<zk>
+ <tabbox orient="vertical" width="100%" height="255px" >
+     <tabs width="160px" align="end">
+        <tab  label="Welcome" />
+        <tab  label="Buyer Package" />
+        <tab  label="Seller Packages" />
+        <tab  label="Supplier Packages" />
+        <tab  label="Shipper Package" />
+    </tabs>
+    <tabpanels style="background-image:url('resources/img/bg_mySobielight.png');border-radius:0px;border:1px solid #c4c8cc">
+        <tabpanel>
+          <include src="welcome.zul"/>
+        </tabpanel>
+        <tabpanel>
+        <include src="buyerPackages.zul"/>
+        </tabpanel>
+        <tabpanel>
+         <include src="sellerPackages.zul"/>
+        </tabpanel>
+        <tabpanel>
+         <include src="supplierPackages.zul"/>
+        </tabpanel>
+    </tabpanels>
+</tabbox>
+</zk>

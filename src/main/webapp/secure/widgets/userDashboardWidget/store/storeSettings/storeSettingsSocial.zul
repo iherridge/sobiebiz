@@ -1,0 +1,107 @@
+<?page title="Social Sharing" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+	<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Facebook page:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.storeFacebookUrl)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Twitter:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.storeTwitterUrl)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Skype:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.storeSkypeName)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Google+:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.storeGoogleUrl)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="StumbleUpon:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.storeStumbleUponUrl)"/>
+				</cell>	
+			</row>
+		</rows>
+	</grid>
+
+<!-- <vbox align="start" style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="200px">Facebook:</hbox>
+		<hbox>
+			<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeFacebookUrl)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Twitter:</hbox>
+		<hbox>
+			<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeTwitterUrl)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Skype:</hbox>
+		<hbox>
+			<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeSkypeName)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Google:</hbox>
+		<hbox>
+			<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeGoogleUrl)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Stumble Upon:</hbox>
+		<hbox>
+			<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeStumbleUponUrl)"/>
+		</hbox>
+	</hlayout>
+</vbox> -->
+</zk>

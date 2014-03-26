@@ -1,0 +1,102 @@
+<?page title="View Customer Store Credit" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<vbox width="100%">
+	<grid style="border:none;margin:0px;padding:0px;" hflex="1">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="2"/>
+		</columns>
+		<rows hflex="1">
+			<row >
+				<cell>
+					<label value="Store Credit"/>
+				</cell>
+				<cell>
+					<label  value="(00.00)" style="color:grey"/>
+				</cell>	
+			</row>
+			<row >
+				<cell colspan="2">
+					<div align="left" hflex="1">
+						<separator orient="horizontal" width="100%" bar="true" />
+						<label value="Update Balance" />
+						<separator orient="horizontal" width="100%" bar="true" />
+					</div>
+				</cell>
+			</row>
+			<row>
+				<cell >
+					<label value="Update Balance:"/>
+				</cell>
+				<cell>
+					<hbox hflex="1">
+						<textbox hflex="2"/>
+						<button label="Update Balance" hflex="1" />
+					</hbox>
+				</cell>
+			</row>
+			<row>
+				<cell >
+					<label value="Notify customer by email:"/>
+				</cell>
+				<cell>
+					<checkbox  />
+				</cell>
+			</row>
+			<row>
+				<cell >
+					<label value="Comments:"/>
+				</cell>
+				<cell>
+					<hbox hflex="1">
+						<textbox hflex="1" height="80px"/>
+					</hbox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+	<div align="left">
+	<space/>
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<label value="Balance History" />
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<grid fixedLayout="true" width="100%">
+		<columns hflex="1">
+			<column label="#" hflex="min" />			
+			<column label="Date" />
+			<column label="Store" />
+			<column label="Action" />
+			<column label="Balance change" />
+			<column label="Balance" />
+			<column label="Notified" />
+			<column label="Comment" />
+		</columns>
+	</grid>
+	<space />
+</zk>

@@ -1,0 +1,30 @@
+<?page title="Dashboard Menu" contentType="text/html;charset=UTF-8"?>
+<zk>
+<grid width="560px">
+		<columns>
+		</columns>
+		<rows>
+			<row align="middle">
+			 <image src="resources/img/tabs/mySobie/new/network32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/calender32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/orders32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/inventory32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/marketing32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/shop32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/applications32.png"/>
+			 <image src="resources/img/tabs/mySobie/new/settings32.png"/>
+			</row>
+			<row align="middle">
+			<html><p>Network</p></html>
+			<html><p>Calendar</p></html>
+			<html><p>Orders</p></html>
+			<html><p>Inventory</p></html>
+			<html><p>Marketing</p></html>
+			<html><p>Store</p></html>
+			<html><p>Applications</p></html>
+			<html><p>Settings</p></html>
+			</row>
+						
+		</rows>
+	</grid>
+</zk>

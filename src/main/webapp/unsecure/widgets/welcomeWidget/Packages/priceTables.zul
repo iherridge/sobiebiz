@@ -1,0 +1,72 @@
+<?page title="Pricing Tables" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style>
+
+
+	</style>
+
+	<grid>
+		<columns>
+			<column sclass="side" label=""/>
+			<column sclass="basic" label="Basic"/>
+			<column sclass="novice" label="Novice"/>
+			<column sclass="advanced" label="Advanced"/>
+		</columns>
+		<rows>
+			<row>
+				<label sclass="side" value="Price"/>
+				<label sclass="basic" value="FREE"/>
+				<label sclass="novice" value="N$ 350.00"/>
+				<label sclass="advanced" value="N$ 600.00"/>									
+			</row>
+			<row>
+				<label sclass="side" value="Classifieds"/>
+				<label sclass="basic" value="0"/>
+				<label sclass="novice" value="3 / month"/>
+				<label sclass="advanced" value="6 / month"/>					
+			</row>
+			<row>
+				<label sclass="side" value="Products"/>
+				<label sclass="basic" value="0"/>
+				<label sclass="novice" value="0"/>
+				<label sclass="advanced" value="0"/>
+			</row>
+			<row>
+				<label sclass="side" value="Services"/>
+				<label sclass="basic" value="0"/>
+				<label sclass="novice" value="0"/>
+				<label sclass="advanced" value="0"/>
+			</row>
+			<row>
+				<label sclass="side" value="Network"/>
+				<label sclass="basic" value="Check"/>
+				<label sclass="novice" value="Check"/>
+				<label sclass="advanced" value="Check"/>
+			</row
+			<row>
+				<label sclass="side" value="Purchases"/>
+				<label sclass="basic" value="Check"/>
+				<label sclass="novice" value="Check"/>
+				<label sclass="advanced" value="Check"/>
+			</row>
+			<row>
+				<label sclass="side" value="Calender"/>
+				<label sclass="basic" value="Check"/>
+				<label sclass="novice" value="Check"/>
+				<label sclass="advanced" value="Check"/>
+			</row>
+			<row>
+				<label sclass="side" value="Reports"/>
+				<label sclass="basic" value="Check"/>
+				<label sclass="novice" value="Check"/>
+				<label sclass="advanced" value="Check"/>
+			</row>
+			<row>
+				<label sclass="side" value=""/>
+				<label sclass="basic" value="Select"/>
+				<label sclass="novice" value="Select"/>
+				<label sclass="advanced" value="Select"/>
+			</row>
+		</rows>
+	</grid>
+</zk>

@@ -1,0 +1,27 @@
+<?page title="Comments & Ratings" contentType="text/html;charset=UTF-8"?>
+<zk>
+<label style="font-weight: bold">Comments and Ratings</label>
+
+	<vlayout  width="100%">
+		<hbox>
+			Use this page to manage your comments and ratings.
+		</hbox>
+	</vlayout>
+	<div align="left" width="100%">
+		<separator orient="horizontal" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%">
+		<tabs width="180px">
+			<tab label="Comments" />
+			<tab label="Ratings" />		
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/marketing/commentsRatings/comments.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/commentsRatings/ratings.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

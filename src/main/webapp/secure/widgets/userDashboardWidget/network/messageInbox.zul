@@ -1,0 +1,13 @@
+<?page title="Message Inbox" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<grid id="messageBoxGrid" height="100%" fixedLayout="true" apply="biz.sobie.web.userdashboard.network.NetworkMessagesCtrl">
+		<columns hflex="1">
+			<column label="Select" width="50px"/>
+			<column label="Icon" width="40px"/>
+			<column label="From" width="200px"/>
+			<column label="Subject" />
+			<column label="Received" width="70px"/>
+		</columns>
+	</grid>
+</zk>

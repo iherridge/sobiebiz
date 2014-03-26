@@ -1,0 +1,160 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+    <style>
+    .silvergray .complex-layout,
+    .silvergray .complex-layout .z-south,
+    .silvergray .complex-layout .z-west {
+        background: #C5E6EF;
+    }
+    .breeze .complex-layout,
+    .breeze .complex-layout .z-south,
+    .breeze .complex-layout .z-west {
+        background: #F7F7F7;
+    }
+    </style>
+    <style>
+        .z-borderlayout {
+            background: #FFFFFF
+        }
+<!--         .complex-layout .z-north {
+            background: #ffcf00 ;
+        } -->
+<!--         img.complex-layout-header-img {
+            padding: 0 0px;
+        } -->
+        .complex-layout-header-label {
+            position: relative;
+            top: -30px;
+            padding-left: 40px;
+            font-size: 24px;
+            color: White;
+            font-weight: bold;
+        }
+        .inner-border,
+        .inner-border .z-north,
+        .inner-border .z-west,
+        .inner-border .z-south,
+        .inner-border .z-east {
+            background: #FFFFFF;
+        }
+        .dl-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+ 
+    </style>
+    <borderlayout sclass="complex-layout" height="100%">
+        <north>
+	        <div id="header" height="100%">
+		         <div id="logo" style="background-image:url('resources/headerbckg.png');background-repeat:repeat-x;" height="40px">
+		            <a href="http://">
+		              <image style="float:center" border="0" src="resources/sobieLogo.png" width="101" height="30px"/>
+		            </a>
+		         </div>
+                <groupbox>
+		           <div style="background-color:#F0F0F0" id="Search" height="30px" width="100%">
+		       			<label value="Search"/>
+		           			<combobox buttonVisible="false" id="searchComboBox" autodrop="false" width="50%" 
+		           					  apply="biz.sobie.web.controllers.TextboxSearchController"/>
+		            			<space/>
+		            			<combobox id="categoryComboBox" width="150px" value="Search Products">
+		            				<comboitem value="Search Products"/>
+		            				<comboitem value="Search Services"/>
+		            				<comboitem value="Search Sellers"/>
+		            				<comboitem value="Search Suppliers"/>
+		            				<comboitem value="Search Users"/>
+		            			</combobox>
+		            			<space/>
+		         		<button label="Go"/>
+		         		<a style="float:right; text-decoration:none" href="Advanced Search">Advanced Search</a>
+		           </div>
+		           <menubar width="100%">
+			            <menu style="background-color:#FFAA33" label="All Categories">
+				            <menupopup>
+							<menuitem label="New" />
+							<menuseparator />
+							<menuitem label="Open" />
+							</menupopup>
+						</menu>
+						<menuseparator />
+						<menuitem label="How it works" />
+						<menuseparator />
+						<menuitem label="Help" />
+						<menuseparator />
+						<menuitem label="Pricing n Plans" />
+						<menuseparator />
+						<menuitem label="About us" />
+					</menubar>                
+		  		</groupbox>
+	        </div>
+        </north>
+        
+        <!-- Widget Dashboard -->
+        <center>
+            <borderlayout sclass="inner-border" id="centerWorkspaceBorderlayout">
+                <center border="0" margins="0,3,3,3">
+                	<div>
+						<include src="secure/blog.zul"/>
+	                    
+	                    <div align="center">
+	                    <groupbox>
+                		<hbox>
+                			<div height="100%" width="745px"> 
+		                    <panel id="productsPanel" title="Browse Products" border="normal" maximizable="true">
+		                        <panelchildren>
+		                        	<grid>
+										<columns>
+											<column/>
+										</columns>
+										<rows>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>	
+											</row>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>	
+											</row>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>
+											</row>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>
+											</row>
+										</rows>
+									</grid>
+		                        </panelchildren>
+		                    </panel>
+		                    </div>
+		                    <div height="100%" width="745px"> 
+		                    <panel id="servicesPanel" title="Browse Services" border="normal" maximizable="true">
+		                        <panelchildren>
+		                        	<grid>
+										<columns>
+											<column/>
+										</columns>
+										<rows>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>	
+											</row>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>	
+											</row>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>
+											</row>
+											<row>
+												<groupbox><image src="resources/img/defaults/defaultProductImage100x100.png"/></groupbox>
+											</row>
+										</rows>
+									</grid>			                        
+		                        </panelchildren>
+		                    </panel>
+		                    </div>
+	                    </hbox>
+	                    </groupbox>
+	                    </div>
+                    </div>
+                </center>
+            </borderlayout>
+        </center>
+    </borderlayout>
+</zk>

@@ -1,0 +1,85 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+
+<style>
+.prodback{
+	color: #373534;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e3e3e3));
+	background: -moz-linear-gradient(top,  #f9f9f9,  #e3e3e3);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e3e3e3');"
+}
+</style>
+
+<vbox width="100%" height="100%" style="border:none;margin:0px;padding:0px;">
+	<cell hflex="1" vflex="min">
+		<hbox hflex="1" >
+			<cell align="start" width="90%" style="border: none;">
+				<paging mold="default" pageSize="10" style="background:none; border:none;"/>
+			</cell>
+			<cell align="end" width="10%" style="border: none;">
+				<image src="@bind(browserWidgetVm.productListView)" onClick="@command('changeBrowserViewLayout')"/>
+			</cell>
+		</hbox>
+	</cell>
+
+	<groupbox style="border:none;margin:0px;padding:0px;" hflex="1">
+		<hlayout 
+			children="@load(browserWidgetVm.storeGridRow1) @template('storeGridBox')">
+			<template name="storeGridBox" var="store">
+				<hbox zclass="prodback">
+					<include
+						src="/unsecure/widgets/browserWidget/storeDisplayGrid.zul" />
+				</hbox>
+			</template>
+		</hlayout>
+		<hlayout
+			children="@load(browserWidgetVm.storeGridRow2) @template('storeGridBox')">
+			<template name="storeGridBox" var="store">
+				<hbox zclass="prodback">
+					<include
+						src="/unsecure/widgets/browserWidget/storeDisplayGrid.zul" />
+				</hbox>
+			</template>
+		</hlayout>
+		<hlayout
+			children="@load(browserWidgetVm.storeGridRow3) @template('storeGridBox')">
+			<template name="storeGridBox" var="store">
+				<hbox zclass="prodback">
+					<include
+						src="/unsecure/widgets/browserWidget/storeDisplayGrid.zul" />
+				</hbox>
+			</template>
+		</hlayout>
+		<hlayout
+			children="@load(browserWidgetVm.storeGridRow4) @template('storeGridBox')">
+			<template name="storeGridBox" var="store">
+				<hbox zclass="prodback">
+					<include
+						src="/unsecure/widgets/browserWidget/storeDisplayGrid.zul" />
+				</hbox>
+			</template>
+		</hlayout>
+		<hlayout
+			children="@load(browserWidgetVm.storeGridRow5) @template('storeGridBox')">
+			<template name="storeGridBox" var="store">
+				<hbox zclass="prodback">
+					<include
+						src="/unsecure/widgets/browserWidget/storeDisplayGrid.zul" />
+				</hbox>
+			</template>
+		</hlayout>
+	</groupbox>
+	
+	<cell hflex="1" vflex="min" style="border:none;margin:0px;padding:0px;">	
+		<hbox hflex="1" height="30px">
+			<cell align="start" width="90%" style="border: none;">
+				<paging mold="default" pageSize="10" style="background:none; border:none;margin-top:6px"/>
+			</cell>
+			<cell align="end" width="10%" style="border: none;">
+				<image src="@bind(browserWidgetVm.productListView)" onClick="@command('changeBrowserViewLayout')"/>
+			</cell>
+		</hbox>
+	</cell>
+</vbox>
+</zk>

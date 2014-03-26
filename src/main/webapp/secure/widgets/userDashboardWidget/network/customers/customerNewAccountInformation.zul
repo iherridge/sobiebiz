@@ -1,0 +1,193 @@
+<?page title="New Customer Account Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<vbox width="100%">
+<grid style="border:none;margin:0px;padding:0px;" hflex="1">
+			<columns>
+				<column label="" hflex="1"/>
+				<column label="" hflex="2"/>
+			</columns>
+			<rows>
+				<row hflex="1">
+					<cell >
+						<label value="Customer group:"/>
+					</cell>
+					<cell  >
+						<combobox width="80%">
+							<comboitem label=""/>
+							<comboitem label=""/>
+						</combobox>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="Customer name:"/>
+					</cell>
+					<cell  >
+						<hbox hflex="1" width="80%">
+							<combobox value="Mr." width="50px">
+								<comboitem label="Mr." />
+								<comboitem label="Mrs."/>
+							</combobox>
+							<textbox value="" hflex="1"/>
+						</hbox>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="Last name:"/>
+					</cell>
+					<cell  >
+						<textbox width="80%" value=""/>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="Postal Address:"/>
+					</cell>
+					<cell  >
+						<textbox width="80%" height="80px" value=""/>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="E-mail Address:"/>
+					</cell>
+					<cell  >
+						<textbox width="80%" value=""/>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="Contact Number:"/>
+					</cell>
+					<cell  >
+						<textbox width="80%" value=""/>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="VAT Number:"/>
+					</cell>
+					<cell  >
+						<textbox width="80%" value=""/>
+					</cell>
+				</row>
+				<row hflex="1">
+					<cell>
+						<label value="ID Number:"/>
+					</cell>
+					<cell  >
+						<textbox width="80%" value=""/>
+					</cell>
+				</row>
+			</rows>
+		</grid>
+</vbox>
+
+<!-- 	<hlayout>
+		<hbox width="250px">Customer Group:</hbox>
+		<hbox>
+			<combobox width="250px">
+				<comboitem label=""/>
+				<comboitem label=""/>
+			</combobox>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Prefix:*</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">First Name:*</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Middle Name / Initial:</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Last Name:*</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">E-mail Address:*</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Date of birth:*</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">VAT / Tax number:</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+		<hlayout>
+		<hbox width="250px">Gender:</hbox>
+		<hbox>
+			<combobox width="250px">
+				<comboitem label="Male"/>
+				<comboitem label="Female"/>
+			</combobox>
+		</hbox>
+	</hlayout>
+	<space />
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<label value="New Password" />
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<space />
+	<hlayout>
+		<hbox width="250px">Password:</hbox>
+		<hbox>
+			<textbox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space /> -->
+</zk>

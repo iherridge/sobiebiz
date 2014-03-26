@@ -1,0 +1,71 @@
+<?page title="Add New Page Header" contentType="text/html;charset=UTF-8"?>
+<zk>
+<hlayout   style="float:right;padding-right:10px">
+				<hbox>
+					<button label="Save / Update"/>
+				</hbox>				
+			</hlayout>
+				<div align="left">
+					<separator orient="horizontal" width="790px" bar="true" />
+				</div>
+				<label value="Add New Header Image" />
+				<div align="left">
+					<separator orient="horizontal" width="790px" bar="true" />
+				</div>
+				<space/>
+			<vbox>
+						<vlayout>
+							<hbox>
+								<image width="750px" height="128px" src="b"/>
+							</hbox>					
+							<hbox align="right">
+								<textbox value="/image url" width="200px"/>
+								<button label="select"/>
+								<button label="Upload / Change"/>
+							</hbox>
+							<space/>			
+			<hlayout>
+				<hbox width="200px">Header Name:</hbox>
+					<hbox>
+						<textbox width="200px"/>
+					</hbox>
+			</hlayout>
+				<space/>
+			<hlayout>
+				<hbox width="200px">Description:</hbox>
+					<hbox>
+						<textbox width="200px" height="80px"/>
+					</hbox>
+			</hlayout>				
+				<space/>
+			<hlayout>
+				<hbox width="200px">Select Page:</hbox>
+					<hbox>
+								<combobox width="200px">
+									<template name="model">										
+									</template>
+								</combobox>
+							</hbox>
+			</hlayout>				
+				<space/>
+			<hlayout>
+				<hbox width="200px">Enable:</hbox>
+					<hbox>
+					<checkbox label="Yes/No"/>
+				</hbox>
+			</hlayout>				
+				<space/>
+			<hlayout>
+				<hbox width="200px">Header Link:</hbox>
+					<hbox>
+						<textbox value="http://" width="200px"/>
+					</hbox>
+			</hlayout>														
+						</vlayout>
+					</vbox>
+					<hlayout   style="float:right;padding-right:10px">
+				<hbox>
+					<button label="Save / Update"/>
+				</hbox>				
+			</hlayout>
+</zk>

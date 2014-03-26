@@ -1,0 +1,14 @@
+<?page title="Chat" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="chatWin" title="Chat" border="normal"  apply="biz.sobie.web.controllers.ChatController" height="25px">
+	<caption>
+		<button id="chatBtn" label="Close" style="float: right;" visible="false"/>
+	</caption>
+	<vbox>
+	<textbox id="messagesTextbox" rows="10" cols="33" multiline="true"/>
+	<hbox>
+		<textbox id="msgTextbox" width="130px"/><button id="sendBtn" label="Send"/>
+	</hbox>
+	</vbox>
+</window>
+</zk>

@@ -1,0 +1,45 @@
+<?page title="Sales Orders Quotations" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- Quotation View -->
+<include width="100%" src="/secure/widgets/userDashboardWidget/sales/salesView/salesViewQuotation.zul"/>
+<!-- Quotation List -->
+	<vbox width="100%">
+		<div align="left" hflex="1">
+			<separator orient="horizontal" bar="true" />
+		<label value="Quotations" />
+			<separator orient="horizontal" bar="true" />
+		</div>
+		<grid fixedLayout="true" hflex="1">
+			<columns hflex="1">
+				<column label="Quotation #" />
+				<column label="Quote to" />
+				<column label="Quotation Date" />
+				<column label="Status" />
+				<column label="Total" />
+				<column label="Action" />
+			</columns>
+			<rows>
+				<row>
+					<cell>
+						<label value="ABC123456"/>
+					</cell>
+					<cell>
+						<label value="Mr. John Doe"/>
+					</cell>
+					<cell align="center">
+						<label value="30 October 12"/>
+					</cell>
+					<cell align="center">
+						<label value="pending"/>
+					</cell>
+					<cell align="right">
+						<label value="N$ 100.00"/>
+					</cell>
+					<cell align="right">
+						<label value="Remind / Delete" style="color:blue;"/>
+					</cell>
+				</row>
+			</rows>
+		</grid>
+	</vbox>
+</zk>

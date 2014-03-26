@@ -1,0 +1,53 @@
+<?page title="Network Profile" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<hbox apply="biz.sobie.web.controllers.NetworkProfileController" style="color:white;background:#808080" width="900px">
+		<vbox>
+			<label value="User Information"/>
+			<space/>
+			<hbox>
+				<image id="profileImage" src="/resources/img/defaults/defaultMaleProfilePic400x400.png" width="100px"/>
+				<vbox>
+					<hbox>Username: <label id="fullNameLbl" value="Name Surname"/></hbox>
+					<hbox>Email: <label id="emailLbl" value="youremail@sobie.biz"/></hbox>
+					<hbox>Telephone: <label id="telephoneLbl" value="123456789"/></hbox>
+					<hbox>Member since: <label id="accountOpenDate" value="--/--/--"/></hbox>
+				</vbox>
+			</hbox>
+			<space/>
+			<hbox>Country: <label id="countryLbl" value="South Africa"/></hbox>
+			<hbox>Town: <label id="townLbl" value="Boksburg"/></hbox>
+			<hbox>Suburb: <label id="SuburbLbl" value="Buyers Park"/></hbox>
+			<hbox>Street: <label id="streetLbl" value="51 Raven Street"/></hbox>
+			<hbox>Account Number: <label id="accNoLbl" value="SBENAM201112272219018001"/></hbox>
+		</vbox>
+		<space/>
+		<vbox>
+			<space/>	
+			<separator orient="vertical" bar="true" height="220px" style="background:white" width="1px"/>
+		</vbox>	
+		<space/>
+		<vbox>
+			<label value="Account Information"/>
+			<space/>
+			<hbox>Account type:<label id="accountTypeLbl" value="Buyer"/><space/>Account type:<label id="AccountPackageLbl" value="Basic"/></hbox>
+			<hbox>Progress:<space/><space/><space/><progressmeter value="40"/></hbox>
+			<space/>
+			<hbox spacing="1">Products: (<label id="productCountLbl" value="00" style="color:orange"/>)<space/>Services: (<label id="servicesCountLbl" value="00" style="color:orange"/>)<space/>Classifieds: (<label id="classifiedsCountLbl" value="00" style="color:orange"/>)</hbox>
+			<hbox spacing="1">Connections: (<label id="connectionsCountLbl" value="00" style="color:orange"/>)<space/>Orders: (<label id="OrdersCountLbl" value="00" style="color:orange"/>)<space/>Coupons: (<label id="couponsCountLbl" value="00" style="color:orange"/>)</hbox>
+			<image src="/resources/img/tempChart.png" width="310px"/><!-- <chart type="line" /> -->
+		</vbox>
+		<space/>
+		<vbox>
+			<space/>	
+			<separator orient="vertical" bar="true" height="220px" style="background:white" width="1px"/>
+		</vbox>
+		<space/>
+		<vbox>
+			<label value="Feedback"/>
+			<space/>
+			<hbox><vbox><space/>Rating:</vbox><space/><space/><space/><space/><image src="/resources/img/tempRating.png"/></hbox>
+			<hbox><vbox><space/>Rank   :</vbox><space/><space/><space/><space/><image src="/resources/img/tempRank.png"/></hbox>
+		</vbox>
+	</hbox>
+
+</zk>

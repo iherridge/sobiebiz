@@ -1,0 +1,29 @@
+<?page title="Banner Impressions" contentType="text/html;charset=UTF-8"?>
+<zk>
+<space />
+	<hlayout>
+		<hbox width="250px">Banner Size:*</hbox>
+		<hbox>
+			<combobox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Impressions:*</hbox>
+		<hbox>
+			<combobox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout >
+		<hbox width="250px" >Price:</hbox>
+		<hbox>
+			<textbox width="70px"/>
+		</hbox>
+		<hbox>
+			<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Add to Cart" label="" image="/resources/img/icons/sbe_addcart16.png" /></hbox>
+		</hbox>
+	</hlayout>
+	<space />
+	
+</zk>

@@ -1,0 +1,8 @@
+<?page title="User Search" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<window title="User Search" border="normal" id="userSearchWin">
+	<combobox mold="rounded" buttonVisible="false" id="userSearchComboBox" apply="biz.sobie.web.controllers.UserSearchController" autodrop="true"/><button label="Search" id="userSearchBtn"/>
+	
+</window>
+</zk>

@@ -1,0 +1,6 @@
+<?page title="Profile Progress Widget" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Profile Progress Widget" border="normal">
+New Content Here!
+</window>
+</zk>

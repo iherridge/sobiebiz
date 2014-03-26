@@ -1,0 +1,21 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<tabbox width="800px" height="445px" style="background-image:url('resources/img/bg_mySobielight.png');border-radius:3px;border:0px solid #c4c8cc" >
+    <tabs >
+        <tab label="Top Selling" />
+        <tab  label="Featured" />
+        <tab  label="On Sale" />
+        </tabs>
+    <tabpanels>
+        <tabpanel>
+          <include src="/test_productList.zul"/>
+        </tabpanel>
+        <tabpanel>
+        <include src="/test_productList.zul"/>
+        </tabpanel>
+        <tabpanel>
+         <include src="/test_productList.zul"/>
+        </tabpanel>
+       </tabpanels>
+</tabbox>
+</zk>

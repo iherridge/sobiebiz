@@ -1,0 +1,192 @@
+<?page title="Customer Overview" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<vbox width="100%">
+	<cell hflex="1">
+	<grid hflex="1">
+		<columns >
+			<column label="Customer information"/>
+			<column label="Billing Address"/>
+		</columns>
+		<rows>
+			<row hflex="1">
+				<cell width="100%">
+				<grid hflex="1">
+					<columns>
+						<column label="" hflex="1"/>
+						<column label="" hflex="2"/>
+					</columns>
+					<rows>
+						<row hflex="1">
+							<cell>
+								<label value="Customer name:"/>
+							</cell>
+							<cell  >
+								<label value="(Prefix)(Name)(Surname)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Last visit:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(dd/mm/yyy hh:mm)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Email confirmation:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(pending / confirmed)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Account created:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(dd/mm/yyy hh:mm)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Customer group:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Customer group)" style="color:grey;"/>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+				</cell>
+				<cell width="100%">
+				<grid hflex="1">
+					<columns>
+						<column label="" hflex="1"/>
+						<column label="" hflex="2"/>
+					</columns>
+					<rows>
+						<row>
+							<cell>
+								<label value="Address:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Address)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Suburb:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Suburb)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="City / Town:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(City / Town)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Region / Province:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Region / Province)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Country:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Country)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Contact Number:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Number)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Fax Number:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Number)" style="color:grey;"/>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	</cell>
+	<cell hflex="1">
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<label value="Customer Statistics" />
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<grid fixedLayout="true" width="100%">
+		<columns hflex="1">
+			<column label="Visits" />			
+			<column label="Purchases" />
+			<column label="Comments" />
+			<column label="Ratings" />
+			<column label="Tags"/>
+			<column label="Likes"/>
+			<column label="Shares"/>
+		</columns>
+	</grid>
+	<space />
+		<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<label value="Recent Orders" />
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<grid fixedLayout="true" width="100%">
+		<columns  hflex="1">
+			<column label="Product ID" />			
+			<column label="SKU" />
+			<column label="Qty" />
+			<column label="Status" />
+			<column label="Total"/>
+		</columns>
+	</grid>
+	</cell>
+</vbox>
+</zk>

@@ -1,0 +1,46 @@
+<?page title="Affiliate Store List" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+</style>
+	<grid fixedLayout="true" width="100%">
+		<columns  hflex="1">
+			<column label="All" width="30px" />			
+			<column label="Name" />
+			<column label="Email" />
+			<column label="Group" />
+			<column label="Country/Region" />
+			<column label="Joined Network" />
+			<column label="Action"/>
+		</columns>
+		<rows>					
+			<row>
+				<checkbox checked="false"/>
+				<label value="Name"/>
+				<label value="Email"/>
+				<label value="Group"/>
+				<label value="Location"/>
+				<label value="dd/mm/yyyy"/>				
+				<hbox><button zclass="sobie-buttonrnd"  tooltiptext="Send Message" label="" image="/resources/img/icons/sbe_messages16.png" />
+				<button zclass="sobie-buttonrnd" tooltiptext="View Profile" label="" image="/resources/img/icons/sbe_view16.png"/>
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+</zk>

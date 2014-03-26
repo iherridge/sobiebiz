@@ -1,0 +1,37 @@
+<?page title="Header" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox>
+		<div zclass="sobieheader"  width="1024px">
+			<hlayout
+				style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;">
+				<div hflex="true" id="logo" >
+					<a>
+						<image id="sobieLogo"
+							style="margin:5px; margin-top:5px" border="0"
+							src="resources/img/sobieLogo.png" width="101" height="30px" />
+					</a>
+				</div>
+				<div style="margin:5px">
+					<a label="Home" visible="false" />
+					<a label="Logout" visible="false" href="/j_spring_security_logout"/>
+					<div id="loginDiv" visible="true">
+						<html style="color:red" if="${not empty param.login_error}">
+					      <![CDATA[
+					        Your login attempt was not successful, try again.<br/><br/>
+					        Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+					       ]]>
+					    </html>
+					 
+					    <h:form id="f" name="f" action="j_spring_security_check" method="POST" xmlns:h="native">
+					       	<hbox>
+						       	Email <textbox id="u" name="j_username" focus="true"/>
+						       	Password <textbox id="p" type="password" name="j_password"/>
+								<h:input type="submit" value="Log in"/>
+							</hbox>
+					    </h:form>
+					</div>
+				</div>
+			</hlayout>
+		</div>
+	</vbox>
+</zk>

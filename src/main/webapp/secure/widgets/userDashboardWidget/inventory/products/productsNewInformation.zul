@@ -1,0 +1,236 @@
+<?page title="Product Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+<vbox width="100%" style="border:none;margin:5px;">
+	<grid hflex="1">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>	
+				<cell>
+					<label value="Product name:"/>
+				</cell>	
+				<cell colspan="2">
+					<textbox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodName)"/>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="SKU or Part #:"/>
+				</cell>	
+				<cell colspan="2">
+					<textbox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodSkuPartNo)"/>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Product brand:"/>
+				</cell>	
+				<cell colspan="2">
+					<textbox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodBrand)"/>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Select Category:"/>
+				</cell>	
+				<cell colspan="2">
+					<combobox id="categoryComboBox" width="60%"
+						model="@load(vm.categoryList)" apply="org.zkoss.bind.BindComposer"
+						viewModel="@id('vm') @init('biz.sobie.web.browser.BrowserWidgetVm')"
+						selectedItem="@bind(inventoryProductsVm.addUpdateProduct.prodCategory)">
+						<template name="model" var="category">
+							<comboitem label="@load(category)"></comboitem>
+						</template>
+					</combobox>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Attributes:"/>
+				</cell>	
+				<hbox hflex="1">
+					<combobox value="Att Set" hflex="1">
+						<template name="model">
+							<comboitem label="Set 01" />
+							<comboitem label="Set 02" />
+						</template>
+					</combobox>
+					<combobox value="Option" hflex="1">
+						<template name="model">
+							<comboitem label="Option 01" />
+							<comboitem label="Option 02" />
+						</template>
+					</combobox>
+				</hbox>
+				<cell hflex="1" align="left">
+					<button label="-" />
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value=""/>
+				</cell>	
+				<hbox hflex="1">
+					<combobox value="Att Set" hflex="1">
+						<template name="model">
+							<comboitem label="Set 01" />
+							<comboitem label="Set 02" />
+						</template>
+					</combobox>
+					<combobox value="Option" hflex="1">
+						<template name="model">
+							<comboitem label="Option 01" />
+							<comboitem label="Option 02" />
+						</template>
+					</combobox>
+				</hbox>
+				<cell hflex="1" align="left">
+					<button label="+" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enabled:"/>
+				</cell>
+				<cell colspan="2" align="left">
+					<checkbox id="as" label="Yes/No"
+				checked="@bind(inventoryProductsVm.addUpdateProduct.prodEnabled)" />
+				</cell>
+			</row>
+			<row>
+				<cell >
+					<label value="Featured Product:"/>
+				</cell>
+				<cell colspan="2" align="left">
+					<checkbox label="Yes/No" checked="@bind(inventoryProductsVm.addUpdateProduct.prodFeatured)" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+
+<!-- <vbox width="100%" style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="200px">Product Name:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(inventoryProductsVm.addUpdateProduct.prodName)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">SKU or Part#:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(inventoryProductsVm.addUpdateProduct.prodSkuPartNo)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Product Brand:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(inventoryProductsVm.addUpdateProduct.prodBrand)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Select Category:</hbox>
+		<hbox>
+			<combobox id="categoryComboBox" width="150px"
+				model="@load(vm.categoryList)" apply="org.zkoss.bind.BindComposer"
+				viewModel="@id('vm') @init('biz.sobie.web.browser.BrowserWidgetVm')"
+				selectedItem="@bind(inventoryProductsVm.addUpdateProduct.prodCategory)">
+				<template name="model" var="category">
+					<comboitem label="@load(category)"></comboitem>
+				</template>
+			</combobox>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Tax Class:</hbox>
+		<hbox>
+		<combobox width="204px">
+		<template name="model">
+		<comboitem label="Tax Class 01" />
+		<comboitem label="Tax Class 02" />
+		</template>
+		</combobox>
+		</hbox>
+		</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="200px">Attributes:</hbox>
+		<hbox>
+			<combobox value="Att Set" width="100px">
+				<template name="model">
+					<comboitem label="Set 01" />
+					<comboitem label="Set 02" />
+				</template>
+			</combobox>
+			<combobox value="Option" width="100px">
+				<template name="model">
+					<comboitem label="Option 01" />
+					<comboitem label="Option 02" />
+				</template>
+			</combobox>
+			<button label="-" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px"></hbox>
+		<hbox>
+			<combobox value="Att Set" width="100px">
+				<template name="model">
+					<comboitem label="Set 01" />
+					<comboitem label="Set 02" />
+				</template>
+			</combobox>
+			<combobox value="Option" width="100px">
+				<template name="model">
+					<comboitem label="Option 01" />
+					<comboitem label="Option 02" />
+				</template>
+			</combobox>
+			<button label="+" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="100px">Enabled:</hbox>
+		<hbox>
+			<checkbox id="as" label="Yes/No"
+				checked="@bind(inventoryProductsVm.addUpdateProduct.prodEnabled)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="100px">Featured:</hbox>
+		<hbox>
+			<checkbox label="Yes/No"
+				checked="@bind(inventoryProductsVm.addUpdateProduct.prodFeatured)" />
+		</hbox>
+	</hlayout>
+</vbox> -->
+</zk>

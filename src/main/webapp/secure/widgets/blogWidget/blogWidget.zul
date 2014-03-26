@@ -1,0 +1,14 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+<zk>
+  	<div align="center" style="padding:5px; background-image:url('resources/img/bg_mySobielight.png');border-radius:10px;border:1px solid #c4c8cc" height="300px" width="960px">
+     	<groupbox width="80%" >
+     		<vlayout>
+     			<hlayout><a label="Update blog"/><a label="Tag/Review product"/><a label="Ask Question"/></hlayout>
+     			<textbox value="Something you would like to share?" width="90%" multiline="true" height="30px"/>
+     		</vlayout>
+     	</groupbox>
+     	<groupbox height="100%" width="80%">
+     		<groupbox></groupbox>
+     	</groupbox>
+    </div>
+</zk>

@@ -1,0 +1,314 @@
+<?page title="Store Display List" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+.imgbox{
+	border: 1px solid #ddd;
+	margin: 3px;
+	color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff);
+border-radius: 4px;
+box-shadow: inset 0px 2px 12px #ddd;
+width: 110px;
+height: 110px;
+}
+
+.img{
+align:center;
+display: block;
+border:1px #cccccc;
+margin: auto;
+padding:3px;
+max-width: 100px;
+max-height: 100px;
+vertical-align: center;
+
+}
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+background-opacity: 0 ;
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+}
+
+.storeBack{
+color: #373534;
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+}
+
+/*********************** B U T T O N S *********************/
+
+.buttonRed {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#BC1815;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonRed:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonBlue {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#22C3EB;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonBlue:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonGreen {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#67B600;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonGreen:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonOrange {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:orange;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+
+.buttonOrange:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+</style>
+
+
+<vbox width="100%">
+	<grid hflex="1" sclass="storeBack" style="border:none;margin:0px;padding:0px;" >
+		<columns width="100%">
+			<column label="" width="130px"/>
+			<column label="" width="100%"/>
+			<column label="" width="100px"/>
+		</columns>
+		<rows>
+			<row hflex="1">	
+				<cell hflex="min" width="20%" align="center">
+					<hbox sclass="imgbox" align="center" >
+						<image sclass="img" width="100px"  content="@load(store.AImage)" style="margin:3px;" onClick="@global-command('displayStoreMainLayoutPage', store=store)"/>
+					</hbox >
+				</cell>
+				<cell hflex="1" >
+					<grid  width="100%" style="border:none;marin:0px;padding:0px;">
+						<columns hflex="1">
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>							
+						</columns>
+						<rows hflex="1">
+							<row hflex="1">
+								<cell colspan="3">
+									<label value="@load(store.storeName)" style="color:black;font-family:arial;font-size:16px" />
+								</cell>	
+							</row>
+							<row hflex="1">
+								<cell>
+									<label value="Category tags:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell>
+									<label value="Tag, tag, tag..."/>
+								</cell>
+								<cell align="right">
+									<hbox >
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+									</hbox>
+								</cell>
+							</row>
+							<row hflex="1">
+								<cell>
+									<label value="City / Town:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell>
+									<label value="Sobie Province "/>
+								</cell>
+								<cell align="right">
+									<label value="Comments" style="color:grey;font-family:arial;" />
+									<label value="(00)" style="color:grey;font-family:arial;" />			
+								</cell>
+							</row>
+							<row hflex="1">
+								<cell>
+									<label value="Country:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell>
+									<label value="United States of Sobie"/>
+								</cell>
+								<cell align="right">
+									<label value="Likes" style="color:grey;font-family:arial;" />
+									<label value="(00)" style="color:grey;font-family:arial;" />
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				</cell>
+				<cell hflex="1" align="center" width="10%">
+					<vbox hflex="1">
+						<button tooltiptext="View Storefront" sclass="buttonRed" label="View Store" onClick="" />
+						<button tooltiptext="Contact Store" sclass="buttonOrange" label="Contact Store" onClick="@global-command('openContactUs')" />
+						<button tooltiptext="Like Store" sclass="buttonBlue" label="Like" onClick="" />
+						<button tooltiptext="Share Store" sclass="buttonGreen" label="Share" onClick="" />
+					</vbox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+
+
+
+
+
+
+
+<!-- <hbox width="100%">
+		<hbox hflex="min">
+			<hbox sclass="imgbox" align="center" >
+				<image sclass="img" width="100px"  content="@load(store.AImage)" style="margin:3px;" onClick="@global-command('displayStoreMainLayoutPage', store=store)"/>
+			</hbox >
+		</hbox>
+		<vbox hflex="2">
+			<hbox>
+				<label value="@load(store.storeName)" style="color:black;font-family:arial;font-size:16px" />
+			</hbox>
+			<hbox align="start">
+				<hbox width="360px">
+					<label value="Description" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+			<hbox align="start">
+				<hbox width="360px">
+					<label value="Street:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+			<hbox align="start">
+				<hbox width="360px">
+					<label value="Suburb:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+			<hbox align="start">
+				<hbox width="360px">
+					<label value="Region:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+			<hbox align="start">
+				<hbox width="360px">
+					<label value="Country:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+		</vbox>
+		<vbox align="center" hflex="1" height="128px" >			
+			<hbox>
+				<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Add to My Network" image="/resources/img/icons/sbe_addnetwork16.png"  /></hbox>
+				<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Contact Store" image="/resources/img/icons/sbe_messages16.png" /></hbox>
+			</hbox>
+			<hbox>
+				<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Like" image="/resources/img/icons/sbe-like16.png"  /></hbox>
+				<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Share" image="/resources/img/icons/sbe_share16.png" /></hbox>
+			</hbox>	
+			<hbox>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+			</hbox>
+			<hbox>
+				<hbox>
+					<label value="Comments" style="color:grey;font-family:arial;font-size:12px" />
+					<label value="(00)" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+				
+				<hbox>
+					<label value="Likes" style="color:grey;font-family:arial;font-size:12px" />
+					<label value="(00)" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+		</vbox>
+	</hbox> -->
+</zk>

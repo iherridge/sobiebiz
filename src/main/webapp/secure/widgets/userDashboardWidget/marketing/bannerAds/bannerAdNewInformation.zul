@@ -1,0 +1,54 @@
+<?page title="Banner Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/webapp/resources/css/sobieStyleSheet.css"/>
+	<space />
+	<hlayout>
+		<hbox width="250px" >Banner Name:*</hbox>
+		<hbox>
+			<textbox zclass="textarea" width="250px" />
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Description:*</hbox>
+		<hbox>
+			<textbox zclass="textarea" width="250px" height="80px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">URL:*</hbox>
+		<hbox>
+			<textbox zclass="textarea" width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Link Banner to Store Index:</hbox>
+		<hbox>
+			<checkbox />
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Start Date:*</hbox>
+		<hbox>
+			<datebox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">End Date:*</hbox>
+		<hbox>
+			<datebox width="250px"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="250px">Enable:</hbox>
+		<hbox>
+			<checkbox />
+		</hbox>
+	</hlayout>
+	<space />
+</zk>

@@ -1,0 +1,70 @@
+<?page title="Network Overview" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div style="color:white;background:#808080" width="950px" >
+	<hbox>
+		<vbox>
+			<div align="center"><label value="Store Design" style="color:orange"/></div>
+			<space/>
+			<label value="Create Content" style="color:orange"/>
+			<hbox><space/><label value=">Pages"/></hbox>
+			<hbox><space/><label value=">Content"/></hbox>
+			<hbox><space/><label value=">Add products and images to pages"/></hbox>
+			<label value="Optimize Store Navigation" style="color:orange"/>
+			<hbox><space/><label value=">Define Menus"/></hbox>
+			<hbox><space/><label value=">Add or change categories"/></hbox>
+			<label value="Build Store Brand" style="color:orange"/>
+			<hbox><space/><label value=">Change Store colors"/></hbox>
+			<hbox><space/><label value=">Update logo"/></hbox>
+			<hbox><space/><label value=">Changte store template or layout"/></hbox>			
+		</vbox>
+		<space/>
+		<space/>
+		<space/>
+		<space/>
+		<vbox>
+			<space/>	
+			<separator orient="vertical" bar="true" height="250px" style="background:white" width="1px"/>
+		</vbox>
+		<space/>
+		<vbox>
+			<div align="center"><label value="Stock my store" style="color:orange"/></div>
+			<space/>
+			<label value="Add Products" style="color:orange"/>
+			<hbox><space/><label value=">Add my own products"/></hbox>
+			<hbox><space/><label value=">Find other products to sell"/></hbox>
+			<label value="My Shopster Network" style="color:orange"/>
+			<space/>
+			<label value="View my Network" style="color:orange"/>
+			<hbox><space/><label value=">Update my Network Profile"/></hbox>
+			<hbox><space/><label value=">View Network messages"/></hbox>
+			<label value="Build Connections" style="color:orange"/>
+			<hbox><space/><label value=">Search Merchant Dirctory"/></hbox>
+			<hbox><space/><label value=">View my list of Contacts"/></hbox>
+		</vbox>			
+		<space/>
+		<space/>
+		<space/>
+		<space/>
+		<vbox>
+			<space/>
+			<separator orient="vertical" bar="true" height="250px" style="background:white" width="1px"/>
+		</vbox>
+		<space/>
+		<vbox>
+			<div align="center"><label value="Store Design" style="color:orange"/></div>
+			<space/>
+			<label value="Create Content" style="color:orange"/>
+			<hbox><space/><label value=">Pages"/></hbox>
+			<hbox><space/><label value=">Content"/></hbox>
+			<hbox><space/><label value=">Add products and images to pages"/></hbox>
+			<label value="Optimize Store Navigation" style="color:orange"/>
+			<hbox><space/><label value=">Define Menus"/></hbox>
+			<hbox><space/><label value=">Add or change categories"/></hbox>
+			<label value="Build Store Brand" style="color:orange"/>
+			<hbox><space/><label value=">Change Store colors"/></hbox>
+			<hbox><space/><label value=">Update logo"/></hbox>
+			<hbox><space/><label value=">Changte store template or layout"/></hbox>	
+		</vbox>			
+	</hbox>
+</div>
+</zk>

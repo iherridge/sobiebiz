@@ -1,0 +1,485 @@
+<?page title="Register" contentType="text/html;charset=UTF-8"?>
+
+<window id="registerWin" position="center" title="Register New Sobie Account" border="0" stubonly="true"
+	 apply="biz.sobie.web.controllers.RegisterController" closable="true" width="1000px">
+	<div align="center">
+		<hbox  style="background-image:url('resources/img/bg_mySobielight.png');border-radius:10px;border:1px solid #c4c8cc">
+		<space/>
+		<vbox>
+		<space/>
+		<hbox spacing="10px">
+				<vbox>
+					Your Email <textbox id="email" focus="true"/>
+					<!-- <script content="zk.googleAPIkey='ABQIAAAAyzTIYf0eTY4hnP9f0-xE_hT2JwPNsCeACyDpmMMjX1b3GwetTxTifiQT0OeRXLaMS099tAo_CnNwlg'" />
+					
+					<gmaps width="250px" height="250px">
+					 
+					</gmaps> -->
+				</vbox>
+				<vbox>
+					First Name <textbox id="firstName"/>
+				</vbox>
+				<vbox>
+					Last Name <textbox id="lastName"/>
+				</vbox>
+				<vbox>
+					Password <textbox id="password" type="password"/>
+				</vbox>
+				<vbox>
+					Re-type Password <textbox id="reTypePassword" type="password"/>
+				</vbox>
+				<vbox>
+					Date of Birth <datebox id="dateOfBirth"/>
+				</vbox>
+				<vbox>
+					Gender <radiogroup id="gender">
+		 				   		Male<radio value="Male"/>
+	   							Female<radio value="Female"/>
+						   </radiogroup>
+				</vbox>			
+		</hbox>
+		<vbox>
+<!-- 			<label value="Please enter the text displayed in the box below?"/>
+				<captcha />
+					
+					<textbox/> -->
+			<tabbox>
+				<tabs>
+					<tab label="Buyer Account" />
+					<tab label="Seller Account" />
+					<tab label="Supplier Account" />
+				</tabs>
+				<tabpanels >
+				
+					<!-- BUYER ACCOUNT -->
+					<tabpanel>
+						<grid>
+							<columns id="sobieProductColumns"  hflex="1"  style="color:white;background:orange">
+								<column width="200px"/>
+								<column width="180px">Free</column>
+								<column width="180px">Novice</column>
+								<column width="180px">Pro</column>
+								<column width="180px">Enterprise</column>
+							</columns>
+							<rows >
+								<row>
+									<label value="Price"/>
+									<label value="NAD 0"/>
+									<label value="NAD 350"/>
+									<label value="NAD 600"/>
+									<label value="NAD 1000"/>
+								</row>
+								<row>
+									<label value="Product Listings"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Product Categories"/>
+									<label value="No"/>
+									<label value="No"/>
+									<label value="No"/>
+									<label value="No"/>
+								</row>
+								<row>
+									<label value="Network Listings"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Sales Leads"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Service Listings"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Classifieds"/>
+									<label value="3"/>
+									<label value="6"/>
+									<label value="12"/>
+									<label value="25"/>
+								</row>
+								<row>
+									<label value="Custom Store Design"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>
+								<row>
+									<label value="Transaction Fees"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>
+								<row>
+									<label value="Access to Supplier Product Network"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>
+								<row>
+									<label value="Bulk Product Upload"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>				
+								<row>
+									<label value="Standard Reports"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>				
+								<row>
+									<label value="Management Dashboard"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>
+								<row>
+									<label value="Product &amp; Stock Management"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>					
+								<row>
+									<label value="Order Management"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Mass Mailing Management"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>				
+								<row>
+									<label value="Advertising Management"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>				
+								<row>
+									<label value="Profile Review"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value=""/>
+			 				   		<button label="Register" id="buyerFree" />
+			 				   		<button label="Register" id="buyerBasic" />
+			 				   		<button label="Register" id="buyerNovice" />
+			 				   		<button label="Register" id="buyerPro" />
+								</row>
+							</rows>
+						</grid>
+					</tabpanel>
+					
+					<!-- SELLER ACCOUNT -->
+					<tabpanel>
+						<grid>
+							<columns style="color:white;background:orange">
+								<column width="200px"></column>
+								<column>Free</column>
+								<column>Novice</column>
+								<column>Pro</column>
+								<column>Enterprise</column>
+							</columns>
+							<rows>
+								<row>
+									<label value="Price"/>
+									<label value="NAD 0"/>
+									<label value="NAD 350"/>
+									<label value="NAD 600"/>
+									<label value="NAD 1000"/>
+								</row>
+								<row>
+									<label value="Product Listings"/>
+									<label value="15"/>
+									<label value="200"/>
+									<label value="2500"/>
+									<label value="20000"/>
+								</row>
+								<row>
+									<label value="Product Categories"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Network Listings"/>
+									<label value="0"/>
+									<label value="200"/>
+									<label value="2500"/>
+									<label value="20000"/>
+								</row>
+								<row>
+									<label value="Sales Leads"/>
+									<label value="0"/>
+									<label value="10"/>
+									<label value="50"/>
+									<label value="100"/>
+								</row>
+								<row>
+									<label value="Service Listings"/>
+									<label value="0"/>
+									<label value="3"/>
+									<label value="10"/>
+									<label value="20"/>
+								</row>
+								<row>
+									<label value="Classifieds"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Custom Store Design"/>
+									<label value="Limited"/>
+									<label value="5 Templates"/>
+									<label value="Full Access"/>
+									<label value="Full Access"/>
+								</row>
+								<row>
+									<label value="Transaction Fees"/>
+									<label value="3%"/>
+									<label value="2.3%"/>
+									<label value="1.3%"/>
+									<label value="0.5%"/>
+								</row>
+								<row>
+									<label value="Access to Supplier Product Network"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Bulk Product Upload"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Standard Reports"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Management Dashboard"/>
+									<label value="No"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Product &amp; Stock Management"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>					
+								<row>
+									<label value="Classifieds"/>
+									<label value="3"/>
+									<label value="6"/>
+									<label value="12"/>
+									<label value="25"/>
+								</row>
+								<row>
+									<label value="Mass Mailing Management"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Advertising Management"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Profile Review"/>
+									<label value="No"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value=""/>
+			 				   		<button label="Register" id="sellerFree" />
+			 				   		<button label="Register" id="sellerNovice" />
+			 				   		<button label="Register" id="sellerPro" />
+			 				   		<button label="Register" id="sellerEnterprise" />
+								</row>
+							</rows>
+						</grid>		
+					</tabpanel>
+					
+					<!-- SUPPLIER ACCOUNT -->
+					<tabpanel>
+						<grid>
+							<columns style="color:white;background:orange">
+								<column width="200px"></column>
+								<column>Basic</column>
+								<column>Novice</column>
+								<column>Pro</column>
+							</columns>
+							<rows>
+								<row>
+									<label value="Price"/>
+									<label value="NAD 750"/>
+									<label value="NAD 1200"/>
+									<label value="NAD 2500"/>
+								</row>
+								<row>
+									<label value="Product Listings"/>
+									<label value="5000"/>
+									<label value="10000"/>
+									<label value="20000"/>
+								</row>
+								<row>
+									<label value="Product Categories"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Network Listings"/>
+									<label value="350"/>
+									<label value="1500"/>
+									<label value="10000"/>
+								</row>
+								<row>
+									<label value="Sales Leads"/>
+									<label value="500"/>
+									<label value="2500"/>
+									<label value="5000"/>
+								</row>
+								<row>
+									<label value="Service Listings"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Classifieds"/>
+									<label value="0"/>
+									<label value="0"/>
+									<label value="0"/>
+								</row>
+								<row>
+									<label value="Custom Store Design"/>
+									<label value="Limited"/>
+									<label value="5 Templates"/>
+									<label value="Full Access"/>
+								</row>
+								<row>
+									<label value="Transaction Fees"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+									<label value="N/A"/>
+								</row>
+								<row>
+									<label value="Access to Supplier Product Network"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Bulk Product Upload"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Standard Reports"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Management Dashboard"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Product &amp; Stock Management"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>					
+								<row>
+									<label value="Order Management"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value="Mass Mailing Management"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Advertising Management"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>				
+								<row>
+									<label value="Profile Review"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+									<label value="Yes"/>
+								</row>
+								<row>
+									<label value=""/>
+			 				   		<button label="Register" id="supplierBasic" />
+			 				   		<button label="Register" id="supplierNovice" />
+			 				   		<button label="Register" id="supplierPro" />
+								</row>
+							</rows>
+						</grid>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</vbox>
+		<space/>
+		</vbox>
+		<space/>
+		</hbox>
+	</div>
+</window>

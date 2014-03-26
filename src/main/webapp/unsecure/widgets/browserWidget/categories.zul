@@ -1,0 +1,15 @@
+<?page title="Categories" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div >
+		<listbox width="180px" height="100%" model="@load(browserWidgetVm.categoryList)">
+			<listhead sizable="true">
+				<listheader label="Categories" sort="auto" />
+			</listhead>
+			<template name="model" var="category">
+				<listitem >
+					<listcell label="@load(category)"/>
+				</listitem>
+			</template>
+		</listbox>
+	</div>
+</zk>

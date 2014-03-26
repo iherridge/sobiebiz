@@ -1,0 +1,49 @@
+<?page title="Store Settings Tabbed Panel" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div width="100%" align="left" apply="org.zkoss.bind.BindComposer" viewModel="@id('storeSettingsVm') @init('biz.sobie.web.userdashboard.store.StoreSettingsVm')">
+		<label style="font-weight: bold">Store Settings</label>
+		<vlayout  width="100%">
+			<hbox>
+				Use this page to manage your store settings and configuration.
+			</hbox>
+			<hbox style="float:right;padding-right:1px">
+				<button zclass="sobie-button" label="View Store" />
+				<button zclass="sobie-button" label="Save/Update" onClick="@command('updateStoreSettings')"/>
+				
+			</hbox>
+		</vlayout>
+		<div align="left">
+			<separator orient="horizontal" width="100%" bar="true" />
+		</div>
+		<tabbox orient="vertical" width="100%">
+			<tabs width="180px">
+				<tab label="General Information" />
+				<tab label="Store Location" />
+				<tab label="Index Header Image" />
+				<tab label="Social Sharing" />
+				<tab label="Default Setiings" />
+				<tab label="About Us" />
+			</tabs >
+			<tabpanels >
+				<tabpanel >
+					<include src="/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsGeneralInformation.zul"/>
+				</tabpanel>
+				<tabpanel>
+					<include src="/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsLocation.zul"/>
+				</tabpanel>
+				<tabpanel>
+					<include src="/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsHeader.zul"/>
+				</tabpanel>
+				<tabpanel>
+					<include src="/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsSocial.zul"/>
+				</tabpanel>
+				<tabpanel>
+					<include src="/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsDefault.zul"/>
+				</tabpanel>
+				<tabpanel>
+					<include src="/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsAbout.zul"/>
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</div>
+</zk>

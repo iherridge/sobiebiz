@@ -1,0 +1,258 @@
+<?page title="Network Messages" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+.sobie-button {
+	color: #373534;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+	background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	padding: .2em 2em .26em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .1em; 
+	-moz-border-radius: .1em;
+	border-radius: .1em;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+.sobie-button:hover {
+color: #373534;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #fefefe,  #f6f6f6);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#f6f6f6');
+	text-decoration: none;
+}
+.sobie-button:active {
+	color: #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff8c00));
+	background: -moz-linear-gradient(top,  #ffb400,  #ff8c00);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb400', endColorstr='ff8c00');
+	position: relative;
+	top: 1px;
+{
+
+</style>
+<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('networkMessageVm') @init('biz.sobie.web.userdashboard.network.NetworkMessagesVm')">
+	<vbox hflex="1" >
+		<hbox hflex="1" visible="@bind(networkMessageVm.createMessageOpen)">
+			<vbox hflex="1">
+				<hbox hflex="1">
+				 	<button label="Send" width="50px" height="78px"/>
+					 <vbox hflex="1">
+				 		<vbox hflex="1">
+					 		<label id="toLbl"/>
+					 		<combobox focus="true" mold="rounded" buttonVisible="false" id="userSearchComboBox" apply="biz.sobie.web.controllers.TextboxSearchController" autodrop="true" hflex="1"/>
+				 		</vbox>
+			 			<vbox hflex="1">
+					 		<label id="ccLbl"/>
+					 		<textbox hflex="1"/>
+				 		</vbox>
+					 	<vbox hflex="1">
+						 	<label id="bccLbl"/>
+						 	<textbox hflex="1" />
+					 	</vbox>
+					 	<hbox hflex="1">
+					 		<label value="Subject:"/>
+					 		<space/>
+					 		<textbox id="subjectTextbx" hflex="1" />
+					 	</hbox>
+					 </vbox>
+					 <button label="Cancel" onClick="@command('cancelCreateMessage')"/>
+				 </hbox>
+				 <textbox id="contentTextbx" height="300px" hflex="1"/>
+			</vbox>
+			
+		</hbox>
+		<div visible="@bind(networkMessageVm.inboxOpen)" hflex="1">
+			<vbox align="right" hflex="1">
+			<hbox style="margin:3px" hflex="1" >
+				<combobox value="Filter" style="float:right"><comboitem label="No Filter"/><comboitem label="Unread"/><comboitem label="Read"/></combobox>
+				<button zclass="sobie-button" label="Create new message" style="float:left" onClick="@command('createNewMessage')"/>
+				<button zclass="sobie-button" label="Delete" style="float:left"/>
+				<button zclass="sobie-button" label="Refresh" style="float:left"/>
+			</hbox>
+	
+			<tabbox id="networkMessagesTabbox"  hflex="1" orient="vertical">
+				<tabs width="180px">
+					<tab label="Messages"/>
+					<tab label="Orders"/>
+					<tab label="Products" onClick="@command('loadProductsInbox')"/>
+					<tab label="Services"/>
+					<tab label="Classifieds"/>
+					<tab label="Dispute"/>
+					<tab label="Payment"/>
+					<tab label="Promotion"/>
+					<tab label="Other"/>
+				</tabs>
+				<tabpanels hflex="1">
+					<tabpanel hflex="1">
+						<grid hflex="1" fixedLayout="true" >
+							<columns hflex="1">
+								<column label="Select" />
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<grid hflex="1" fixedLayout="true">
+							<columns hflex="1">
+								<column label="Select"/>
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel hflex="1">
+						<div height="100%">
+							<grid fixedLayout="true" model="@load(networkMessageVm.messages)" span="true">
+								<columns sizable="true">
+									<column label="Select" hflex="min"/>
+									<column label="Icon" hflex="min"/>
+									<column label="From" hflex="1"/>
+									<column label="Subject" hflex="1"/>
+									<column label="Received" hflex="min"/>
+								</columns>
+								<rows>
+									<template name="model" var="message">
+										<row onClick="@command('openMessage', message=message)">
+											<checkbox/>
+											<image src="/resources/img/tabs/mySobie/networkMessages/EnvelopeOpen-16x16.png"/>
+											<label value="@load(message.fromCustNo)"/>
+											<label value="@load(message.msgSubject)"/>
+											<label value="@load(message.msgDate)"/>
+										</row>
+									</template>
+								</rows>
+							</grid>
+							<div>
+								<window mode="modal" visible="@bind(networkMessageVm.requestForApprovalPopupVisble)" position="center,center">
+									<vbox>
+										<label value="Message:"/>
+										<textbox multiline="true" width="500px" height="50px" value="@load(networkMessageVm.openedMessage.msgContent)" readonly="true"/>
+										<label value="The following information was changed:"/>
+										<grid model="@load(networkMessageVm.productHistory)">
+											<columns>
+												<column label="Date and Time"/>
+												<column label="Field Name"/>
+												<column label="From Value"/>
+												<column label="To Value"/>
+											</columns>
+											<rows>
+												<template name="model" var="productHistory">
+													<row>	
+														<label value="@load(productHistory.dateTime)"/>
+														<label value="@load(productHistory.fieldName)"/>
+														<label value="@load(productHistory.fieldValueFrom)"/>
+														<label value="@load(productHistory.fieldValueTo)"/>
+													</row>
+												</template>
+											</rows>
+										</grid>
+										<label value="Add Reply Message:"/>
+										<textbox multiline="true" width="500px" height="50px" value="@bind(networkMessageVm.replyMessageContent)"/>
+										<hbox>
+											<button label="Approve" onClick="@command('approveProductRequest')" visible="@load(networkMessageVm.rpApproveVisible)"/>
+											<button label="Decline" onClick="@command('declineProductRequest')" visible="@load(networkMessageVm.rpDeclineVisible)"/>
+											<button label="Reply" onClick="@command('replyOnProductRequest')"/>
+											<button label="Edit" onClick="@command('editProduct')"/>
+											<button label="Close" onClick="@command('closeProductRequestMsg')"/>
+										</hbox>
+									</vbox>
+								</window>
+								<window mode="modal" visible="@bind(networkMessageVm.notificationSupplierRemovedProductVisble)"  action="show: slideDown;hide: slideUp" position="center,center"
+								style="padding:5px; background-image:url('resources/img/bg_mySobielight.png');opacity:0.8;border-radius:10px;border:1px solid #c4c8cc">
+									<button label="Approve" onClick="@command('approveProductRequest')"/>
+									<button label="Reply"/>
+									<button label="Cancel"/>
+								</window>
+							</div>
+						</div>
+					</tabpanel>
+					<tabpanel>
+						<grid height="100%" fixedLayout="true" >
+							<columns  hflex="1">
+								<column label="Select"/>
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<grid height="100%" fixedLayout="true" >
+							<columns  hflex="1">
+								<column label="Select" />
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<grid height="100%" fixedLayout="true" >
+							<columns  hflex="1">
+								<column label="Select"/>
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<grid height="100%" fixedLayout="true" >
+							<columns  hflex="1">
+								<column label="Select" />
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<grid height="100%" fixedLayout="true" >
+							<columns  hflex="1">
+								<column label="Select" />
+								<column label="Icon"/>
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received"/>
+							</columns>
+						</grid>
+					</tabpanel>
+					<tabpanel>
+						<grid height="100%" fixedLayout="true" >
+							<columns hflex="1">
+								<column label="Select" />
+								<column label="Icon" />
+								<column label="From" />
+								<column label="Subject" />
+								<column label="Received" />
+							</columns>
+						</grid>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+			</vbox>
+		</div>
+	</vbox>
+</div>
+</zk>

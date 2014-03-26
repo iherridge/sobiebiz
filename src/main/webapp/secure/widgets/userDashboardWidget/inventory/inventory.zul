@@ -1,0 +1,18 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div width="100%" id="subMenu" apply="biz.sobie.web.userdashboard.inventory.InventoryCtrl">
+		<groupbox hflex="1">
+			<div align="center" hflex="1">
+				<hlayout hflex="1">
+					<a label="Overview" id="overviewBtn"/>
+					<a label="Categories" id="categoriesBtn"/>
+					<a label="Products" id="productsBtn"/>
+					<a label="Network Products" id="networkProductsBtn"/>
+					<a label="Services" id="servicesBtn"/>
+					<a label="Classifieds" id="classifiedsBtn"/>
+				</hlayout>
+			</div>
+		</groupbox>
+		<include id="inventoryContentArea" src="/secure/widgets/userDashboardWidget/inventory/inventoryProducts.zul"/>
+	</div>
+</zk>

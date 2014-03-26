@@ -1,0 +1,17 @@
+<?page title="Network" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div>
+		<tabbox id="storeTabbox">
+			<tabs >
+				<tab id="myOrdersTab" label="My Orders" apply="biz.sobie.web.controllers.OrderController"/>
+				<tab id="customersTab" label="Customers" />
+
+			</tabs>
+			<tabpanels height="300px">
+				<tabpanel><include id="myOrdersInc" src="/secure/tabSliders/mySobie/orders/myOrders.zul" /></tabpanel>
+				<tabpanel></tabpanel>
+
+			</tabpanels>
+		</tabbox>
+	</div>
+</zk>

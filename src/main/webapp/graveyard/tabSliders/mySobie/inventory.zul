@@ -1,0 +1,24 @@
+<?page title="Network" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div>
+		<tabbox id="inventoryTabbox">
+			<tabs >
+				<tab id="inventoryOverviewTab" label="Overview"/>
+				<tab id="inventoryVirtualInventoryTab" label="Virtual Inventory" />
+				<tab id="inventoryMyProductsTab" label="My Products" apply="biz.sobie.web.controllers.ProductController"/>
+				<tab id="inventoryMyServicesTab" label="My Services" />
+				<tab id="inventoryMyClassifiedsTab" label="My Classifieds" />
+				<tab id="inventoryCategoriesTab" label="Categories" />
+				<tab id="inventorySetPricingTab" label="Set Pricing" />
+			</tabs>
+			<tabpanels height="300px">
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel><include id="inventoryMyProductsInc" src="/secure/tabSliders/mySobie/inventory/myProducts.zul" /></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+			</tabpanels>
+		</tabbox>
+	</div>
+</zk>

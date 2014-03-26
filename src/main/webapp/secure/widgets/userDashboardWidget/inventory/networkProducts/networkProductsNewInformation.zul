@@ -1,0 +1,49 @@
+<?page title="Product Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="200px">Product Name:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(networkProductsVm.selectedProduct.prodName)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">SKU or Part#:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(networkProductsVm.selectedProduct.prodSkuPartNo)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Product Brand:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(networkProductsVm.selectedProduct.prodBrand)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Select Category:</hbox>
+		<hbox>
+			<textbox width="200px"
+				value="@bind(networkProductsVm.selectedProduct.prodCategory)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Publish:</hbox>
+		<hbox>
+			<checkbox id="as" label="Yes/No"
+				checked="@bind(networkProductsVm.selectedProduct.prodEnabled)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">
+			Enable Add to Cart:
+		</hbox>
+		<hbox>
+			<checkbox label="Yes/No"
+				checked="@bind(networkProductsVm.selectedProduct.prodAddToCart)" />
+		</hbox>
+	</hlayout>
+</vbox>
+</zk>

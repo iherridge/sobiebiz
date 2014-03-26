@@ -1,0 +1,151 @@
+<?page title="Product Pricing" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none; margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Retail Price:"/>
+				</cell>
+				<cell>
+					<doublebox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodRetailPrice)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Wholesale Price:"/>
+				</cell>
+				<cell>
+					<doublebox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodWholesalePrice)"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<label value="Leave blank if product does not have a
+				wholesale price.." style="color:grey;"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Sale Price:"/>
+				</cell>
+				<cell>
+					<doublebox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodSalePrice)"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<label value="Leave blank if product is not on sale.
+				If specified then it will be displayed
+				as a sale price adjacent to the retail
+				price." style="color:grey;"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Tax class:"/>
+				</cell>
+				<cell>
+					<combobox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.taxClassId)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enable Add to Cart:"/>
+				</cell>
+				<cell>
+					<checkbox label="" checked="@bind(inventoryProductsVm.addUpdateProduct.prodAddToCart)"/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	
+	<div align="left" hflex="1">
+		<separator orient="horizontal"  bar="true" />
+		<label value="Group Prices" />
+		<separator orient="horizontal"  bar="true" />
+	</div>
+	<grid fixedLayout="true" hflex="1">
+		<columns hflex="1">
+			<column label="All" hflex="min" />
+			<column label="Group Name" />
+			<column label="Price" />
+			<column label="Enabled"/>
+			<column label="Action" hflex="min"/>
+		</columns>
+	</grid>
+</vbox>
+
+	
+<!-- 		<hlayout>
+			<hbox width="300px">Retail Price:</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodRetailPrice)"/>
+			</hbox>									
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">Sale Price:</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodSalePrice)"/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">
+				Leave blank if product is not on sale.
+				If specified then it will be displayed
+				as a sale price adjacent to the retail
+				price.
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">Wholesale Price:</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodWholesalePrice)"/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">
+				Leave blank if product does not have a
+				wholesale price.
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">Tax Class:</hbox>
+			<hbox>
+				<combobox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.taxClassId)"/>
+			</hbox>
+		</hlayout>
+		<space/>
+		<hlayout>
+			<hbox width="200px">
+				Enable Add to Chart:
+				<checkbox label="" checked="@bind(inventoryProductsVm.addUpdateProduct.prodAddToCart)"/>
+			</hbox>
+		</hlayout>
+ -->
+</zk>

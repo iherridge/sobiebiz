@@ -1,0 +1,10 @@
+<?page title="MenuItem" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<listcell sclass="menuitem">
+			<hlayout>
+				<image id="icon"  sclass="mi-icon"  src="${arg.icon}" popup="kaas" />
+				<label id="title" sclass="mi-title" value="${arg.title}" />
+				<label id="count" sclass="mi-count" value="${arg.count}" />
+			</hlayout>
+		</listcell>
+</zk>

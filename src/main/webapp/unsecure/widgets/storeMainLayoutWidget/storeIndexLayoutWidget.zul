@@ -1,0 +1,402 @@
+<?page title="Store Index" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+background-opacity: 0 ;
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+}
+
+.storeBack{
+color: #373534;
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+}
+
+/*********************** B U T T O N S *********************/
+
+.buttonRed {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#BC1815;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonRed:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonBlue {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#22C3EB;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonBlue:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonGreen {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#67B600;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonGreen:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonOrange {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:orange;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonGrey {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:grey;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonOrange:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.headerbox{
+padding: 3px;
+color: #373534;
+border: solid 1px #ddd;
+border-radius: 4px;
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);}
+
+.imgboxStore{
+	border: 1px solid #ddd;
+	margin: 3px;
+	color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff);
+border-radius: 4px;
+box-shadow: inset 0px 2px 12px #ddd;
+width: 140px;
+height: 140px;
+}
+
+.imgStore{
+align:center;
+display: block;
+border:1px #cccccc;
+margin: auto;
+padding:3px;
+max-width: 130px;
+max-height: 130px;
+vertical-align: center;
+
+}
+
+.z-separator-hor-bar {
+			background: #eeeeee;	
+			height: 1px;		
+		}
+</style>
+
+	<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('storeMainLayoutVm') @init('biz.sobie.web.store.StoreMainLayoutVm')">
+		<vbox hflex="1" align="center">
+			<!-- Store Info Header -->
+			<hbox sclass="headerbox" width="100%" align="center">	
+					<grid hflex="1" sclass="storeBack" style="background:none;border:none;margin:0px;padding:0px;" >
+						<columns width="100%">
+							<column label="" width="150px"/>
+							<column label="" width="100%"/>
+							<column label="" width="100px"/>
+						</columns>
+						<rows>
+							<row hflex="1">	
+								<cell hflex="1" align="center">
+									<hbox sclass="imgboxStore" align="center" >
+										<image width="130px" sclass="imgStore" content="@load(storeMainLayoutVm.storeMainLayout.storeLogo.AImage)"/> 
+									</hbox >
+								</cell>
+								<cell hflex="2" >
+									<grid  width="100%" style="border:none;marin:0px;padding:0px;">
+										<columns hflex="1">
+											<column label="" hflex="1"/>
+											<column label="" hflex="1"/>
+											<column label="" hflex="min"/>
+											<column label="" hflex="1"/>
+											<column label="" hflex="1"/>							
+										</columns>
+										<rows hflex="1">
+											<row hflex="1">
+												<cell colspan="5" align="left">
+													<label style="color:orange;font-family:arial;font-size:16px" value="@load(storeMainLayoutVm.storeMainLayout.storeName)"/>
+												</cell>	
+											</row>
+											<row hflex="1">
+												<cell align="left">
+													<label value="Country:" style="color:grey;font-family:arial;" />
+												</cell>
+												<cell align="left">
+													<label value="Country"/>
+												</cell>
+												<cell align="left">
+													<label value="Tel:" style="color:grey;font-family:arial;"/>
+												</cell>
+												<cell align="left">
+													<label value="@bind(storeMainLayoutVm.storeMainLayout.storeTel)"/>
+												</cell>
+												<cell align="right">
+													<hbox >
+														<image src="/resources/img/icons/sbe-star16.png"/>
+														<image src="/resources/img/icons/sbe-star16.png"/>
+														<image src="/resources/img/icons/sbe-star16.png"/>
+														<image src="/resources/img/icons/sbe-star16.png"/>
+														<image src="/resources/img/icons/sbe-star16.png"/>
+													</hbox>
+												</cell>
+											</row>
+											<row hflex="1">
+												<cell align="left">
+													<label value="City / Town:" style="color:grey;font-family:arial;" />
+												</cell>
+												<cell align="left">
+													<label value="City/Town "/>
+												</cell>
+												<cell align="left">
+													<label value="Fax:" style="color:grey;font-family:arial;"/>
+												</cell>
+												<cell align="left">
+													<label value="@bind(storeMainLayoutVm.storeMainLayout.storeFax)"/>
+												</cell>
+												<cell align="right">
+													<label value="Comments" style="color:grey;font-family:arial;" />
+													<label value="(00)" style="color:grey;font-family:arial;" />			
+												</cell>
+											</row>
+											<row hflex="1">
+												<cell align="left">
+													<label value="Suburb:" style="color:grey;font-family:arial;" />
+												</cell>
+												<cell align="left">
+													<label value="Suburb"/>
+												</cell>
+												<cell align="left">
+													<label value="Email:" style="color:grey;font-family:arial;"/>
+												</cell>
+												<cell align="left">
+													<label value="@bind(storeMainLayoutVm.storeMainLayout.storeAdminEmail)"/>
+												</cell>
+												<cell align="right">
+													<label value="Likes" style="color:grey;font-family:arial;" />
+													<label value="(00)" style="color:grey;font-family:arial;" />
+												</cell>
+											</row>
+											<row hflex="1">
+												<cell align="left">
+													<label value="Street:" style="color:grey;font-family:arial;"/>
+												</cell>
+												<cell align="left" colspan="4">
+													<label value="Street"/>
+												</cell>
+											</row>
+										</rows>
+									</grid>
+								</cell>
+								<cell hflex="1" align="center">
+									<vbox hflex="1">
+										<button tooltiptext="Add to Network" sclass="buttonRed" label="Add to Network" onClick="" />
+										<button tooltiptext="Contact Us" sclass="buttonOrange" label="Contact Us" onClick="" />
+										<button tooltiptext="Like Store" sclass="buttonBlue" label="Like" onClick="" />
+										<button tooltiptext="Share Store" sclass="buttonGreen" label="Share" onClick="" />
+										<button tooltiptext="Share Store" sclass="buttonGrey" label="@bind(storeMainLayoutVm.showHideMapText)" onClick="@command('openCloseStoreMap')"/>
+									</vbox>
+								</cell>
+							</row>
+						</rows>
+					</grid>
+				<!-- <hbox sclass="imgbox" align="center" hflex="min">
+					<image width="100px" sclass="img" content="@load(storeMainLayoutVm.storeMainLayout.storeLogo.AImage)"/> 
+				</hbox>
+				<vbox hflex="1">
+					<hbox hflex="1"><label style="color:orange;font-family:arial;font-size:16px" value="@load(storeMainLayoutVm.storeMainLayout.storeName)"/></hbox> 
+					<hbox hflex="1">
+						<vbox hflex="1">
+							<label>Country:</label>
+							<label>City/Town:</label>
+							<label>Suburb:</label>
+							<label>Street:</label>
+							<label>Description:</label>
+						</vbox>
+						<vbox hflex="1">
+							<hbox><label>Tel:</label><label value="@bind(storeMainLayoutVm.storeMainLayout.storeTel)"/></hbox>
+							<hbox><label>Fax:</label><label value="@bind(storeMainLayoutVm.storeMainLayout.storeFax)"/></hbox>
+							<hbox><label>Email:</label><label value="@bind(storeMainLayoutVm.storeMainLayout.storeAdminEmail)"/></hbox>
+							
+							<hbox>
+								<label>Rating:</label>
+								<image src="/resources/img/icons/sbe-star16.png"/>
+								<image src="/resources/img/icons/sbe-star16.png"/>
+								<image src="/resources/img/icons/sbe-star16.png"/>
+								<image src="/resources/img/icons/sbe-star16.png"/>
+								<image src="/resources/img/icons/sbe-star16.png"/>
+							</hbox>
+							<hbox>
+								<label value="Comments:" />
+								<label value="(00)" style="color:grey;font-family:arial;font-size:12px" />
+								<space/>
+								<label value="Likes:" />
+								<label value="(00)" style="color:grey;font-family:arial;font-size:12px" />
+							</hbox>
+						</vbox>
+					</hbox>
+				</vbox>
+				<vbox align="center" hflex="min">
+					<hbox>
+						<button zclass="sobie-buttonrnd"  tooltiptext="Add to My Network" image="/resources/img/icons/sbe_addnetwork16.png"  />
+						<button zclass="sobie-buttonrnd"  tooltiptext="Contact Store" image="/resources/img/icons/sbe_messages16.png" />
+					</hbox>
+					<hbox>
+						<button zclass="sobie-buttonrnd"  tooltiptext="Like" image="/resources/img/icons/sbe-like16.png"  />
+						<button zclass="sobie-buttonrnd"  tooltiptext="Share" image="/resources/img/icons/sbe_share16.png" />
+					</hbox>
+					<hbox>
+						<button zclass="sobie-button" tooltiptext="Show on Map" label="@bind(storeMainLayoutVm.showHideMapText)" image="/resources/img/icons/sbe-map16.png"  onClick="@command('openCloseStoreMap')"/>
+					</hbox>					
+				</vbox> -->
+				
+			</hbox>
+			<vbox align="center" width="100%" visible="@bind(storeMainLayoutVm.storeMapOpen)">
+					<script content="zk.googleAPIkey='AIzaSyCO3ulxtceaClLfXN1EkIek7nBkxc_Lsaw'" />
+				
+					<gmaps id="storeLocator" hflex="1" height="350px" showZoomCtrl="true"  showTypeCtrl="true" enableDragging="false"
+					 lat="@bind(storeMainLayoutVm.storeMainLayout.latitude)" lng="@bind(storeMainLayoutVm.storeMainLayout.longitude)">
+						<gmarker open="false" lat="@bind(storeMainLayoutVm.storeMainLayout.latitude)" lng="@bind(storeMainLayoutVm.storeMainLayout.longitude)"
+						 iconImage="/resources/img/sbeGooglePins/seller.png"/>
+					</gmaps>
+			</vbox>
+			
+			
+			<!-- Store Header Image -->
+			<vbox align="center" width="100%">
+				<image hflex="1" vflex="min" content="@load(storeMainLayoutVm.storeMainLayout.storeIndexMainHeaderImage.AImage)"/> 
+			</vbox>
+			
+			
+			<!-- Store Top Menu -->
+			<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('storeContentPageVm') @init('biz.sobie.web.store.StoreContentPageVm')">
+				<menubar hflex="1" children="@load(storeContentPageVm.storeMenuItems) @template('menuBar')">
+					<template name="menuBar" var="menuItem">
+						<menuitem label="@bind(menuItem.menuItem)" onClick="@global-command('openMenuItem', menuItem=menuItem)"/>
+					</template>
+				</menubar>
+			</div>
+			
+			<!-- Featured Products Widget  -->
+			<vbox width="100%" visible="@bind(storeMainLayoutVm.featuredProductsVisible)">
+				<label style="float:left;color:orange;font-family:arial;font-size:16px;">Featured Products</label>
+				<separator orient="horizontal" hflex="1" bar="true" />
+				<include src="/unsecure/widgets/storeMainLayoutWidget/storeFeaturedProducts.zul"/>
+				<separator orient="horizontal" hflex="1" bar="true" />
+			</vbox>
+			
+			<!-- Store Content Area  -->
+			<hbox width="100%">
+				<include hflex="1" src="@bind(storeMainLayoutVm.storeContentArea)"/>
+			</hbox>
+			
+			<!-- Store Footer  -->
+			<vbox align="center" hflex="1" height="100px">
+				<label style="font-weight: bold">Footer</label>
+			</vbox>
+		</vbox>
+	</div>
+</zk>

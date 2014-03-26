@@ -1,0 +1,32 @@
+<?page id="testZul" title="CUSTOM ZK + SPRING SECURITY LOGIN"?>
+<zk>
+<window id="signinWin" title="Sobie Sign In" border="none" position="center" 
+		apply="biz.sobie.web.controllers.SignInController" width="500px" closable="true"  style="background-image:url('resources/img/bg_mySobielight.png');border-radius:10px;border:1px solid #c4c8cc">
+
+    <!-- this form-login-page form is also used as the
+         form-error-page to ask for a login again. -->
+    <html style="color:red" if="${not empty param.login_error}">
+      <![CDATA[
+        Your login attempt was not successful, try again.<br/><br/>
+        Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+       ]]>
+    </html>
+ 
+    <h:form id="f" name="f" action="j_spring_security_check" method="POST"
+    xmlns:h="native">
+        <grid>
+            <rows>
+                <row>Email <textbox id="u" name="j_username" focus="true"/></row>
+                <row>Password <textbox id="p" type="password" name="j_password"/></row>
+                <!-- <row><checkbox id="r" name="j_spring_security_remember_me"/>Remember me</row> -->
+                <row spans="2">
+                    <hbox>
+                        <h:input type="submit" value="Log in"/>
+                        <h:input type="reset" value="Reset"/>
+                    </hbox>
+                </row>
+            </rows>
+        </grid>
+    </h:form>
+</window>
+</zk>

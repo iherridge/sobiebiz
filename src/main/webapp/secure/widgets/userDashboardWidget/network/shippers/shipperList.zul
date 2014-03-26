@@ -1,0 +1,36 @@
+<?page title="Network Shipper List" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<label style="font-weight: bold">Manage Shippers</label>
+		<vlayout>
+			<hbox >
+			Use this page to manage your store shippers.
+			</hbox>
+			<hbox  style="float:right;padding-right:10px">
+				<button label="Add New Shipper"/>
+				<button label="Create Shipper Group"/>
+			</hbox>				
+			</vlayout>
+		<div align="left">
+			<separator orient="horizontal" width="824px" bar="true" />
+		</div>
+			<label value="Shipper List" />
+		<div align="left">
+			<separator orient="horizontal" width="824px" bar="true" />
+		</div>	
+		<space />
+		<grid fixedLayout="true" width="824px">
+			<columns style="color:white;background:orange" hflex="1">
+				<column label="All" width="30px" />			
+				<column label="ID" />
+				<column label="Name" />
+				<column label="Email" />
+				<column label="Group" width="50px"/>
+				<column label="Telephone" width="70px"/>
+				<column label="Country" width="60px"/>
+				<column label="Region/Province" width="110px" />
+				<column label="Seller Since" width="110px"/>
+				<column label="Action" width="70px"/>
+			</columns>
+		</grid>
+	<space />
+</zk>

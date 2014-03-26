@@ -1,0 +1,68 @@
+<?page title="Welcome" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+.welcomeimgbox{
+	border: 1px solid #ddd;
+	margin: 3px;
+	color: #555;
+	padding:0px;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff);
+border-radius: 4px;
+box-shadow: inset 0px 2px 12px #ddd;
+}
+
+	.welcomeimg{
+align:middel;
+display: block;
+border:1px #cccccc;
+margin: auto;
+padding:3px;
+vertical-align: middle;
+}
+
+
+</style>
+
+	<hbox width="100%">
+		<cell align="center" hflex="min">
+			<hbox sclass="welcomeimgbox" >
+				<image align="absmiddle" height="150px" sclass="welcomeimg" src="resources/img/Welcome.png" />
+			</hbox>
+		</cell>
+		<cell hflex="1">
+			<vbox hflex="1" style="padding:3px;">
+				<html>
+					<label
+						style="color:orange;font-family:arial;font-size:16px">
+						Welcome
+					</label>
+					<p
+						style="color:#606060;font-family:arial;font-size:12px">
+						Sobie.biz is a brand new and one of a kind trade
+						portal for Namibia, whether your shopping for
+						products and services, listing your company or
+						starting a new business. We have all the tools you
+						need to boost your success.
+						<br />
+						<br />
+						We cater directly for all types of Business to
+						Business and Business to Consumer trade within
+						Namibia. Sell, resell, supply or ship any product
+						directly to your customer through our most
+						innovative and advanced business tool applications.
+						<br />
+						<br />
+						Register now as a buyer, seller, supplier or shipper
+						to experience the best of what we have to offer
+						through ecommerce...
+					</p>
+				</html>
+			</vbox>
+		</cell>
+	</hbox>
+</zk>

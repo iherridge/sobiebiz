@@ -1,0 +1,51 @@
+<?page title="Order View" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox width="100%" style="border:none;padding:0px; margin:0px">
+	<hbox  hflex="1">
+		<cell hflex="1">
+			<label hflex="1" style="font-weight: bold;font-size:13px">Order # 0000000000 I (status) I dd/mm/yyyy hh:mm:ss am/pm </label>
+		</cell>
+		<cell hflex="1" align="right">
+			<hbox style="float:right;padding-right:1px">
+				<button label="Back" />
+				<button label="View Customer Info" />
+				<button label="Send Email" />
+			</hbox>
+		</cell>
+
+	</hbox>
+	<div align="left" hflex="1">
+		<separator orient="horizontal" bar="true" />
+	</div>
+	<tabbox orient="vertical" hflex="1">
+		<tabs width="180px">
+			<tab label="Order Information" />
+			<tab label="Quotations" />
+			<tab label="Invoices" />
+			<tab label="Credit Memos" />
+			<tab label="Shipment" />
+			<tab label="Comment History" />
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/sales/salesOrdersViewInformation.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/sales/salesOrdersViewQuotations.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/sales/salesOrdersViewInvoices.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/sales/salesOrdersViewCreditMemo.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/sales/salesOrdersViewShipment.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/sales/salesOrdersViewCommentHistory.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</vbox>
+</zk>

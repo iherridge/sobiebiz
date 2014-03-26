@@ -1,0 +1,6 @@
+<?page title="Sobie Panel Header" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<hlayout height="40px"
+		style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;">
+	</hlayout>
+</zk>

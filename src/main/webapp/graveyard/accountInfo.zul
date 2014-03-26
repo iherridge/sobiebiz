@@ -1,0 +1,18 @@
+<?page title="Account Info" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="accountInfoWin" position="center" title="Account Info" border="0" stubonly="true"
+	width="1000px"
+<calendar /><grid>
+		<columns>
+			<column label="kaas"/>
+			<column label="1111"/>
+		</columns>
+		<rows>
+			<row>
+				<label value="is ja"/>
+				<label value="net so" />	
+			</row>
+		</rows>
+	</grid>
+</window>
+</zk>

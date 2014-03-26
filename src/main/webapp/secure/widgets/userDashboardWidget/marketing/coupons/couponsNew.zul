@@ -1,0 +1,38 @@
+<?page title="Add New Coupon" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style/>
+
+<label style="font-weight: bold">Add New Coupon</label>
+
+	<vlayout  width="1006px">
+		<hbox>
+			Use this page to create a new coupon for your store.
+		</hbox>
+		<hbox style="float:right;padding-right:1px">
+			<button label="Save" />
+			<button label="Cancel" onClick="@global-command('openNetworkCustomers')"/>
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" width="1006px" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="1006px">
+		<tabs width="180px">
+			<tab label="Coupon Information" />
+			<tab label="Coupon Type" />
+			<tab label="Upload File" />			
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/marketing/coupons/couponNewInformation.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/coupons/couponNewType.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/coupons/couponNewUploadFile.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

@@ -1,0 +1,38 @@
+<?page title="View Customer Wishlist" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+	<grid fixedLayout="true" width="100%">
+		<columns hflex="1">
+			<column label="#" hflex="min" />			
+			<column label="Product ID" />
+			<column label="Product Name" />
+			<column label="SKU" />
+			<column label="Qty" />
+			<column label="Price" />
+			<column label="Total" />
+			<column label="Date Added" />
+			<column label="Days in Wishlist" hflex="min"/>
+		</columns>
+	</grid>
+</zk>

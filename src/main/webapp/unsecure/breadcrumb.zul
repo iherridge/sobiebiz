@@ -1,0 +1,13 @@
+<?page title="Breadcrumb" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox align="left" hflex="1">
+		<hbox>
+			<a label="Home" onClick="@global-command('displayBrowserWidget')"/>
+			<label value="->" visible="@bind(indexVM.breadcrump.breadcrumpShoppingCartVisible)"/><a label="Shopping Cart" visible="@bind(indexVM.breadcrump.breadcrumpShoppingCartVisible)" disabled="true"/>
+			<!-- System Menu -->
+			<label value="->" visible="@bind(indexVM.breadcrump.breadcrumpSystemUsersVisible)"/><a label="System Users" visible="@bind(indexVM.breadcrump.breadcrumpSystemUsersVisible)" disabled="true"/>
+			<!-- Store Menu -->
+			<label value="->" visible="@bind(indexVM.breadcrump.breadcrumpStoreSettingsVisible)"/><a label="Store Settings" visible="@bind(indexVM.breadcrump.breadcrumpStoreSettingsVisible)" disabled="true"/>
+		</hbox>
+	</vbox>
+</zk>

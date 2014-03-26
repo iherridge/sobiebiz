@@ -1,0 +1,110 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('inventoryProductsVm') @init('biz.sobie.web.userdashboard.inventory.InventoryProductsVm')">
+		<vbox width="100%" visible="@bind(inventoryProductsVm.addProductOpen))">
+			<cell hflex="1" align="right">
+				<button label="Save" onClick="@command('saveNewProduct')"/>
+				<button label="Cancel" onClick="@command('closeAddNewProduct')"/>
+			</cell>
+			<cell hflex="1">
+			<tabbox hflex="1" id="tb" orient="vertical">
+			    <tabs width="180px">
+			        <tab label="Product Information" />
+			        <tab label="SEO Settings" />
+			        <tab label="Pricing" />
+			        <tab label="Inventory" />
+			        <tab label="Shipping" />
+			        <tab label="Product Images" />
+			        <tab label="Product Description" />
+			        <tab label="Product Video" />
+			    </tabs>
+			    <tabpanels hflex="1">
+			        <tabpanel>
+						<include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewInformation.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+				        <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewSeo.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+				        <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewPricing.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+				        <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewInventory.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+				        <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewShipping.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+					   <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewImages.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+					   <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewDescription.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+					   <include src="/secure/widgets/userDashboardWidget/inventory/products/productsNewVideo.zul"/>
+			        </tabpanel>
+			    </tabpanels>
+			</tabbox>
+		</cell>
+	</vbox>
+		<vbox id="myProductsTab" hflex="1">
+			<div align="left" hflex="1">
+				<separator orient="horizontal"  bar="true" />
+				<label value="Store Products" />
+				<separator orient="horizontal" bar="true" />
+			</div>
+
+			<hbox hflex="1" id="myProductGridControls"
+				apply="biz.sobie.web.userdashboard.inventory.InventoryProductsCtrl">
+				<!-- <combobox value="Filter" style="float:right">
+					<comboitem label="No Filter" />
+					<comboitem label="Unread" />
+					<comboitem label="Read" />
+				</combobox> -->
+				<!-- <button id="editSelectedProductsBtn"
+					label="Edit selected products" style="float:left" /> -->
+				<button label="Add new product" style="float:left" onClick="@command('openAddNewProduct')"/>
+			</hbox>
+			<grid id="myProductGrid" fixedLayout="true" hflex="1" model="@load(inventoryProductsVm.ownedProducts)">
+				<columns hflex="1">
+					<column label="Image"/>
+					<column label="Name" />
+					<column label="Retail Price" />
+					<column label="Sale Price" />
+					<column label="Wholesale Price" />
+					<column label="In Stock" />
+					<column label="Enabled"  />
+					<column label="Action" />
+				</columns>
+				<rows hflex="1">
+					<template name="model" var="ownedProduct" hflex="1">
+						<row hflex="1">
+							<image content="@load(ownedProduct.primaryImage)" width="50px" height="50px"/>
+							<label value="@load(ownedProduct.prodName)" />
+							<label value="@load(ownedProduct.prodRetailPrice)" />
+							<label value="@load(ownedProduct.prodSalePrice)" />
+							<label value="@load(ownedProduct.prodWholesalePrice)" />
+							<image src="@load(ownedProduct.prodInStockImage)" width="16px" height="16px"/>
+							<image src="@load(ownedProduct.prodStatusImage)" width="16px" height="16px" tooltiptext="@load(ownedProduct.prodStatusName)"/>
+							<hbox>
+								<a label="@load(ownedProduct.prodStatusLinkName)" onClick="@command('activateProduct', product=ownedProduct)"/> / 
+								<a label="edit" onClick="@command('editProduct', product=ownedProduct)"/> / 
+								<a label="delete" onClick="@command('deleteProduct', product=ownedProduct)" popup="delete"/>
+							</hbox>
+						</row>
+					</template>
+				</rows>
+			</grid>
+			<window mode="modal" action="show: slideDown;hide: slideUp" position="center,center" visible="@bind(inventoryProductsVm.deleteProductPopupVisible)"
+				width="60%" style="padding:5px; background-image:url('resources/img/bg_mySobielight.png');opacity:0.8;border-radius:10px;border:1px solid #c4c8cc">
+				<vbox>
+					<label>It was detected that this product is currently being sold by other sellers, would you like to notify them that you are about to remove the product from your shop?</label>
+					<label>Note that the product will be set into a mode where no more new sellers will be able to browse the product and add it to their shops. Also, the product will still apear active in the
+					Sellers shops which are currently active, once all sellers have accepted the removal of the product, then only will the product be deleted from your shop.</label>
+					<button label="Continue" onClick="@command('continueAndDeleteProduct')"/>
+					<button label="Cancel" onClick="@command('cancelDeleteProduct')"/>
+				</vbox>
+			</window>
+		</vbox>
+	</div>
+</zk>

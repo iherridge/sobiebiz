@@ -1,0 +1,89 @@
+<?page title="ReisterLogin" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<style src="/resources/css/sobieInside.css" />
+	<window id="registerWin" position="center" title="ReisterLogin"
+		stubonly="true" apply="biz.sobie.web.controllers.RegisterController"
+		closable="true" border="normal" width="860px">
+		<html>
+			<table width="840" cellspacing="5" cellpadding="5"
+				style="background-image:url('resources/img/bg_mySobielight.png');border-radius:10px;border:1px solid #c4c8cc">
+				<tr>
+					<td width="460px">
+						<p>Register a new account.</p>
+						<form class="form">
+
+							<p class="name">
+								<input type="text" name="name"
+									id="name" />
+								<label for="name">First Name*</label>
+							</p>
+
+							<p class="surname">
+								<input type="text" name="surname"
+									id="surname" />
+								<label for="surname">Surname*</label>
+							</p>
+
+							<p class="email">
+								<input type="text" name="email"
+									id="email" />
+								<label for="email">Email*</label>
+							</p>
+
+							<p class="password">
+								<input type="text" name="password"
+									id="password" />
+								<label for="password">Password*</label>
+							</p>
+
+							<p class="password">
+								<input type="text" name="password"
+									id="password" />
+								<label for="password">
+									Confirm Password*
+								</label>
+							</p>
+
+							<p class="submit">
+								<input type="submit" value="Register" />
+							</p>
+
+						</form>
+					</td>
+					<td width="5">
+						<img src="resources/img/bg_mySobie.png"
+							width="1" height="320" />
+					</td>
+					<td width="460px">
+						<p>
+							If you are already a member, please login.
+						</p>
+						<form class="form">
+
+							<p class="email">
+								<input type="text" name="email"
+									id="email" />
+								<label for="email">Email*</label>
+							</p>
+
+							<p class="password">
+								<input type="text" name="password"
+									id="password" />
+								<label for="password">Password*</label>
+							</p>
+
+							<p class="submit">
+								<input type="submit" value="Login" />
+							</p>
+							<p class="facebook">
+								<input type="submit"
+									value="Login with Facebook" />
+							</p>
+						</form>
+					</td>
+				</tr>
+			</table>
+
+		</html>
+	</window>
+</zk>

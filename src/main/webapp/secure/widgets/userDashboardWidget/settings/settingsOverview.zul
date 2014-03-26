@@ -1,0 +1,35 @@
+<?page title="Settings Overview" contentType="text/html;charset=UTF-8"?>
+<zk>
+<label style="font-weight: bold">Settings Overview</label>
+	
+<vlayout>
+		<hbox>
+					Use the links on this page to manage various settings including payments, shipping and tax classes.
+		</hbox>			
+</vlayout>
+<div align="left">
+				<separator orient="horizontal" width="790px" bar="true" />
+			</div>
+<space/>
+<label style="font-weight: bold; padding:8px" >Payment settings</label>
+<vlayout>
+		<hbox style="padding:8px">
+					Add and cinfigure payment options such as credit cards, purchase orders etc.
+		</hbox>			
+</vlayout>
+<space/>
+<label style="font-weight: bold; padding:8px" >Shipping</label>
+<vlayout>
+		<hbox style="padding:8px">
+					Add custom shipping options and rules. You can also configure these options to retrieve shipping rates from shippers.
+		</hbox>			
+</vlayout>
+<space/>
+<label style="font-weight: bold; padding:8px" >Tax Classes</label>
+<vlayout>
+		<hbox style="padding:8px">
+					Configure tax classes and rules for your prducts. 
+		</hbox>			
+</vlayout>
+<space/>
+</zk>

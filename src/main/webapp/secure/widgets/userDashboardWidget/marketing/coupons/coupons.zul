@@ -1,0 +1,40 @@
+<?page title="Coupons" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+<!-- <style src="/webapp/resources/css/sobieStyleSheet.css"/> -->
+
+	<label style="font-weight: bold">Coupons</label>
+	<vlayout width="100%">
+		<hbox >
+			Use this page to manage your Coupons.
+		</hbox>
+		<hbox style="float:right;padding-right:1px">
+			<button label="Add New Coupon" />
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" bar="true" />
+	</div>
+	<grid  fixedLayout="true" width="100%">
+		<columns  hflex="1">
+			<column label="Coupon Name" />
+			<column label="Description" />
+			<column label="Start/End" />
+			<column label="Type"  />
+			<column label="Enabled" />
+			<column label="Action" />
+		</columns>
+		<rows>					
+			<row>
+				<label value="Coupon Name"/>
+				<label value="Description"/>
+				<label value="dd/mm/yyyy"/>
+				<label value="type"/>
+				<label value="yes/no"/>				
+				<hbox><button zclass="sobie-buttonrnd"  tooltiptext="Edit" label="" image="/resources/img/icons/sbe_edit16.png" />
+				<button zclass="sobie-buttonrnd" tooltiptext="Delete" label="" image="/resources/img/icons/sbe_delete16.png"/>
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+</zk>

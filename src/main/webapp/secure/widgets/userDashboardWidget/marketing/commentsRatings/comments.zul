@@ -1,0 +1,32 @@
+<?page title="Comments" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox>					
+		<grid fixedLayout="true" width="810px">
+			<columns  hflex="1">
+				<column label="Username" />			
+				<column label="Item" />
+				<column label="Comment"/>
+				<column label="Date Created" width="90px"/>
+				<column label="Published"/>
+				<column label="Action" width="140px"/>
+			</columns>
+			<rows>
+				<row>
+					<label value="username"/>
+					<label value="item"/>
+					<label value="comment"/>
+					<label value="dd/mm/yyyy"/>
+					<label value="yes/no"/>
+					<hbox>
+						<button zclass="sobie-buttonrnd"  tooltiptext="View Comment" label="" image="/resources/img/icons/sbe_view16.png" />
+						<button zclass="sobie-buttonrnd"  tooltiptext="Publish" label="" image="/resources/img/icons/sbe_wishlist16.png" />	
+						<button zclass="sobie-buttonrnd"  tooltiptext="Delete" label="" image="/resources/img/icons/sbe_delete16.png" />
+					</hbox>	
+				</row>
+			</rows>
+		</grid>
+		<vbox align="center" width="810px" >
+			<paging  totalSize="100" pageSize="20" mold="default"/>
+		</vbox>
+	</vbox>
+</zk>

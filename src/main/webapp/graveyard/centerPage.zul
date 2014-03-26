@@ -1,0 +1,13 @@
+<?page title="Home Page" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<tabbox>
+		<tabs>
+			<tab label="HOME" />
+		</tabs>
+		<tabpanels>
+			<tabpanel>
+				<include src="/secure/productDisplay.zul"/>	
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

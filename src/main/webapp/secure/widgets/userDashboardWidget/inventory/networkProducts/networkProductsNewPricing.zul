@@ -1,0 +1,47 @@
+<?page title="Product Pricing" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="300px">Retail Price:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodRetailPrice)" />
+		</hbox>							
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">Sale Price:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodSalePrice)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Leave blank if product is not on sale.
+			If specified then it will be displayed
+			as a sale price adjacent to the retail
+			price.
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">Wholesale Price:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodWholesalePrice)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Leave blank if product does not have a
+			wholesale price.
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">Tax Class:</hbox>
+		<hbox>
+			<combobox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.taxClassId)" />
+		</hbox>
+	</hlayout>
+</vbox>
+</zk>

@@ -1,0 +1,178 @@
+<?page title="productDisplayWidget" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+<div id="productDisplayWidget" apply="org.zkoss.bind.BindComposer" viewModel="@id('productDisplayVm') @init('biz.sobie.web.productdisplay.ProductDisplayVm')" >
+	<grid width="100%" style="margin:0px;padding:0px;border:none;" height="100%" >
+		<columns>
+			<column label="" hflex="min"/>
+			<column label=""/>
+			<column label=""/>
+			<column label="" hflex="min"/>
+		</columns>		
+		<rows>		
+			<row>
+			 <cell rowspan="9" align="center">
+			 	<image content="@bind(productDisplayVm.selectedProduct.primaryImage)" width="190px"/>
+             </cell>
+             <cell colspan="3">
+            	<label value="Product ID: " />
+            	<label value="@bind(productDisplayVm.selectedProduct.prodId)" />
+             	<separator />
+             </cell>	
+			</row>
+			<row>				
+				<cell>
+				<label value="Sold by: "/>
+				<label value="@bind(productDisplayVm.selectedProduct.ownerStoreNo)" />
+				</cell>
+				<cell>
+				<label value="Stock Available: "/>
+				<label value="Yes" />
+				</cell>
+				<cell align="center">
+				<button label="Add to Cart" onClick="" />
+				</cell>						
+			</row>
+			<row>				
+				<cell>
+				<label value="Category: "/>
+				<label value="@bind(productDisplayVm.selectedProduct.prodCategory)" />
+				</cell>
+				<cell>
+				<label value="Brand: "/>
+				<label value="@bind(productDisplayVm.selectedProduct.prodBrand)" />
+				</cell>
+				<cell align="center">
+				<button label="Add to Wishlist" onClick="" />
+				</cell>						
+			</row>
+			<row>				
+				<cell>
+				<label value="Unit price: "/>
+				<label value="@bind(productDisplayVm.selectedProduct.prodSalePrice)" />
+				</cell>
+				<cell>
+				<label value="Currency: "/>
+				<label value="N$" />
+				</cell>
+				<cell align="center">
+				<button label="Compare" onClick="" />
+				</cell>						
+			</row>
+			<row>				
+				<cell>
+				<label value="Quantity: "/><intbox width="40px" value="1"/>
+				</cell>
+				<cell>
+				<label value="Min quantity per order:"/>
+				<label value="@bind(productDisplayVm.selectedProduct.prodMinPurchaseQty)" />
+				</cell>
+				<cell align="center">
+				<button label="Like" onClick="" /><button label="Rate" onClick="" />
+				</cell>						
+			</row>
+			<row>				
+				<cell>
+				<label value="Product option:"/>
+				</cell>
+				<cell>
+				<combobox><comboitem label="Attrb01"/><comboitem label="Attrb02"/></combobox>
+				</cell>
+										
+			</row>
+				<row>				
+				<cell>
+				<label value="Size:"/>
+				<label value="@bind(productDisplayVm.selectedProduct.prodSize)" />
+				</cell>
+				<cell>
+				<label value="Weight:"/>
+				<label value="@bind(productDisplayVm.selectedProduct.prodWeight)" />
+				</cell>
+				<cell align="center">
+				<label value="Product Rating"/>
+				</cell>						
+			</row>
+				<row>				
+				<cell colspan="2">
+				<label value="Shipping cost from (address) to (address) with (selected shipper): N$ 0.00"/>
+				</cell>						
+				</row>
+			<row>				
+				<cell>
+				<label value="Delivery time in days: 00 days"/>
+				</cell>
+				<cell>
+				<label value="Total Cost: N$ 0.00"/>
+				</cell>
+				<cell align="center">
+				<label value="Seller Rating"/>
+				</cell>						
+			</row>
+			<row>
+				<cell align="center">
+				<label value="Smaller images"/>						
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+				<label value="Share on: Facebook / Google / Email"/>						
+				</cell>
+			</row>
+			<row>
+				<cell colspan="4" align="center">
+						<tabbox>
+						<tabs>
+							<tab label="Description" />
+							<tab label="Features" />
+							<tab label="Specifications" />
+							<tab label="Video" />
+							<tab label="Shipping Time/Cost" />
+							<tab label="Comments" />
+							<tab label="Questions and Answers" />
+						</tabs>
+						<tabpanels >
+							<tabpanel height="250px">
+								<html content="@bind(productDisplayVm.selectedProduct.prodDesc)"/>
+							</tabpanel>
+							<tabpanel height="250px">
+								<html content="@bind(productDisplayVm.selectedProduct.prodFeatures)"/>
+							</tabpanel>
+							<tabpanel height="250px">
+								<html content="@bind(productDisplayVm.selectedProduct.prodSpecification)"/>
+							</tabpanel>
+							<tabpanel height="250px"></tabpanel>
+							<tabpanel height="250px"></tabpanel>
+							<tabpanel height="250px"></tabpanel>
+							<tabpanel height="250px"></tabpanel>
+						</tabpanels>
+					</tabbox>				
+				</cell>
+			</row>
+													
+		</rows>		
+	</grid>
+</div>
+</zk>

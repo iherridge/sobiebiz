@@ -1,0 +1,46 @@
+<?page title="Default Layout" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window width="985px" title="Default Layout" border="normal">
+		<borderlayout height="950px">
+			<north border="0" height="370px"
+				splittable="false" collapsible="false">
+				<borderlayout height="365px">
+					<north border="0" height="100px">
+						<include src="/header.zul" />
+					</north>
+					<center border="0">
+						Breadcrumbs
+					</center>
+					<south border="0" height="255px">
+						<include src="/headerMenuContent_Anon.zul" />
+					</south>
+				</borderlayout>
+			</north>
+			<center border="0">
+
+				<borderlayout>
+					<west title="Left Column" maxsize="160" size="160px"
+						flex="true" border="0" splittable="false">
+						<div>
+							<include src="/categories.zul" />
+						</div>
+					</west>
+					<center title="Content">
+						<include src="/productTab.zul" />
+					</center>
+					<east title="Right Column" maxsize="160"
+						size="160px" flex="true" border="0" splittable="false"
+						collapsible="true">
+						<div style="background:#B8D335">
+							<label value="160px"
+								style="color:white;font-size:50px" />
+						</div>
+					</east>
+				</borderlayout>
+			</center>
+			<south title="Footer" maxsize="560" size="110px"
+				splittable="true" collapsible="false">
+			</south>
+		</borderlayout>
+	</window>
+</zk>

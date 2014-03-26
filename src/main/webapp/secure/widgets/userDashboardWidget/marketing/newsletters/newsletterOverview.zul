@@ -1,0 +1,19 @@
+<?page title="Newsletters Overview" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox>
+	<hbox style="float:right">
+		<button label="Export" />
+	</hbox>						
+		<grid fixedLayout="true" width="810px">
+			<columns  hflex="1">
+				<column label="Date sent" />			
+				<column label="Newsletter" />
+				<column label="Clicked"/>
+				<column label="Unsubscribed"/>
+				<column label="Forwarded"/>
+				<column label="Bounced"/>
+				<column label="Failed"/>
+			</columns>
+		</grid>
+	</vbox>
+</zk>

@@ -1,0 +1,75 @@
+<?page title="Newsletter Configuration" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/webapp/resources/css/sobieStyleSheet.css"/>
+	<vlayout width="585px">
+		<hbox style="float:right;padding-right:1px">
+			<button label="Save" />
+			<button label="Cancel" />
+		</hbox>
+	</vlayout>
+	<vlayout>
+		<label style="font-weight: bold">Sender Information</label>	
+		<space />
+		<hlayout>
+			<hbox width="250px" >From Name:</hbox>
+			<hbox>
+				<textbox zclass="textarea" width="250px" />
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="250px">From Email:</hbox>
+			<hbox>
+				<textbox zclass="textarea" width="250px"/>
+			</hbox>
+		</hlayout>
+		<space/>
+		<hlayout>
+			<hbox width="250px" >Reply To Name:</hbox>
+			<hbox>
+				<textbox zclass="textarea" width="250px" />
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="250px">Reply To Email:</hbox>
+			<hbox>
+				<textbox zclass="textarea" width="250px"/>
+			</hbox>
+		</hlayout>
+		<space />
+		<label style="font-weight: bold">Mail Configuration</label>	
+		<space />
+		<hlayout>
+			<hbox width="250px" >Embed Images:</hbox>
+			<hbox>
+				<checkbox />
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="250px" >Embed Attachments:</hbox>
+			<hbox>
+				<checkbox/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="250px" >Display Un-Subscribe:</hbox>
+			<hbox>
+				<checkbox/>
+			</hbox>
+		</hlayout>
+		<space />
+		<label style="font-weight: bold">Notification Configuration</label>	
+		<space />
+		<hlayout>
+			<hbox width="250px" >Every time a user subscribes:</hbox>
+			<hbox>
+				<checkbox />
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="250px" >Every time a user un-subscribes:</hbox>
+			<hbox>
+				<checkbox/>
+			</hbox>
+		</hlayout>
+	</vlayout>
+</zk>

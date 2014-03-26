@@ -1,0 +1,283 @@
+<?page title="Customer New Adresses" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<div width="100%">
+	<grid hflex="1">
+		<columns >
+			<column label=" Billing Address"/>
+			<column label=" Shipping Address"/>
+		</columns>
+		<rows>
+			<row hflex="1">
+				<cell width="100%">
+				<grid hflex="1">
+					<columns>
+						<column label="" hflex="1"/>
+						<column label="" hflex="2"/>
+					</columns>
+					<rows>
+						<row>
+							<cell>
+								<label value="Address:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Suburb:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="City / Town:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Region / Province:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label  value="Country:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Contact Number:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Fax Number:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+				</cell>
+				<cell width="100%">
+				<grid hflex="1">
+					<columns>
+						<column label="" hflex="1"/>
+						<column label="" hflex="2"/>
+					</columns>
+					<rows>
+						<row>
+							<cell>
+								<label value="Address:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Suburb:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="City / Town:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Region / Province:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Country:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Contact Number:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Fax Number:"/>
+							</cell>	
+							<cell>
+								<textbox width="80%" value=""/>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</div>
+
+
+
+
+<!-- 	<hbox align="center">
+		<vbox width="100%" style="border:1px">
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hbox>
+				<label value="Billing Address" />
+			</hbox>
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hlayout>
+				<hbox width="100px">Address:*</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">City/Town:*</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Region/Province:</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Country:*</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Tel:</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Fax:</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />			
+		</vbox>
+		<space/>
+		<vbox width="100%" style="border:1px">
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hbox>
+				<label value="Shipping Address" />
+				<checkbox />Same as Billing Address
+			</hbox>
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hlayout>
+				<hbox width="100px">Address:*</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">City/Town:*</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Region/Province:</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Country:*</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Tel:</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Fax:</hbox>
+				<hbox>
+					<textbox width="180px"/>
+				</hbox>
+			</hlayout>
+			<space />
+		</vbox>
+	</hbox> -->
+</zk>

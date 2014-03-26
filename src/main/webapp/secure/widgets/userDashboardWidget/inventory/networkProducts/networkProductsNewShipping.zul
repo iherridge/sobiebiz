@@ -1,0 +1,108 @@
+<?page title="Product Shipping" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="250px">
+			Enable Free Shipping:
+		</hbox>
+		<hbox>
+			<checkbox
+				tooltiptext="Check this box to enable free shipping for this product. All other shipping rules will be ignored."
+				checked="@bind(networkProductsVm.selectedProduct.prodFreeShipping)" />
+		</hbox>
+	</hlayout>					
+	<hlayout>
+		<hbox width="250px">Ship Separately:</hbox>
+		<hbox>
+			<checkbox
+				tooltiptext="Check this box to calculate shipping cost on this item separately from other items in the cart."
+				checked="@bind(networkProductsVm.selectedProduct.prodShipSeperate)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="250px">Shipping Type:</hbox>
+		<hbox>
+			<combobox width="150px"
+				value="@bind(networkProductsVm.selectedProduct.prodShippingTypeId)" />
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="500px">
+			Leave blank if this does not apply. Note
+			that the dimensions can be used to determine
+			shipping cost. This is especially
+			important for over size items like
+			furniture.
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="250px">Weight:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodWeight)" />
+			kg
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="250px">Height:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodHeight)" />
+			cm
+		</hbox>
+	</hlayout>
+	<!-- <hlayout>
+		<hbox width="300px">
+			Leave blank if this does not apply. Note
+			that the weight can be used to determine
+			shipping cost. This is especially
+			important for oversize items like
+			furniture.
+		</hbox>
+	</hlayout> -->
+	<hlayout>
+		<hbox width="250px">Width:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodWidth)" />
+			cm
+		</hbox>
+	</hlayout>
+	<!-- <hlayout>
+		<hbox width="300px">
+			Leave blank if this does not apply. Note
+			that the weight can be used to determine
+			shipping cost. This is especially
+			important for oversize items like
+			furniture.
+		</hbox>
+	</hlayout> -->
+	<hlayout>
+		<hbox width="250px">Lenght:</hbox>
+		<hbox>
+			<doublebox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodLenght)" />
+			cm
+		</hbox>
+	</hlayout>
+	<!-- <hlayout>
+		<hbox width="300px">
+			Leave blank if this does not apply. Note
+			that the weight can be used to determine
+			shipping cost. This is especially
+			important for oversize items like
+			furniture.
+		</hbox>
+	</hlayout> -->
+	<hlayout>
+		<hbox width="200px">
+			Enable Shipping for this product:
+		</hbox>
+		<hbox>
+			<checkbox label="Yes / No"
+				checked="@bind(networkProductsVm.selectedProduct.prodShippingEnabled)" />
+		</hbox>
+	</hlayout>
+</vbox>
+</zk>

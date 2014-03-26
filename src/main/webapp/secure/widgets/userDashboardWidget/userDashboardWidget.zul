@@ -1,0 +1,21 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<div id="userDashboardDiv" width="824" height="100%" apply="biz.sobie.web.userdashboard.UserDashboardCtrl">
+		<div id="mainMenu" width="100%">
+			<groupbox>
+				<hlayout style="float:right;">
+					<button id="networkBtn" image="/resources/img/userDashboardWidget/network32.png" tooltiptext="Network"/>
+					<button id="calendarBtn" image="/resources/img/userDashboardWidget/calendar32.png" tooltiptext="Calendar"/>
+					<button id="ordersBtn" image="/resources/img/userDashboardWidget/orders32.png" tooltiptext="Orders"/>
+					<button id="inventoryBtn" image="/resources/img/userDashboardWidget/inventory32.png" tooltiptext="Inventory"/>
+					<button id="marketingBtn" image="/resources/img/userDashboardWidget/marketing32.png" tooltiptext="Marketing"/>
+					<button id="storeBtn" image="/resources/img/userDashboardWidget/shop32.png" tooltiptext="Store"/>
+					<button id="applicationsBtn" image="/resources/img/userDashboardWidget/applications32.png" tooltiptext="Applications"/>
+					<button id="settingsBtn" image="/resources/img/userDashboardWidget/settings32.png" tooltiptext="Settings"/>
+				</hlayout>
+			</groupbox>
+		</div>
+		<include id="contentArea"/>
+	</div>
+</zk>

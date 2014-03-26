@@ -1,0 +1,175 @@
+<?page title="Store Location" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+	<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1" />
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Street name:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.street)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="City / Town:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.cityTown)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Country:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.country)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enabled:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes/No"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<div align="left">
+						<separator orient="horizontal" width="100%" bar="true" />
+					</div>
+					<label value="FIND ON MAP" />
+					<div align="left">
+						<separator orient="horizontal" width="100%" bar="true" />
+					</div>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+				<label value="Click the following button to find the latitude and longitude from the information provided above:"/>
+				<button label="Search" onClick="@command('getLatLngFromAddress')"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Latitude:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.latitude)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Longetude:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeSettingsVm.storeSettings.longitude)"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hbox height="350px" width="100%">
+					<script content="zk.googleAPIkey='AIzaSyCO3ulxtceaClLfXN1EkIek7nBkxc_Lsaw'" />
+						
+						<gmaps id="storeLocator" width="650px" height="350px" showZoomCtrl="true"  showTypeCtrl="true" onMapClick="@command('mapMouseEvent')"
+							onMapDrop="@command('mapDropEvent')" lat="@bind(storeSettingsVm.storeSettings.latitude)" lng="@bind(storeSettingsVm.storeSettings.longitude)">
+							<gmarker open="false" lat="@bind(storeSettingsVm.storeSettings.latitude)" lng="@bind(storeSettingsVm.storeSettings.longitude)"
+								iconImage="/resources/img/sbeGooglePins/seller.png"/>
+						</gmaps>
+					</hbox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+
+<!-- <vbox align="start" style="border:none;margin:5px;">
+		<hlayout>
+			<hbox width="200px">Street Name:</hbox>
+				<hbox>
+					<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.street)"/>
+				</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="200px">City / Town:</hbox>
+			<hbox>
+				<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.cityTown)"/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="200px">Country:</hbox>
+			<hbox>
+				<textbox value="@bind(storeSettingsVm.storeSettings.country)"/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="200px">Enabled:</hbox>
+				<hbox>
+					<checkbox label="Yes/No"/>
+				</hbox>
+		</hlayout>
+		<div align="left">
+				<separator orient="horizontal" width="100%" bar="true" />
+			</div>
+			<label value="FIND ON MAP" />
+			<div align="left">
+				<separator orient="horizontal" width="100%" bar="true" />
+			</div>
+			<space/>
+			<hlayout>
+				<label value="Click the following button to find the latitude and longitude from the information provided above:"/>
+				<button label="Search" onClick="@command('getLatLngFromAddress')"/>
+			</hlayout>
+				<hlayout>
+				<hbox width="200px">Latitude:</hbox>
+					<hbox>
+						<textbox width="100px" value="@bind(storeSettingsVm.storeSettings.latitude)"/>
+					</hbox>
+						<hbox width="100px">Longitude:</hbox>
+					<hbox>
+						<textbox width="100px" value="@bind(storeSettingsVm.storeSettings.longitude)"/>
+					</hbox>
+			</hlayout>
+			<hlayout width="650px" height="350px">
+				<hbox>
+				<script content="zk.googleAPIkey='AIzaSyCO3ulxtceaClLfXN1EkIek7nBkxc_Lsaw'" />
+					
+					<gmaps id="storeLocator" width="650px" height="350px" showZoomCtrl="true"  showTypeCtrl="true" onMapClick="@command('mapMouseEvent')"
+						onMapDrop="@command('mapDropEvent')" lat="@bind(storeSettingsVm.storeSettings.latitude)" lng="@bind(storeSettingsVm.storeSettings.longitude)">
+						<gmarker open="false" lat="@bind(storeSettingsVm.storeSettings.latitude)" lng="@bind(storeSettingsVm.storeSettings.longitude)"
+							iconImage="/resources/img/sbeGooglePins/seller.png"/>
+					</gmaps>
+				</hbox>
+			</hlayout>
+			<div align="left">
+				<separator orient="horizontal" width="850px" bar="true" />
+			</div>
+</vbox> -->
+</zk>

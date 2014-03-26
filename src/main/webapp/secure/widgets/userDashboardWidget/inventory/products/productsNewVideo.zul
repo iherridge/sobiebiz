@@ -1,0 +1,125 @@
+<?page title="Product Video" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+<vbox hflex="1" style="border:none;margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows hflex="1">
+			<row>	
+				<cell hflex="1">
+					<label value="Youtube URL:"/>
+				</cell>
+				<cell colspan="2" align="right" hflex="1">
+					<textbox hflex="1" value="@bind(inventoryProductsVm.addUpdateProduct.prodYouTubeUrl)" />
+				</cell>
+				<cell>
+					<progressmeter hflex="1" value="10" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Select Video:"/>
+				</cell>
+				<cell >
+					<button label="Update" />
+				</cell>
+				<cell align="right">
+					<label value="Alt text:"/>
+				</cell>
+				<cell>
+					<textbox hflex="1"  />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="4">
+					<separator orient="horizontal" hflex="1" bar="true" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enable comments:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes / No" checked="@bind(inventoryProductsVm.addUpdateProduct.prodCommentsEnabled)" />
+				</cell>
+				<cell align="right">
+					<label value="Enable Q n A:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes / No" checked="@bind(inventoryProductsVm.addUpdateProduct.prodQnaEnabled)" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+
+<!-- <vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="100px">YouTube URL:</hbox>
+		<hbox>
+			<textbox width="300px"
+				value="@bind(inventoryProductsVm.addUpdateProduct.prodYouTubeUrl)" />
+		</hbox>
+		<hbox>
+			<progressmeter width="150px" />
+		</hbox>
+	</hlayout>
+
+	<hlayout>
+		<hbox width="100px">Select Video:</hbox>
+		<hbox>
+			<button label="Update" />
+		</hbox>
+		<hbox width="100px">ALT Text:</hbox>
+		<hbox>
+			<textbox width="100px" />
+		</hbox>
+	</hlayout>
+
+	<div align="center">
+		<separator orient="horizontal" width="790px" bar="true" />
+	</div>
+
+	<space />
+	<hlayout>
+		<hbox width="200px">Enable Comments on this product:</hbox>
+		<hbox>
+			<checkbox label="Yes / No"
+				checked="@bind(inventoryProductsVm.addUpdateProduct.prodCommentsEnabled)" />
+		</hbox>
+		<space />
+		<hbox width="200px">Enable QnA on this product:</hbox>
+		<hbox>
+			<checkbox label="Yes / No"
+				checked="@bind(inventoryProductsVm.addUpdateProduct.prodQnaEnabled)" />
+		</hbox>
+	</hlayout>
+	</vbox> -->
+</zk>

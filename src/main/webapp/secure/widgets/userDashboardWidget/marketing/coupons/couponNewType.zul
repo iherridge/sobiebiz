@@ -1,0 +1,37 @@
+<?page title="Coupon Type" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style src="/webapp/resources/css/sobieStyleSheet.css"/>
+	<space />
+	<hlayout>
+		<hbox width="250px" >Select:*</hbox>
+		<vbox>
+			<radio label="Item Discount" />
+			<radio label="Shipping Discount" />
+			<radio label="Order Discount" />
+		</vbox>
+	</hlayout>	
+	<space />
+	<hlayout>
+		<hbox width="250px" >Type:*</hbox>
+		<hbox>
+			<combobox width="250px">
+				<comboitem label="% Discount"/>
+				<comboitem label="Fixed Ammount"/>
+			</combobox>
+		</hbox>
+	</hlayout>	
+	<space />
+	<hlayout>
+		<hbox width="250px" >Amount:*</hbox>
+		<hbox>
+			<textbox zclass="textarea" width="250px" />
+		</hbox>
+	</hlayout>	
+	<space />
+	<hlayout>
+		<hbox width="250px" >Usage Limit:*</hbox>
+		<hbox>
+			<textbox zclass="textarea" width="250px" />
+		</hbox>
+	</hlayout>			
+</zk>

@@ -1,0 +1,91 @@
+<?page title="View Customer Tabbed Panel" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+<vbox width="100%">
+	<vlayout hflex="1">
+		<label style="font-weight: bold" value="Customer Information"/>
+		<hbox width="100%" >
+			<cell hflex="2">
+				<label value="Use this page to view and edit all your existing customer information."/>
+			</cell>
+			<cell hflex="1" align="right" >
+				<button label="Send Quotation" />
+				<button label="Send Message" />
+			</cell>
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%px">
+		<tabs width="180px">
+			<tab label="Customer Overview" />
+			<tab label="Account Information" />
+			<tab label="Addresses" />
+			<tab label="Orders" />
+			<tab label="Billing Agreements" />
+			<tab label="Shopping Cart" />
+			<tab label="Wishlist" />
+			<tab label="Coupons" />
+			<tab label="Store Credit" />
+			<tab label="Comments" />
+			<tab label="Tags" />
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewOverview.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewAccountInformation.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewAddresses.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewOrders.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewBillingAgreements.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewShoppingCart.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewWishlist.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewCoupons.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewStoreCredit.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewComments.zul"/>
+			</tabpanel>
+			<tabpanel>
+ 				<include src="/secure/widgets/userDashboardWidget/network/customers/customerViewTags.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+	</vbox>
+</zk>

@@ -1,0 +1,71 @@
+<?page title="General Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox hflex="1" style="border:none;margin:5px;">
+	<grid hflex="1" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell  >
+					<label value="Category name:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>	
+			</row>
+			<row>
+				<cell >
+					<label value="Category type:"/>
+				</cell>
+				<cell>
+					<combobox width="40%">
+						<template name="model">
+							<comboitem label="Product" />
+							<comboitem label="Service" />
+						</template>
+					</combobox>
+				</cell>	
+			</row>
+			<row>
+				<cell >
+					<label value="Order:"/>
+				</cell>
+				<cell>
+					<textbox width="20%" />
+				</cell>	
+			</row>
+			<row>
+				<cell >
+					<label value="Enabled:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes/No" />
+				</cell>	
+			</row>
+		</rows>
+	</grid>
+</vbox>
+</zk>

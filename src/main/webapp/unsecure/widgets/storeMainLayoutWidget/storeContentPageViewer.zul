@@ -1,0 +1,18 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div apply="org.zkoss.bind.BindComposer" viewModel="@id('storeContentPageVm') @init('biz.sobie.web.store.StoreContentPageVm')">
+		<hbox >
+			<hbox style="margin-right:3px" width="180px">
+				<include src="/unsecure/widgets/storeMainLayoutWidget/storeBrowserWidget/storeBrowserLeftWidgetColumn.zul" />
+			</hbox >
+			<hbox style="margin-left:3px" width="690px">
+				<vbox width="100%" align="center">
+					<image width="670px" height="115px" content="@bind(storeContentPageVm.addUpdateStoreContentPage.storeContentPageHeaderImage.AImage)"/>
+					<window width="690px">
+						<html content="@bind(storeContentPageVm.addUpdateStoreContentPage.pageContent)" />
+					</window>
+				</vbox>	
+			</hbox>
+		</hbox>
+	</div>
+</zk>

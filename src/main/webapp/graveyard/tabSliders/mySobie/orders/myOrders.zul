@@ -1,0 +1,47 @@
+<?page title="Network Profile" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('biz.sobie.web.viewmodel.OrderViewModel')">
+		<groupbox width="900px">
+			<hbox spacing="25px">
+			<space/>
+				<vbox><image height="35px" width="35px" src="resources/img/tabs/mySobie/orders/shopping-bag.png" hspace="10"/><label value="Preparing Order"/></vbox>
+				<image src="resources/img/tabs/mySobie/orders/arrow-right.png"/>
+				<vbox><image height="35px" width="35px" src="resources/img/tabs/mySobie/orders/readyForShipment.png" hspace="10"/><label value="Ready for Shipment"/></vbox>
+				<image src="resources/img/tabs/mySobie/orders/arrow-right.png"/>
+				<vbox><image height="35px" width="35px" src="resources/img/tabs/mySobie/orders/shippingOrder.png" hspace="10"/><label value="Shipping Order"/></vbox>
+				<image src="resources/img/tabs/mySobie/orders/arrow-right.png"/>
+				<vbox><image height="35px" width="35px" src="resources/img/tabs/mySobie/orders/search.png" hspace="10"/><label value="Order Shipped"/></vbox>
+				<image src="resources/img/tabs/mySobie/orders/arrow-right.png"/>
+				<vbox><image height="35px" width="35px" src="resources/img/tabs/mySobie/orders/lock.png" hspace="10"/><label value="Order Closed"/></vbox>
+			</hbox>
+		</groupbox >
+	    <listbox model="@load(vm.orderList)" selectedItem="@bind(vm.selectedOrder)" vflex="true" height="210px" >
+	     	<listhead>
+		         <listheader label="PO#" align="center"/>
+		         <listheader label="Product Summary" align="center" />
+					<listheader label="Seller Name" align="center" />
+					<listheader label="Payment Date" align="center" />
+					<listheader label="Confirmation Date" align="center" />
+					<listheader label="Last Upate" align="center" />
+					<listheader label="Confirmation Date" align="center" />
+					<listheader label="Total Payment" align="center" />
+					<listheader label="Order Status" align="center" />
+					<listheader label="Action" align="center" />
+			     </listhead>
+			     <template name="model" var="order">
+			         <listitem>
+			             <listcell label="@load(order.orderNo)" />
+			             <listcell label="@load(order.buyerAccNo)" />
+			             <listcell label="@load(order.sellerAccNo)" />
+			             <listcell label="@load(order.supplierAccNo)" />
+			             <listcell label="@load(order.shipperAccNo)" />
+			             <listcell label="@load(order.tranType)" />
+			             <listcell label="@load(order.orderDate)" />
+			             <listcell label="@load(order.orderTime)" />
+			             <listcell label="@load(order.prodId)" />
+			             <listcell label="@load(order.prodQty)" />
+			         </listitem>
+			     </template>
+	   </listbox>
+</vbox>
+</zk>

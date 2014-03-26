@@ -1,0 +1,53 @@
+<?page title="Shopping Cart" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+
+<div apply="biz.sobie.web.controllers.ShoppingCartController" height="100%">
+	<vbox width="850px" align="center" >
+		<hbox hflex="1">
+			<label value="Items in your shopping cart"/>
+			<hbox  style="float:right;">
+					<space/><space/>
+					<label value="Ship my orders to:"/>
+					<combobox value="Shipping address"><comboitem label="Shipping address"/></combobox>
+			</hbox>
+		</hbox>
+		<hbox apply="org.zkoss.bind.BindComposer" viewModel="@id('shoppingCartVm') @init('biz.sobie.web.viewmodel.ShoppingCartViewModel')">
+			<grid id="shoppingCartGrid" height="100%" fixedLayout="true" width="850px" model="@load(shoppingCartVm.shoppingCart.shoppingCartProducts)">
+				<columns hflex="1">
+					<column hflex="min"><checkbox id="selectAllCheckbox" tooltip="true" tooltiptext="Select All"></checkbox></column>
+					<column label="Item" hflex="1" />
+					<column label="Store" hflex="1"/>
+					<column label="SKU" hflex="1"/>
+					<column label="Quantity" hflex="1"/>
+					<column label="Amount" hflex="1"/>
+					<column label="Shipping cost" hflex="1"/>
+					<column label="Action" hflex="1"/>
+				</columns>
+				<rows>
+					<template name="model" var="shoppingCartProduct">
+						<row>
+							<checkbox checked="false"/>
+							<label value="@load(shoppingCartProduct.prodName)"/>
+							<label value="Stoe name"/>
+							<label value="SKU#"/>
+							<spinner value="1" width="40px"/>
+							<label value="@load(shoppingCartProduct.prodRetailPrice) @converter('formatedNumber', format='NAD ###,##0.00')"/>
+							<label value="NAD 0.00"/>
+							<hbox><button zclass="sobie-buttonrnd"  tooltiptext="Remove from Cart" label="" image="/resources/img/icons/sbe_removecart16.png" /><button zclass="sobie-buttonrnd" tooltiptext="View Detail" label="" image="/resources/img/icons/sbe_view16.png"/></hbox>
+						</row>
+					</template>
+				</rows>
+			</grid>
+			<space/>
+		</hbox>
+		<hlayout width="850px"  style="margin:5px;">
+			<hlayout width="100%"><space/><checkbox id="confirmCheckoutCheckbox" label="Please confirm that the order details are correct before continueing to the next step."></checkbox></hlayout>
+			<vbox>
+				<hbox style="float: right;"><label value="Grand Total:"/><label id="grandTotalLbl" value="NAD 0.00" style="color:orange;"/><space/></hbox>
+				<button zclass="sobie-button" id="proceedToCheckoutBtn" label="Proceed to checkout" disabled="true"/>
+			</vbox>
+		</hlayout>
+	</vbox>
+</div>
+</zk>

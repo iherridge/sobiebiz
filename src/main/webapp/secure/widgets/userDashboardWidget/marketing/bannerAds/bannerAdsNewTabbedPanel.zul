@@ -1,0 +1,35 @@
+<?page title="Add New Banner Ad" contentType="text/html;charset=UTF-8"?>
+<zk>
+<label style="font-weight: bold">Add Banner Ad</label>
+
+	<vlayout  width="100%">
+		<hbox>
+			Use this page to create a new banner advert for your store.
+		</hbox>
+		<hbox style="float:right;padding-right:1px">
+			<button label="Save" />
+			<button label="Cancel" onClick="@global-command('openNetworkCustomers')"/>
+		</hbox>
+	</vlayout>
+	<div align="left" width="100%">
+		<separator orient="horizontal" width="1006px" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%">
+		<tabs width="180px">
+			<tab label="Banner Information" />
+			<tab label="Impressions" />
+			<tab label="Upload File" />			
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/marketing/bannerAds/bannerAdNewInformation.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/bannerAds/bannerAdNewImpressions.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/marketing/bannerAds/bannerAdNewFileUpload.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</zk>

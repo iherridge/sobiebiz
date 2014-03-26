@@ -1,0 +1,119 @@
+<?page title="Notifications" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div  apply="org.zkoss.bind.BindComposer" viewModel="@id('notificationWidgetVm') @init('biz.sobie.web.notifications.NotificationWidgetVm')">
+		<vbox width="200px">
+			<vbox>
+				<separator orient="horizontal" width="200px" bar="true" />
+					<hbox>
+						<vbox align="center" width="20px">
+							<image src="resources/img/icons/sbe_notifications16.png"/>
+						</vbox>
+						<vbox>
+							<label value="Notifications" />
+						</vbox>					
+					</hbox>
+				<separator orient="horizontal" width="200px" bar="true" />
+			</vbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_messages16.png"/></vbox>
+				<vbox width="140px"><label>Messages</label></vbox>
+				<vbox align="center" width="30px"><hbox  spacing="0"><label>(</label><a onClick="@global-command('openNetworkMessages')">0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_cart16.png"/></vbox>
+				<vbox width="140px"><label>Shopping Cart</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a label="@bind(notificationWidgetVm.shoppingCartTotalItems)" onClick="@global-command('openShoppingCart')"/><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_wishlist16.png"/></vbox>
+				<vbox width="140px"><label>Wishlist</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="/resources/img/icons/sbe-shcalendar16.png"/></vbox>
+				<vbox width="140px"><label>Events</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<vbox>
+				<separator orient="horizontal" width="200px" bar="true" />
+					<hbox>
+						<vbox align="center" width="20px">
+							<image src="resources/img/icons/sbe_dashboard16.png"/>
+						</vbox>
+						<vbox>
+							<label value="Dashboard" />
+						</vbox>					
+					</hbox>
+				<separator orient="horizontal" width="200px" bar="true" />
+			</vbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_sysmessages16.png"/></vbox>
+				<vbox width="140px"><label>System Messages</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_network16.png"/></vbox>
+				<vbox width="140px"><label>Network Requests</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_comments16.png"/></vbox>
+				<vbox width="140px"><label>Comments</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_store16.png"/></vbox>
+				<vbox width="140px"><label>Store</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_inventory16.png"/></vbox>
+				<vbox width="140px"><label>Inventory</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_sales16.png"/></vbox>
+				<vbox width="140px"><label>Sales</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_purchases16.png"/></vbox>
+				<vbox width="140px"><label>Purchases</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_shipping16.png"/></vbox>
+				<vbox width="140px"><label>Shipping</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+			<hbox>
+				<vbox align="center" width="20px"><image src="resources/img/icons/sbe_marketing16.png"/></vbox>
+				<vbox width="140px"><label>Marketing</label></vbox>
+				<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>0</a><label>)</label></hbox></vbox>
+			</hbox>
+	<!-- 		<menubar width="200px" visible="true" autodrop="false">
+				<menu label="Notifications"  width="200px">
+					<menupopup  width="200px">
+						<menuitem label="Marketing (00)" image="resources/img/icons/sbe_marketing16.png"/>
+						<menuitem label="System Messages" />
+						<menuitem label="Task Notifications" />
+						<menuitem label="Store Users" />
+						<menuitem label="Order Statuses" />
+					</menupopup>
+				</menu>
+			</menubar>
+			<menubar width="200px" visible="true" autodrop="false">
+				<menu label="Dashboard"  width="200px">
+					<menupopup  width="200px">
+						<menuitem label="Marketing" image="resources/img/icons/sbe_marketing16.png"/>
+						<menuitem label="System Messages" />
+						<menuitem label="Task Notifications" />
+						<menuitem label="Store Users" />
+						<menuitem label="Order Statuses" />
+					</menupopup>
+				</menu>
+			</menubar> -->
+			
+		</vbox>
+	</div>
+</zk>

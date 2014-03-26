@@ -1,0 +1,103 @@
+<?page title="Default Settings" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Customer Comment Status:"/>
+				</cell>
+				<cell>
+					<combobox width="40%" value="@bind(storeSettingsVm.storeSettings.storeCustCommentStatus)">
+					<comboitem label="Publish Immediately"/>
+					<comboitem label="Require Admin Approval"/>
+					</combobox>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Include Tax in inventory prices:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes/No" checked="@bind(storeSettingsVm.storeSettings.storeIncludeTaxInProductPrice)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Enable Address Validation:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes/No" checked="@bind(storeSettingsVm.storeSettings.storeEnableAddressValidation)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Enable Friendly URL's:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes/No" checked="@bind(storeSettingsVm.storeSettings.storeEnableFriendlyUrls)"/>
+				</cell>	
+			</row>
+		</rows>
+	</grid>
+
+
+<!-- <vbox align="start" style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="200px">Customer Comment Status:</hbox>
+		<hbox>
+			<combobox width="200px" value="@bind(storeSettingsVm.storeSettings.storeCustCommentStatus)">
+					<comboitem label="Publish Immediately"/>
+					<comboitem label="Require Admin Approval"/>
+			</combobox>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="200px">Include Taxes in Product Price:</hbox>
+		<hbox>
+			<checkbox label="Yes/No" checked="@bind(storeSettingsVm.storeSettings.storeIncludeTaxInProductPrice)"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="200px">Enable Address Validation:</hbox>
+		<hbox>
+			<checkbox label="Yes/No" checked="@bind(storeSettingsVm.storeSettings.storeEnableAddressValidation)"/>
+		</hbox>
+	</hlayout>
+	<space />
+	<hlayout>
+		<hbox width="200px">Enable Friendly url's:</hbox>
+		<hbox>
+			<checkbox label="Yes/No" checked="@bind(storeSettingsVm.storeSettings.storeEnableFriendlyUrls)"/>
+		</hbox>
+	</hlayout>
+</vbox> -->
+</zk>

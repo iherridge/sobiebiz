@@ -1,0 +1,142 @@
+<?page title="Service Location" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+	<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1" />
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Street name:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value=""/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Suburb:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value=""/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="City / Town:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value=""/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Country:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value=""/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<div align="left">
+						<separator orient="horizontal" width="100%" bar="true" />
+					</div>
+					<label value="FIND ON MAP" />
+					<div align="left">
+						<separator orient="horizontal" width="100%" bar="true" />
+					</div>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+				<label value="Click the following button to find the latitude and longitude from the information provided above:"/>
+				<button label="Search" onClick=""/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Latitude:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value=""/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Longetude:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value=""/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Range:"/>
+				</cell>
+				<cell >
+					<hbox>
+						<combobox value="Select" width="40%">
+							<template name="model">
+								<comboitem label="fixed" />
+								<comboitem label="variable" />
+							</template>
+						</combobox>
+						<textbox value="kilometers" width="40%" style="color:grey;" />
+					</hbox>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Service area:"/>
+				</cell>
+				<cell>
+					<hbox>
+						<combobox value="Select" width="40%">
+							<template name="model">
+								<comboitem label="area 01" />
+								<comboitem label="area 02" />
+							</template>
+						</combobox>
+						<button label="+" onClick="" />
+					</hbox>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<hbox height="350px" width="100%">
+					<script content="zk.googleAPIkey='AIzaSyCO3ulxtceaClLfXN1EkIek7nBkxc_Lsaw'" />
+						
+						<!-- <gmaps id="storeLocator" width="650px" height="350px" showZoomCtrl="true"  showTypeCtrl="true" onMapClick="@command('mapMouseEvent')"
+							onMapDrop="@command('mapDropEvent')" lat="@bind(storeSettingsVm.storeSettings.latitude)" lng="@bind(storeSettingsVm.storeSettings.longitude)">
+							<gmarker open="false" lat="@bind(storeSettingsVm.storeSettings.latitude)" lng="@bind(storeSettingsVm.storeSettings.longitude)"
+								iconImage="/resources/img/sbeGooglePins/seller.png"/>
+						</gmaps> -->
+					</hbox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</zk>

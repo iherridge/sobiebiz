@@ -1,0 +1,437 @@
+<?page title="UI style page" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+
+<style dynamic="true">
+
+.sobie-maincontainer{
+background-image:url('resources/img/testImages/bg012.png');
+background-repeat:repeat;
+background-color:#008bb6;
+margin:3px;
+padding:3px;
+}
+
+.sobie-boxcontainer{
+background-color:#FFFFFF;
+border-radius:3px;
+box-shadow: 6px 6px 6px -6px black;
+margin-right:3px;
+margin-left:3px;
+padding:6px;
+
+}
+
+.sobie-welcomecontainer{
+background-color:#FFFFFF;
+border-radius:3px;
+box-shadow: 6px 6px 6px -6px black;
+margin:6px;
+padding:6px;
+
+}
+
+.sobie-eastcontainer{
+background-color:#FFFFFF;
+border-radius:3px;
+box-shadow: 6px 6px 6px -6px black;
+margin-right:3px;
+margin-left:3px;
+padding:6px;
+
+}
+
+.sobie-searchcontainer{
+margin:5px;
+}
+
+.sobie-header{
+margin-left:2px;
+margin-right:2px;
+}
+
+.sobie-footer{
+background-color:#3b3937;
+margin-top:5px;
+padding:6px;
+-moz-box-shadow:    inset 0 0 10px #000000;
+-webkit-box-shadow: inset 0 0 10px #000000;
+box-shadow:         inset 0 0 10px #000000;
+
+}
+
+.sobie-menu{
+margin-left:2px
+margin-right:2px
+}
+
+.sobie-button {
+	color: #373534;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+	background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+	display: inline-block;
+	zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
+	vertical-align: baseline;
+	margin: 0 2px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	padding: .1em 1em .26em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .1em; 
+	-moz-border-radius: .1em;
+	border-radius: .1em;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.2);
+	box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+.sobie-button:hover {
+color: #373534;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #fefefe,  #f6f6f6);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#f6f6f6');
+	text-decoration: none;
+}
+
+.sobie-button:active {
+	color: #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffb400), to(#ff8c00));
+	background: -moz-linear-gradient(top,  #ffb400,  #ff8c00);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb400', endColorstr='ff8c00');
+	position: relative;
+	top: 1px;
+{
+
+</style>
+
+	
+<!-- Start of Sobie Index -->	
+
+<vbox sclass="sobie-maincontainer" align="center"  width="100%" height="100%">
+			<div>
+				<!-- North  -->
+				<vbox  width="1024px">
+					<div>
+						<include id="sobieHeader" src="/graveyard/stylesobieHeader.zul"  />		
+						<menubar sclass="sobie-header" width="1024px" autodrop="true">
+							<menu label="System">
+								<menupopup>
+									<menuitem label="My Account" />
+									<menuitem label="System Messages" />
+									<menuitem label="Task Notifications" />
+									<menuitem label="Store Users" />
+									<menuitem label="Order Statuses" />
+								</menupopup>
+							</menu>
+							<menu label="Store">
+								<menupopup>
+									<menuitem label="Store Settings" />
+									<menuitem label="Store Locator" />
+									<menuitem label="Content Pages" />
+								</menupopup>
+							</menu>
+							<menu label="Network">
+								<menupopup>
+									<menuitem label="Messages" />
+									<menuitem label="Customers" />
+									<menuitem label="Sellers"/>
+									<menuitem label="Suppliers" />
+									<menuitem label="Shippers"/>
+								</menupopup>
+							</menu>
+							<menu label="Inventory">
+								<menupopup>
+									<menuitem label="Categories" />
+									<menuitem label="Products" />
+									<menuitem label="Network Products"/>
+									<menuitem label="Services" />
+									<menuitem label="Classifieds" />
+									<menuitem label="Attributes" />
+									<menuitem label="Reviews and Ratings" />
+								</menupopup>
+							</menu>
+							<menu label="Sales">
+								<menupopup>
+									<menu label="Orders" image="/widgets/menu/drop-down_menu/img/file_new.png">
+			                            <menupopup>
+			                                <menuitem label="Quotations" />
+			                                <menuitem label="Invoices" />
+			                                <menuitem label="Shipment" />
+			                                <menuitem label="Returns" />
+			                            </menupopup>
+			                        </menu>
+									<menuitem label="Manange Quotations" />
+									<menuitem label="Manage Invoices" />
+									<menuitem label="Manage Shipments" />
+									<menuitem label="Manage Returns" />
+									<menuitem label="Billing Agreements" />
+									<menuitem label="Terms and Conditions" />
+									<menuitem label="Tax (VAT)" />
+								</menupopup>
+							</menu>
+							<menu label="Purchases">
+								<menupopup>
+									<menu label="Orders" image="/widgets/menu/drop-down_menu/img/file_new.png">
+			                            <menupopup>
+			                                <menuitem label="Quotations" />
+			                                <menuitem label="Invoices" />
+			                                <menuitem label="Shipment" />
+			                                <menuitem label="Returns" />
+			                            </menupopup>
+			                        </menu>
+									<menuitem label="Billing Agreements" />
+								</menupopup>
+							</menu>
+							<menu label="Marketing">
+								<menupopup>
+									<menuitem label="Banners" />
+									<menuitem label="Coupons" />
+									<menuitem label="Newsletters" />
+									<menuitem label="Calendar" />
+								</menupopup>
+							</menu>
+							<menu label="Reports">
+								<menupopup>
+									<menuitem label="Orders" />
+									<menuitem label="Invoices" />
+									<menuitem label="Quotations" />
+									<menuitem label="Expenses" />
+									<menuitem label="Service Requests" />
+									<menuitem label="Most Frequent Customers" />
+									<menuitem label="Top Spending Customers" />
+									<menuitem label="Top Earning Products" />
+									<menuitem label="Order Picklist" />
+									<menuitem label="Activity Log" />
+									<menuitem label="Coupon Usage" />
+									<menuitem label="Sales Tax" />
+									<menuitem label="Supplier List" />
+								</menupopup>
+							</menu>
+						</menubar>
+						<div zclass="sobie-searchcontainer" style="margin-left:10px;" apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('biz.sobie.web.viewmodel.BrowserWidgetViewModel')">
+							<label value="Search" />	
+							<combobox buttonVisible="false" id="searchComboBox" autodrop="false" width="300px"/>
+							<space />
+							<combobox id="categoryComboBox" width="150px" model="@load(vm.categoryList)">
+								<template name="model" var="category">
+									<comboitem label="@load(category)"></comboitem>
+								</template>
+							</combobox>
+							<space />
+							<button zclass="sobie-button" label="Go" />
+							<a
+								style="float:right; text-decoration:none; margin-right:10px; padding:3px"
+								href="Advanced Search">
+								Advanced Search
+							</a>
+						</div>
+						<!-- <include src="@bind(indexVM.infoPageArea)" width="1024px"/> WELCOME AREA -->
+						<vbox align="center">
+							<vbox zclass="sobie-welcomecontainer">
+								<vbox width="1006px" height="100%">
+									<tabbox  orient="vertical" width="1006px" height="230px">
+										<tabs width="178px">
+											<tab label="Welcome" />
+											<tab label="Buyer" />
+											<tab label="Seller" />
+											<tab label="Supplier" />
+											<tab label="Shipper" />											
+										</tabs>
+										<tabpanels >
+											<tabpanel>
+											<include src="/unsecure/widgets/welcomeWidget/welcome.zul"/>					
+											</tabpanel>									
+										</tabpanels>
+									</tabbox>
+								</vbox>
+							</vbox>
+						</vbox>
+					</div>	
+				</vbox>
+				<vbox width="1024px" align="center">
+					<hbox >
+			 			<!-- West -->
+			<!--		<vbox id="indexWest" height="100%" style="background:red" width="0px">
+							<label style="font-weight: bold">left column</label>
+						</vbox> -->
+						
+						<!-- Centre -->
+						<vbox zclass="sobie-boxcontainer">
+							<vbox width="778px" height="100%">
+								<tabbox  orient="vertical" width="778px">
+									<tabs width="178px">
+										<tab label="Page Information" />
+										<tab label="Page Header" />
+										<tab label="SEO settings" />
+										<tab label="Page Content" />
+									</tabs>
+									<tabpanels >
+										<tabpanel>
+										<vbox>
+											<hbox style="float:right;padding-right:1px" height="26px">							
+												<combobox><comboitem label=""/><comboitem label=""/></combobox>
+												<bandbox><bandpopup> </bandpopup></bandbox>
+												<button zclass="sobie-button" label="Save" />
+												<button zclass="sobie-button" label="Cancel" />
+												
+											</hbox>																	
+												<grid fixedLayout="true" width="587px" mold="paging" pageSize="6" autopaging="true" vflex="true">
+													<columns  hflex="1">
+														<column label="All" width="30px" />			
+														<column label="ID" />
+														<column label="Name" />
+														<column label="Email" width="100px" />
+														<column label="Group" width="50px"/>
+														<column label="Tel" width="100px"/>
+														<column label="Country" width="60px"/>											
+														<column label="Since" width="70px"/>
+														<column label="Action" width="60px"/>											
+													</columns>
+													<rows>
+														<row>
+															<cell rowspan="3"><checkbox /></cell>
+															<cell rowspan="3"><label>sbe_00000</label></cell>
+															<cell rowspan="3"><label>John</label></cell>
+															<cell rowspan="3"><label>john@sobie.biz</label></cell>
+															<cell rowspan="3"><label>retail</label></cell>
+															<cell rowspan="3"><label>0000000000</label></cell>
+															<cell rowspan="3"><label>Namibia</label></cell>
+															<cell rowspan="3"><label>13/02/2012</label></cell>
+															<cell rowspan="3"><label>edit/view</label></cell>
+														</row>																					
+													</rows>																								
+												</grid>
+												<paging  totalSize="100" pageSize="20" mold="default"/>
+											</vbox>
+										</tabpanel>									
+									</tabpanels>
+								</tabbox>
+							</vbox>
+							<space/>
+							<hbox width="778px">
+								<vbox align="center" width="178px">
+									<bandbox mold="rounded" width="178px"><bandpopup> </bandpopup></bandbox>
+									<combobox  mold="rounded" width="178px"><comboitem label=""/><comboitem label=""/></combobox>
+									<datebox  mold="rounded" width="178px" />
+									<spinner  mold="rounded" width="178px" />								
+									<fileupload width="178px" />
+									<slider width="178px"/>
+									<progressmeter width="178px" />
+									<button zclass="sobie-button" label="Normal" />
+																							
+								</vbox>
+								<space/>
+								<vbox>
+									<chart width="585px"/>																		
+								</vbox>
+							</hbox>
+						</vbox>
+							        
+						<!-- East -->
+						<vbox align="center"  id="indexEast" height="100%" width="200px" >			
+							<div  apply="org.zkoss.bind.BindComposer" viewModel="@id('notificationWidgetVm') @init('biz.sobie.web.notifications.NotificationWidgetVm')">
+								<vbox zclass="sobie-eastcontainer" >
+									<vbox>
+										<div align="center"><separator orient="horizontal" width="200px" bar="true" /></div>
+											<hbox>
+												<vbox align="center" width="20px">
+													<image src="resources/img/icons/sbe_notifications16.png"/>
+												</vbox>
+												<vbox>
+													<label value="Notifications" />
+												</vbox>					
+											</hbox>
+										<separator orient="horizontal" width="200px" bar="true" />
+									</vbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_messages16.png"/></vbox>
+										<vbox width="140px"><label>Messages</label></vbox>
+										<vbox align="center" width="30px"><hbox  spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_cart16.png"/></vbox>
+										<vbox width="140px"><label>Shopping Cart</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a label="@bind(notificationWidgetVm.shoppingCart.totalItems)" onClick="@global-command('openShoppingCart')"/><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_wishlist16.png"/></vbox>
+										<vbox width="140px"><label>Wishlist</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<vbox>
+										<separator orient="horizontal" width="200px" bar="true" />
+											<hbox>
+												<vbox align="center" width="20px">
+													<image src="resources/img/icons/sbe_dashboard16.png"/>
+												</vbox>
+												<vbox>
+													<label value="Dashboard" />
+												</vbox>					
+											</hbox>
+										<separator orient="horizontal" width="200px" bar="true" />
+									</vbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_sysmessages16.png"/></vbox>
+										<vbox width="140px"><label>System Messages</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_network16.png"/></vbox>
+										<vbox width="140px"><label>Network Requests</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_comments16.png"/></vbox>
+										<vbox width="140px"><label>Comments</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_store16.png"/></vbox>
+										<vbox width="140px"><label>Store</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_inventory16.png"/></vbox>
+										<vbox width="140px"><label>Inventory</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_sales16.png"/></vbox>
+										<vbox width="140px"><label>Sales</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_purchases16.png"/></vbox>
+										<vbox width="140px"><label>Purchases</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_shipping16.png"/></vbox>
+										<vbox width="140px"><label>Shipping</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>
+									<hbox>
+										<vbox align="center" width="20px"><image src="resources/img/icons/sbe_marketing16.png"/></vbox>
+										<vbox width="140px"><label>Marketing</label></vbox>
+										<vbox align="center" width="30px"><hbox spacing="0"><label>(</label><a>00</a><label>)</label></hbox></vbox>
+									</hbox>									
+								</vbox>
+							</div>
+							<vbox zclass="sobie-eastcontainer" >
+								<calendar width="195px" />
+							</vbox>											
+						</vbox>
+					</hbox>
+				</vbox>
+				<!-- South -->
+				<vbox zclass="sobie-footer" align="center"  width="100%" height="100px">
+					<label style="font-weight: bold">footer</label>
+					<include id="chatInc"/>
+				</vbox>
+			</div>
+		</vbox>
+</zk>

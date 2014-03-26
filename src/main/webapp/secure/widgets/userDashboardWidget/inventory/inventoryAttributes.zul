@@ -1,0 +1,47 @@
+<?page title="Inventory Attributes" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- Tabbed Page -->
+	<div width="100%" >
+		<vbox width="100%">
+			<cell hflex="1" align="right">
+				<button label="Save" onClick=""/>
+				<button label="Cancel" onClick=""/>
+			</cell>
+			<tabbox hflex="1" id="tb" orient="vertical">
+			    <tabs width="180px">
+			        <tab label="Attribute Information" />
+			    </tabs>
+			    <tabpanels hflex="1">
+			        <tabpanel hflex="1">
+						<include src="/secure/widgets/userDashboardWidget/inventory/attributes/attributeNewInformation.zul"/>
+			        </tabpanel>
+			    </tabpanels>
+			</tabbox>
+		</vbox>
+		<!-- Classified List -->
+		<vbox width="100%" style="padding:5px;">
+			<div align="left" hflex="1">
+				<separator orient="horizontal"  bar="true" />
+				<label value="Attribute Sets" />
+				<separator orient="horizontal" bar="true" />
+			</div>
+			<hbox hflex="1">
+				<cell hflex="2">
+					<label value="Use this page to manage your inventory attributes such as color / size / model / style etc."/>
+				</cell>
+				<cell align="right" hflex="1">
+					<button label="Add New Attribute Set" />
+				</cell>
+			</hbox>
+			<grid fixedLayout="true" hflex="1">
+				<columns  hflex="1">
+					<column label="#" hflex="min"/>
+					<column label="Attribute Set" />
+					<column label="Options" />
+					<column label="Enabled" />
+					<column label="Action" hflex="min"/>
+				</columns>
+			</grid>
+		</vbox>
+	</div>
+</zk>

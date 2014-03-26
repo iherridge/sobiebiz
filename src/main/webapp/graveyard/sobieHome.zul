@@ -1,0 +1,86 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+    <groupbox id="header">
+    <div align="right">Login/Register/Shopping cart (0) </div>
+		<div id="logo" style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;" height="40px">
+		   <a href="http://">
+		     <image style="margin-left:10px; margin-top:5px" border="0" src="resources/img/sobieLogo.png" width="101" height="30px"/>
+		   </a>
+		   
+		</div>
+        <div style="background-color:#F0F0F0; padding:2px" id="Search" height="28px">
+         <div style="margin-left:10px;">
+   			<label value="Search"/>
+   			<combobox buttonVisible="false" id="searchComboBox" autodrop="true" width="300px" />
+    			<space/>
+    			<combobox id="categoryComboBox" width="150px" value="Search Products">
+    				<comboitem value="Search Products"/>
+    				<comboitem value="Search Services"/>
+    				<comboitem value="Search Sellers"/>
+    				<comboitem value="Search Suppliers"/>
+    				<comboitem value="Search Users"/>
+    			</combobox>
+        		<space/>
+       			<button label="Go"/>
+       			<a style="float:right; text-decoration:none; margin-right:10px; padding:3px" href="Advanced Search">Advanced Search</a>
+     		</div>
+        </div>
+        <menubar style="padding:2px" width="100%">
+			<menu style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;" label="All Categories">
+				<menupopup>
+					<menuitem label="New" />
+					<menuseparator />
+					<menuitem label="Open" />
+				</menupopup>
+			</menu>
+			<menuseparator />
+			<menuitem label="How it works" />
+			<menuseparator />
+			<menuitem label="Help" />
+			<menuseparator />
+			<menuitem label="Pricing n Plans" />
+			<menuseparator />
+			<menuitem label="About us" />
+		</menubar>                
+     </groupbox>
+     <borderlayout sclass="inner-border" id="centerWorkspaceBorderlayout" width="100%">
+     	<center border="0" margins="0,3,3,3">
+        	<div>
+        		<include id="welcomeWidget" src="/welcomeWidget.zul"/>
+        		<!-- The blog widget must only desplayed when a user is logged in, thus the source is set to null -->
+				<include id="blogWidget"/>
+				<include id="productBrowserWidget" src="/secure/widgets/productBrowserWidget.zul"/>
+			</div>
+		</center>
+	</borderlayout>                
+</zk>
+
+     
+<!--      <groupbox width="494px" height="248px">
+		 	<panel width="500px" height="248px">
+		    	<panelchildren>
+		        	<hlayout style="padding:5px; background-image:url('resources/img/panelGradientBackground.png');border-radius:5px;border: 1px solid #c4c8cc">
+			        	<image style="box-shadow:1px 1px 3px #888; margin:5px" src="resources/img/Welcome.png" align="left"/>
+				        <vlayout>
+					        <label style="color:orange;margin:10px;face:verdana">Welcome</label>
+				        	<label value="Sobie.biz is a brand new and one of a kind trade portal for Namibia,
+					        whether your shopping for products and services, listing your company or starting a new business. We have all the tools you need to boost your success.
+					        We cater directly for all types of Business to Business and Business to Consumer trade within Namibia. Sell, resell, supply or ship any product directly to your customer through our most innovative and advanced business tool applications.
+					        Register now as a buyer, seller, supplier or shipper to experience the best of what we have to offer through ecommerce..."/>
+				        </vlayout>
+		        	 </hlayout>
+		        </panelchildren>
+	      </panel>
+	  </groupbox>
+	  <groupbox width="494px" height="248px">
+	      <panel>
+	       <panelchildren>
+	        <vlayout style="border: 1px solid #c4c8cc; padding:5px; background-image:url('resources/img/panelGradientBackground.png');border-radius:5px" width="302px" height="215px">
+	          <label style="color:orange;margin:10px;">BUYER</label>
+	          <label style="margin:10px;text-indent:5px">FREE</label>
+	             <a align="right" href="buyer_packege">read more...</a>
+	        </vlayout>
+	        </panelchildren>
+	      </panel>
+     </groupbox> -->

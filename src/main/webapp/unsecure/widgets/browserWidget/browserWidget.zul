@@ -1,0 +1,64 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+background: transparent;
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+}
+
+.z-borderlayout { background-color : transparent; padding:0px; margin:0px; }
+
+.z-north, .z-south, .z-west, .z-center, .z-east {
+background-color : transparent;
+border:0 none; padding:0px; margin:0px; }
+</style>
+
+	<div width="100%" vflex="min" apply="org.zkoss.bind.BindComposer" viewModel="@id('browserWidgetVm') @init('biz.sobie.web.browser.BrowserWidgetVm')">
+		<borderlayout vflex="min" hflex="1">
+			<west collapsible="true"  title=" " vflex="min" >
+				<hbox hflex="min" >
+					<include src="@bind(browserWidgetVm.browserLeftWidgetColumnSrc)"/>
+				</hbox >
+			</west>
+			<center vflex="min" >
+				<hbox hflex="1" vflex="min" >
+					<tabbox hflex="1" vflex="min"  >
+						<tabs >
+							<tab label="Products" />
+							<tab label="Stores" visible="@bind(browserWidgetVm.selectedStoreViewVisible)"/>
+							<tab label="Services" />
+							<tab label="Classifieds" visible="@bind(browserWidgetVm.selectedClassifiedsViewVisible)"/>
+						</tabs>
+						<tabpanels hflex="1" vflex="1">
+							<tabpanel hflex="1" vflex="1">
+								<include src="@bind(browserWidgetVm.selectedProductView)"/>
+							</tabpanel>
+							<tabpanel hflex="1" vflex="1">
+								<include src="@bind(browserWidgetVm.selectedStoreView)"/>
+							</tabpanel>
+							<tabpanel hflex="1" vflex="1">
+								<include src="@bind(browserWidgetVm.selectedServiceView)"/>
+							</tabpanel>
+							<tabpanel hflex="1" vflex="1">
+								<!-- Include Classifieds -->
+							</tabpanel>
+						</tabpanels>
+					</tabbox>
+				</hbox>
+			</center>
+		</borderlayout>
+	</div>
+</zk>

@@ -1,0 +1,144 @@
+<?page title="Featured Products" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+
+<style>
+	 .sobie-buttonrnd {
+	display: block;
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff); 
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff); 
+  background-image: -ms-linear-gradient(top, #ffffff, #ffffff); 
+  background-image: -o-linear-gradient(top, #ffffff, #ffffff); 
+  color: #a7a7a7;
+  margin: 3px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 6px #aaa, inset 0px 1px 2px #fff;
+}
+.sobie-buttonrnd:hover {
+	text-decoration: none;
+  color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff); 
+}
+.sobie-buttonrnd:active {
+background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f9f9f9));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f9f9f9); 
+  background-image: -moz-linear-gradient(top, #fffffff, #f9f9f9); 
+  background-image: -ms-linear-gradient(top, #ffffff, #f9f9f9); 
+  background-image: -o-linear-gradient(top, #ffffff, #f9f9f9);
+	position:relative;
+	top:0px;
+   }
+.sobie-buttonrnd:before {
+content: "";
+  display: block;
+  background: #fff;
+  border-top: 2px solid #ddd;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  bottom: -7px;
+  right: -7px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: inset 0px 4px 12px #ddd;
+  }  
+  
+.sobie-buttonBG {
+  position: relative;
+  display: inline-block;
+  margin-right: -2px;
+} 
+
+.sobie-buttonBG:before {
+  content: "";
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  
+}
+
+.imgbox{
+	border: 1px solid #ddd;
+	margin: 3px;
+	color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff);
+border-radius: 4px;
+box-shadow: inset 0px 2px 12px #ddd;
+width: 125px;
+height: 125px;
+}
+
+.img{
+align:middel;
+display: block;
+border:1px #cccccc;
+margin: auto;
+padding:3px;
+max-width: 122px;
+max-height: 122px;
+vertical-align: middle;
+}
+
+.featurebox{
+margin: 3px;
+color: #373534;
+border: solid 1px #ddd;
+border-radius: 4px;
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+</style>
+	<hbox width="100%" style="margin-top:6px; margin-bottom:6px;">
+	<hbox hflex="1" >
+		<hbox height="240px" align="center" width="25px">
+			<image align="center" src="/resources/img/arrowleft.png"/>
+		</hbox>
+		<hbox hflex="1" align="center" children="@load(storeMainLayoutVm.storeMainLayout.featuredProductList) @template('featuredProductsBox')">
+			<template name="featuredProductsBox" var="featuredProducts">
+				<vbox sclass="featurebox" align="center" height="240px" >
+					<vbox align="center" width="135px" >
+						<label maxlength="12" value="@load(featuredProducts.prodName)" style="color:black;font-family:arial;font-size:16px" />
+					</vbox>
+					<hbox sclass="imgbox"><image sclass="img"  content="@load(featuredProducts.primaryImage)" onClick="@global-command('displayProductPage' , product=product)"/></hbox>
+					<label value="@load(featuredProducts.prodRetailPrice) @converter('formatedNumber', format='NAD ###,##0.00')" style="color:orange;font-family:arial;font-size:16px" />			
+					<hbox>
+						<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd" popup="View" label="" image="/resources/img/icons/sbe_view16.png" width="35px"/></hbox>
+					<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd" popup="Add to Cart" label="" image="/resources/img/icons/sbe_addcart16.png" width="35px" onClick="@command('addProductToShoppingCart', product=product) @global-command('refreshShoppingCartNotification')" apply="org.zkoss.bind.BindComposer" viewModel="@id('shoppingCartVM') @init('biz.sobie.web.viewmodel.ShoppingCartViewModel')"/></hbox>
+					<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd" popup="Add to Wishlist" label="" image="/resources/img/icons/sbe_addwishlist16.png" width="35px"/></hbox>
+					</hbox>	
+				</vbox >
+			</template>
+		</hbox>
+		<hbox height="240px" align="center" width="25px">
+			<image align="center" src="/resources/img/arrowright.png"/>
+		</hbox>
+	</hbox>
+	</hbox>
+</zk>

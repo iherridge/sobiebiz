@@ -1,0 +1,61 @@
+<?page title="Shopping Cart" contentType="text/html;charset=UTF-8"?>
+<window id="placeOrderWin" title="Verify Details" position="center" border="0" stubonly="true" 
+		apply="biz.sobie.web.controllers.ShoppingCartController" width="745px" height="460px" style="color:#606060;background:#FFFFFF">
+		
+	<hbox style="padding:5px; background-image:url('resources/img/bg_mySobielight.png');opacity:0.8;border-radius:10px;border:1px solid #c4c8cc" width="710px" height="410px">
+		<space/>
+		<space/>
+		<vbox spacing="10px">
+			<label value="Please enter/verify your payment details:"/>
+			<hbox>
+			<vbox spacing="15px">
+				<label value="Account Holder Name:"/>
+				<label value="Card Number:"/>
+				<label value="CSV:"/>
+				<label value="Card Expiry Date:"/>
+			</vbox>
+			<vbox>
+				<textbox id="accountHolderNameTextbox" width="200px" />
+				<textbox id="cardNumberTextbox" width="200px"/>
+				<textbox id="csvTextbox" width="200px"/>
+				<hlayout>
+					<combobox id="cardExpiryMonthCombobox" width="50px">
+						<comboitem label="01"/><comboitem label="02"/><comboitem label="03"/><comboitem label="04"/><comboitem label="05"/><comboitem label="06"/>
+						<comboitem label="07"/><comboitem label="08"/><comboitem label="09"/><comboitem label="10"/><comboitem label="11"/><comboitem label="12"/>
+					</combobox>
+					<combobox id="cardExpiryYearCombobox" width="50px">
+						<comboitem label="12"/><comboitem label="13"/><comboitem label="14"/><comboitem label="15"/><comboitem label="16"/><comboitem label="17"/>
+						<comboitem label="18"/><comboitem label="19"/><comboitem label="20"/><comboitem label="21"/><comboitem label="22"/><comboitem label="23"/>
+					</combobox>
+				</hlayout>
+			</vbox>
+			</hbox>
+			<space/>
+			<label value="Please enter/verify your delivery details:"/>
+			<hbox>
+			<vbox spacing="15px">
+				<label value="Address Line 1:"/>
+				<label value="Address Line 2:"/>
+				<label value="Suburb:"/>
+				<label value="City:"/>
+				<label value="Country"/>
+				<label value="Code"/>
+			</vbox>
+			<vbox>
+				<textbox id="addressLine1Textbox" width="200px" />
+				<textbox id="addressLine2Textbox" width="200px"/>
+				<textbox id="suburbTextbox" width="200px"/>
+				<textbox id="cityTextbox" width="200px"/>
+				<textbox id="countryTextbox" width="200px"/>
+				<textbox id="codeTextbox" width="200px"/>
+			</vbox>
+			</hbox>
+			<hlayout width="710px">
+			<hlayout width="525px"><space/><checkbox id="confirmOrderCheckbox" label="Please confirm that the above details are correct before continueing to the next step."></checkbox></hlayout>
+			<vbox>
+				<button id="placeOrderBtn" label="Place Order" style="color:white;background:orange" disabled="true"/>
+			</vbox>
+		</hlayout>
+		</vbox>
+	</hbox>
+</window>

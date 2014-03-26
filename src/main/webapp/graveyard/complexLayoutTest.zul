@@ -1,0 +1,105 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+    <style>
+    .silvergray .complex-layout,
+    .silvergray .complex-layout .z-south,
+    .silvergray .complex-layout .z-west {
+        background: #C5E6EF;
+    }
+    .breeze .complex-layout,
+    .breeze .complex-layout .z-south,
+    .breeze .complex-layout .z-west {
+        background: #F7F7F7;
+    }
+
+        .z-borderlayout {
+            background: #FFFFFF
+        }
+        .complex-layout .z-north {
+            background: #ffcf00 ;
+        }
+        img.complex-layout-header-img {
+            padding: 0 0px;
+        }
+        .complex-layout-header-label {
+            position: relative;
+            top: -30px;
+            padding-left: 40px;
+            font-size: 24px;
+            color: White;
+            font-weight: bold;
+        }
+        .inner-border,
+        .inner-border .z-north,
+        .inner-border .z-west,
+        .inner-border .z-south,
+        .inner-border .z-east {
+            background: #FFFFFF;
+        }
+        .dl-link {
+            text-decoration: none;
+            cursor: pointer;
+        }
+ 
+    </style>
+    <borderlayout sclass="complex-layout" height="810px">
+        <north size="90px" border="0">
+            <div>
+                <image sclass="complex-layout-header-img" src="/resources/Header.jpg" />
+            </div>
+        </north>
+        <!-- Sidebar -->
+        <west width="200px" border="0" flex="true" splittable="true" margins="0,5,0,0" collapsible="true">
+            <vlayout spacing="0">
+                <panel width="100%" border="normal" title="Browse Products">
+                    <panelchildren style="padding:5px;">
+                        <vbox>
+                            <toolbarbutton label="Computer Hardware" />
+                            <toolbarbutton label="PC's and Laptops" />
+                            <toolbarbutton label="Electronics" />
+                            <toolbarbutton label="Cameras" />
+                            <toolbarbutton label="Software" />
+                            <toolbarbutton label="Cell Phones" />
+                            <toolbarbutton label="Home and Outdoor" />
+                            <toolbarbutton label="Automitive" />
+                            <toolbarbutton label="Outlet" />
+                            <toolbarbutton label="More" />
+                        </vbox>
+                    </panelchildren>
+                </panel>
+            </vlayout>
+        </west>
+        <east width="130px" title="Advertise Here" flex="true" collapsible="true">
+            <vlayout>
+				<image  src="resources/img/defaults/defaultProductImage100x100.png"></image>
+				<image  src="resources/img/defaults/defaultProductImage100x100.png"></image>
+				<image  src="resources/img/defaults/defaultProductImage100x100.png"></image>
+				<image  src="resources/img/defaults/defaultProductImage100x100.png"></image>
+				<image  src="resources/img/defaults/defaultProductImage100x100.png"></image>
+				<image  src="resources/img/defaults/defaultProductImage100x100.png"></image>
+            </vlayout>
+        </east>
+        <!-- Content -->
+        <center>
+            <borderlayout sclass="inner-border" id="centerWorkspaceBorderlayout">
+                <center border="0" margins="0,3,3,3">
+                	<div>
+                		<hbox hflex="0"><combobox  buttonVisible="false" id="userSearchComboBox" apply="biz.sobie.web.controllers.TextboxSearchController" autodrop="true" width="300px"/><button label="Search" onClick="" /></hbox>
+	                    <panel id="topSellingProductsPanel" title="Top Selling Products" border="normal" height="1000px">
+	                        <panelchildren>
+	                        	<include id="productDisplayInc" src="/secure/productDisplay.zul" apply="biz.sobie.web.controllers.ProductController"/>
+								
+	                        </panelchildren>
+	                    </panel>
+                    </div>
+                </center>
+<!--                 <east border="0" width="50%" margins="0,0,3,3">
+                    <panel title="Customer Overview" border="normal" height="100%" hflex="1">
+                        <panelchildren>
+                        </panelchildren>
+                    </panel>
+                </east> -->
+            </borderlayout>
+        </center>
+    </borderlayout>
+</zk>

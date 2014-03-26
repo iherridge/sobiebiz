@@ -1,0 +1,42 @@
+<?page title="Add New Content Page" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div width="100%" align="left">
+	<vlayout hflex="1">
+		<label style="font-weight: bold" value="Add New Content Page"/>
+		<hbox width="100%" >
+			<cell hflex="2">
+				<label value="Use this page create a new content page that will be displayed in your store."/>
+			</cell>
+			<cell hflex="1" align="right" >
+				<button label="Save/Update" />
+				<button label="Cancel" />
+			</cell>
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%">
+		<tabs width="180px">
+			<tab label="Page Information" />
+			<tab label="Page Header" />
+			<tab label="SEO settings" />
+			<tab label="Page Content" />
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/store/contentPageNewPageInformation.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/store/contentPageNewPageHeader.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/store/contentPageNewSeoSettings.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/store/contentPageNewPageContent.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</div>
+</zk>

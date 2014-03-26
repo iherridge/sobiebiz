@@ -1,0 +1,80 @@
+<?page title="My Account" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox width="100%">
+		<cell align="right" hflex="min">
+			<a label="@bind(personalProfileVm.displayEditNonEditButton)" onClick="@command('editMyAccountDetails')" visible="@bind(personalProfileVm.personalProfile)"/>
+		</cell>
+		<grid style="border:none;margin:0px;padding:0px;" width="100%">
+			<columns>
+				<column label="" hflex="min"/>
+				<column label="" hflex="1"/>
+			</columns>
+			<rows>
+				<row>
+					<cell>
+						<label value="Date of birth:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Gendre:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Marital Status:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="E-mail Address:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Contact Number:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="VAT Number:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="ID Number:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Password:"/>
+					</cell>
+					<cell  >
+						<textbox value=""/>
+					</cell>
+				</row>
+			</rows>
+		</grid>
+	</vbox>
+</zk>

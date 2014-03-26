@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="productService" class="biz.sobie.web.services.ProductService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="customerAccountService" class="biz.sobie.web.services.CustomerAccountService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>	
+	
+	<bean id="messageService" class="biz.sobie.web.services.MessageService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>	
+
+	<bean id="orderService" class="biz.sobie.web.services.OrderService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>	
+	
+	<bean id="storeService" class="biz.sobie.web.services.StoreService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="serviceProviderService" class="biz.sobie.web.services.ServiceProviderService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="likeService" class="biz.sobie.web.likes.LikeService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+</beans>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?><?page title="Inventory Categories" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- DualBox -->
+<vbox width="100%" style="margin:0px;padding:5px;border:none;">
+	<cell align="right" hflex="1">
+		<button label="Save" onClick=""/>
+		<button label="Cancel" onClick=""/>
+	</cell>
+   	<hlayout style="padding:5px;">
+	   	<tree rows="7" multiple="true" checkmark="true" hflex="2">
+		    <treecols>
+		        <treecol label="Select Categories"/>
+		    </treecols>
+		    <treechildren>
+		        <treeitem>
+		            <treerow>
+		                <treecell label="Item 1"/>
+		            </treerow>
+		        </treeitem>
+		        <treeitem>
+		            <treerow>
+		                <treecell label="Item 2"/>
+		            </treerow>
+		            <treechildren>
+		                <treeitem>
+		                    <treerow>
+		                        <treecell label="Item 2.1"/>
+		                    </treerow>
+		                    <treechildren>
+		                        <treeitem>
+		                            <treerow>
+		                                <treecell label="Item 2.1.1"/>
+		                            </treerow>
+		                        </treeitem>
+		                        <treeitem>
+		                            <treerow>
+		                                <treecell label="Item 2.1.2"/>
+		                            </treerow>
+		                        </treeitem>
+		                    </treechildren>
+		                </treeitem>
+		                <treeitem>
+		                    <treerow>
+		                        <treecell label="Item 2.2"/>
+		                    </treerow>
+		                </treeitem>
+		            </treechildren>
+		        </treeitem>
+		        <treeitem label="Item 3"/>
+		    </treechildren>
+		</tree>
+	    <vbox spacing="10px" width="24px">
+	        <image style="cursor:pointer" id="chooseBtn" src="/resources/img/icons/sbe_arrowright.png" />
+	        <image style="cursor:pointer" id="removeBtn" src="/resources/img/icons/sbe_arrowleft.png" />       
+	    </vbox>
+	    <tree rows="7" multiple="true" checkmark="true" hflex="2">
+		    <treecols>
+		        <treecol label="Store Categories"/>
+		    </treecols>
+		    <treechildren>
+		        <treeitem>
+		            <treerow>
+		                <treecell label="Item 1"/>
+		            </treerow>
+		        </treeitem>
+		        <treeitem>
+		            <treerow>
+		                <treecell label="Item 2"/>
+		            </treerow>
+		            <treechildren>
+		                <treeitem>
+		                    <treerow>
+		                        <treecell label="Item 2.1"/>
+		                    </treerow>
+		                    <treechildren>
+		                        <treeitem>
+		                            <treerow>
+		                                <treecell label="Item 2.1.1"/>
+		                            </treerow>
+		                        </treeitem>
+		                        <treeitem>
+		                            <treerow>
+		                                <treecell label="Item 2.1.2"/>
+		                            </treerow>
+		                        </treeitem>
+		                    </treechildren>
+		                </treeitem>
+		                <treeitem>
+		                    <treerow>
+		                        <treecell label="Item 2.2"/>
+		                    </treerow>
+		                </treeitem>
+		            </treechildren>
+		        </treeitem>
+		        <treeitem label="Item 3"/>
+		    </treechildren>
+		</tree>
+	    <vbox spacing="10px" width="24px">
+	        <image style="cursor:pointer" id="upBtn" src="/resources/img/icons/sbe_arrowup.png" />
+	        <image style="cursor:pointer" id="downBtn" src="/resources/img/icons/sbe_arrowdown.png" />
+	    </vbox>
+	</hlayout>
+</vbox>
+
+<!-- <vbox hflex="1">
+	<vbox hflex="1">
+		<cell align="right" hflex="1">
+			<button label="Save" onClick=""/>
+			<button label="Cancel" onClick=""/>
+		</cell>
+		<cell hflex="1" align="left">
+			<tabbox hflex="1" id="tb" orient="vertical">
+			    <tabs width="180px">
+			        <tab label="Category Information" />
+			        <tab label="SEO Settings" />
+			        <tab label="Category Image" />
+			        <tab label="Category Description" />
+			    </tabs>
+			    <tabpanels hflex="1">
+			        <tabpanel  >
+						<include src="/secure/widgets/userDashboardWidget/inventory/categories/categoriesNewInformation.zul"/>
+			        </tabpanel >
+			        <tabpanel >
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/categories/categoriesNewSeo.zul"/>
+			        </tabpanel>
+			        <tabpanel >
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/categories/categoriesNewImage.zul"/>
+			        </tabpanel>
+			        <tabpanel >
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/categories/categoriesNewDescription.zul"/>
+			        </tabpanel>
+			    </tabpanels>
+			</tabbox>
+		</cell>
+	</vbox>
+Category List
+	<vlayout hflex="1">
+		<div align="left" hflex="1">
+			<separator orient="horizontal"  bar="true" />
+			<label value="Category List" />
+			<separator orient="horizontal"   bar="true" />
+		</div>
+		<hbox hflex="1">
+			<cell hflex="3">
+				<label  value="Use this page to manage your product and service categories (ex.
+				tshirts, pants, socks). Categories will be
+				displayed in your store as hierarchical groupings of products and services so
+				customers can easily find what they
+				are looking for."/>
+			</cell>
+			<cell hflex="1" align="right">
+				<button label="Add New Category" />
+			</cell>
+		</hbox>
+		<grid id="myProductGrid" fixedLayout="true" hflex="1">
+			<columns  hflex="1">
+				<column label="#" hflex="min"/>
+				<column label="Category Name" />
+				<column label="Description" />
+				<column label="Type" />
+				<column label="Order" />
+				<column label="Enabled" />
+				<column label="Action" hflex="min" />
+			</columns>
+		</grid>
+	</vlayout>
+</vbox> -->
+
+</zk>

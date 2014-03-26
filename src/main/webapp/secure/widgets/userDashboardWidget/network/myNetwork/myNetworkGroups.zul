@@ -1,0 +1,18 @@
+<?page title="My Network Groups" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox width="100%">
+	<cell align="right" hflex="1">
+		<button zclass="sobie-button" label="Add New Customer Group"/>
+	</cell>
+	<cell hflex="1">					
+	<grid fixedLayout="true" hflex="1">
+		<columns hflex="1">
+			<column label="All" hflex="min" />						
+			<column label="Group Name" />
+			<column label="Tax Classes" />
+			<column label="Action" hflex="min"/>
+			</columns>
+	</grid>
+	</cell>	
+</vbox>
+</zk>

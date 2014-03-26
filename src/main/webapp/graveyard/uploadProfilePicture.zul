@@ -1,0 +1,31 @@
+<?page title="Update Personal Details" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="updloadProfilePictureWin" position="center" title="Update Personal Details" border="0" stubonly="true"
+	 apply="biz.sobie.web.controllers.UpdatePersonalDetailsController" closable="true">
+	 <hbox style="color:white;background:#808080">
+	 <space/>
+	 <vbox>
+	 	<space/>
+	 	<label value="Please click on the image below to upload a profile"/>
+	 	picture to your Personal Profile:
+	 	<space/>
+	 	<image id ="profileImage"
+			src="/resources/img/defaults/defaultMaleProfilePic400x400.png"
+			tooltip="true" tooltiptext="Click on image to upload your own."
+			onUpload="event.getMedias();"
+   			onClick="Fileupload.get(-1);"
+   			width="300px" height="300px"/>
+	   	<zscript><![CDATA[
+		Executions.getCurrent().getDesktop().setAttribute("org.zkoss.zul.Fileupload.target", profileImage);
+	    ]]></zscript>
+	    <hbox>
+	    <button id="uploadProfilePictureBtn"
+	    		label="Skip" style="float: left;"
+				tooltip="true" tooltiptext="Upload a profile picture at a later stage."/>
+		</hbox>
+	 	<space/>      
+	 </vbox>
+	 <space/>
+	 </hbox>
+</window>
+</zk>

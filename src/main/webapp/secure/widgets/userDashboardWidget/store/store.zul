@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div id="subMenu" apply="biz.sobie.web.userdashboard.store.StoreCtrl">
+		<groupbox width="850px">
+			<div align="center">
+				<hlayout>
+					<a label="Overview" id="overviewBtn"/>
+					<a label="Settings" id="settingsBtn"/>
+					<a label="Store Locator" id="storeLocatorBtn"/>
+					<a label="Content Pages" id="contentPagesBtn"/>
+					<a label="Store Layout" id="storeLayoutBtn"/>
+					<a label="Styles" id="stylesBtn"/>
+					<a label="Store Widgets" id="storeWidgetsBtn"/>
+				</hlayout>
+			</div>
+		</groupbox>
+		<include id="storeContentArea" src="/secure/widgets/userDashboardWidget/store/storeOverview.zul"/>
+	</div>
+</zk>

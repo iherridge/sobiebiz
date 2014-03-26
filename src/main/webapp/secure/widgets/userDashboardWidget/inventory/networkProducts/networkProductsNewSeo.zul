@@ -1,0 +1,45 @@
+<?page title="Product SEO" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="200px">
+			Enter a SEO title for this product:
+		</hbox>
+		<hbox>
+			<textbox width="200px" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">
+			Enter Meta Keywords:
+		</hbox>
+		<hbox>
+			<textbox width="200px" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">
+			Enter Meta Description:
+		</hbox>
+		<hbox>
+			<textbox width="200px" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">
+			SEO friendly name for this product:
+		</hbox>
+		<hbox>
+			<textbox width="200px" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">
+			Use only characters a-z and 0-9. Use "-"
+			instead of spaces. Do not use a file
+			extension or parameters in your page
+			name.
+		</hbox>
+	</hlayout>
+</vbox>
+</zk>

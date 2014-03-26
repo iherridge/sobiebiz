@@ -1,0 +1,46 @@
+<?page title="Newsletter Subscribers" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox>
+		<hbox style="float:right">
+			<button zclass="sobie-button" label="Export" />
+			<button zclass="sobie-button" label="Add New Subscriber" />
+		</hbox>
+		<grid fixedLayout="true" width="810px">
+			<columns hflex="1">
+				<column label="All" width="30px" />
+				<column label="Name" />
+				<column label="Email" />
+				<column label="Newsletter" />
+				<column label="Subscribed"  />
+				<column label="Format" />
+				<column label="Enabled" />
+				<column label="Action"  />
+			</columns>
+			<rows>
+				<row>
+					<checkbox />
+					<label value="name" />
+					<label value="email" />
+					<label value="newsletter" />
+					<label value="dd/mm/yyyy" />
+					<label value="html/text" />
+					<label value="yes/no" />
+					<hbox>
+						<button zclass="sobie-buttonrnd"
+							tooltiptext="View Comment" label=""
+							image="/resources/img/icons/sbe_view16.png" />
+						<button zclass="sobie-buttonrnd"
+							tooltiptext="Publish" label=""
+							image="/resources/img/icons/sbe_wishlist16.png" />
+						<button zclass="sobie-buttonrnd"
+							tooltiptext="Delete" label=""
+							image="/resources/img/icons/sbe_delete16.png" />
+					</hbox>
+				</row>
+			</rows>
+		</grid>
+		<vbox align="center" width="810px">
+			<paging totalSize="100" pageSize="20" mold="default" />
+		</vbox>
+	</vbox>
+</zk>

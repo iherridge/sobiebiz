@@ -1,0 +1,316 @@
+<?page title="Product List" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+background: transparent;
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+}
+
+.z-borderlayout { background-color : transparent; padding:0px; margin:0px; }
+
+.z-north, .z-south, .z-west, .z-center, .z-east {
+background-color : transparent;
+border:0 none; padding:0px; margin:0px; }
+
+/*********************** IMAGE BOX *********************/
+
+.imgbox{
+	border: 1px solid #ddd;
+	margin: 3px;
+	color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff);
+border-radius: 4px;
+box-shadow: inset 0px 2px 12px #ddd;
+width: 110px;
+height: 110px;
+}
+
+.img{
+align:center;
+display: block;
+border:1px #cccccc;
+margin: auto;
+padding:3px;
+max-width: 100px;
+max-height: 100px;
+vertical-align: center;
+
+}
+
+/*********************** B U T T O N S *********************/
+
+.buttonRed {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#BC1815;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonRed:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonBlue {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#22C3EB;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonBlue:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonGreen {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#67B600;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonGreen:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonOrange {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:orange;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:5px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonOrange:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+
+</style>
+
+	<!-- <hbox width="100%">
+		<hbox hflex="min">
+			<hbox sclass="imgbox" align="center" >
+				<image sclass="img" width="100px"  content="@load(product.primaryImage)" style="margin:3px;" onClick="@global-command('displayProductPage' , product=product)"/>
+			</hbox >
+		</hbox>
+		<vbox hflex="2">
+			<hbox>
+				<label maxlength="50" value="@load(product.prodName)" style="color:black;font-family:arial;font-size:16px" />
+			</hbox>
+			<hbox align="start">
+				<hbox width="180px">
+					<label value="Att01:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+				<hbox width="180px">
+					<label value="Att02:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+			<hbox align="start">
+				<label value="Description:" style="color:grey;font-family:arial;font-size:12px" />
+			</hbox>
+			<hbox align="start">
+				<label value="Store:" style="color:grey;font-family:arial;font-size:12px" />
+			</hbox>
+			<hbox align="start">
+				<hbox width="180px">
+					<label value="Min Order:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+				<hbox width="180px">
+					<label value="Processing time:" style="color:grey;font-family:arial;font-size:12px" />
+				</hbox>
+			</hbox>
+			
+		</vbox>
+		<vbox align="right" hflex="1" vflex="min" >
+			<label value="@load(product.prodRetailPrice) @converter('formatedNumber', format='NAD ###,##0.00')" style="color:orange;font-family:arial;font-size:16px" />			
+			<hbox>
+				<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Add to Cart" label="" image="/resources/img/icons/sbe_addcart16.png" onClick="@command('addProductToShoppingCart', product=product) @global-command('refreshShoppingCartNotification')" apply="org.zkoss.bind.BindComposer" viewModel="@id('shoppingCartVM') @init('biz.sobie.web.viewmodel.ShoppingCartViewModel')"/></hbox>
+				<hbox align="center" zclass="sobie-buttonBG"><button zclass="sobie-buttonrnd"  tooltiptext="Add to Wishlist" label="" image="/resources/img/icons/sbe_addwishlist16.png" /></hbox>
+				<button zclass="sobie-buttonrnd" label="Add to Shop" onClick="@command('addProductToSellerShop', product=product)"  apply="org.zkoss.bind.BindComposer" viewModel="@id('inventoryNetworkProductsVM') @init('biz.sobie.web.userdashboard.inventory.InventoryNetworkProductsVm')"/>		
+			</hbox>	
+			<hbox>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+				<image src="/resources/img/icons/sbe-star16.png"/>
+			</hbox>
+			<hbox>
+			<label value="Comments" style="color:grey;font-family:arial;font-size:12px" />
+			<label value="(00)" style="color:grey;font-family:arial;font-size:12px" />
+			</hbox>
+			<hbox>
+			<label value="Likes" style="color:grey;font-family:arial;font-size:12px" />
+			<label value="(00)" style="color:grey;font-family:arial;font-size:12px" />
+			</hbox>
+		</vbox>
+	</hbox> -->
+	
+	
+<hbox width="100%">
+	<grid hflex="1" sclass="storeBack" style="border:none;margin:0px;padding:0px;" >
+		<columns width="100%">
+			<column label="" width="130px"/>
+			<column label="" width="100%"/>
+			<column label="" width="100px"/>
+		</columns>
+		<rows>
+			<row hflex="1">	
+				<cell hflex="min" width="20%" align="center">
+					<hbox sclass="imgbox" align="center" >
+						<image sclass="img" width="100px"  content="@load(product.primaryImage)" style="margin:3px;" onClick="@global-command('displayProductPage' , product=product)"/>
+					</hbox >
+				</cell>
+				<cell hflex="1" >
+					<grid  width="100%" style="border:none;marin:0px;padding:0px;">
+						<columns hflex="1">
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>
+							<column label="" hflex="1"/>							
+						</columns>
+						<rows hflex="1">
+							<row hflex="1">
+								<cell colspan="4">
+									<label maxlength="30" value="@load(product.prodName)" style="color:black;font-family:arial;font-size:14px" />
+								</cell>	
+								<cell colspan="2" align="right">
+									<label value="@load(product.prodRetailPrice) @converter('formatedNumber', format='NAD ###,##0.00')" style="color:orange;font-family:arial;font-size:14px" />
+								</cell>
+							</row>
+							<row hflex="1">
+								<cell>
+									<label value="Attributes:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell colspan="3">
+									<label value="Att01, Att02, Att03"/>
+								</cell>
+								<cell align="right" colspan="2">
+									<hbox >
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+										<image src="/resources/img/icons/sbe-star16.png"/>
+									</hbox>
+								</cell>
+							</row>
+							<row hflex="1">
+								<cell>
+									<label value="Store:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell colspan="3">
+									<label value="Store name "/>
+								</cell>
+								<cell align="right" colspan="2">
+									<label value="Comments" style="color:grey;font-family:arial;" />
+									<label value="(00)" style="color:grey;font-family:arial;" />			
+								</cell>
+							</row>
+							<row hflex="1">
+								<cell>
+									<label value="Min-Order:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell >
+									<label value="(00)"/>
+								</cell>
+								<cell hflex="1" >
+									<label tooltiptext="Processing time" value="Proc Time:" style="color:grey;font-family:arial;" />
+								</cell>
+								<cell align="left" >
+									<label value="days/hours"/>
+								</cell>
+								<cell align="right" colspan="2">
+									<label value="Likes" style="color:grey;font-family:arial;"/>
+									<space/>
+									<label value="@load(product.prodLikes)" style="color:grey;font-family:arial;" />
+								</cell>
+							</row>
+							<row>
+							</row>
+						</rows>
+					</grid>
+				</cell>
+				<cell hflex="1" align="center" width="10%">
+					<vbox hflex="1">
+						<button tooltiptext="Add to shoppingcart" sclass="buttonRed" label="Add to cart"  onClick="@command('addProductToShoppingCart', product=product) @global-command('refreshShoppingCartNotification')" apply="org.zkoss.bind.BindComposer" viewModel="@id('shoppingCartVM') @init('biz.sobie.web.viewmodel.ShoppingCartViewModel')" />
+						<!-- <button tooltiptext="Add to My Store" sclass="buttonOrange" label="Add to My Store" onClick="" /> -->
+						<button tooltiptext="Add to wishlist" sclass="buttonOrange" label="Add to wishlist" onClick="" />
+						<button tooltiptext="Like Product" sclass="buttonBlue" label="Like" onClick="@command('likeProduct', product=product)" />
+						<button tooltiptext="Share Product" sclass="buttonGreen" label="Share" onClick="" />
+					</vbox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</hbox>
+</zk>

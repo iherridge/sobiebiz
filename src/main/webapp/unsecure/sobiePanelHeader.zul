@@ -1,0 +1,128 @@
+<?page title="Sobie Panel Header" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<hlayout height="40px"
+		style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;">
+		<image id="sobieLogo" style="margin:5px; margin-top:5px;"
+			border="0" src="resources/img/sobieLogo.png" width="101"
+			height="30px" onClick="@global-command('refreshPage')" />
+	</hlayout>
+	<!-- Login -->
+	<vbox width="100%">
+		<hbox style="margin:5px;" hflex="1">
+			<div apply="org.zkoss.bind.BindComposer" viewModel="@id('searchBoxVm') @init('biz.sobie.web.searchbox.SearchBoxVm')">
+				<!-- <combobox style="border-radius:3px;background:none;color:white;" buttonVisible="false" id="searchComboBox" autodrop="false" width="210px" value="Search" /> -->
+				<bandbox id="bd"  mold="rounded" autodrop="true" width="210px" onChanging="@command('onChanging')">
+					<bandpopup>
+						<listbox height="100%" width="210px" mold="paging" pageSize="7"
+			                	onSelect="bd.value=self.selectedItem.label; bd.close();"
+			                	model="@load(searchBoxVm.searchedCustomers)"
+			                	visible="@bind(searchBoxVm.showPeopleList)">
+			                <listhead>
+			                    <listheader label="People" />
+			                </listhead>
+			                <template name="model" var="searchedCustomer">
+			                <listitem>
+		                		<listcell onClick="@global-command('openSearchedAccount', customer=searchedCustomer)">
+		                			<hbox hflex="1">
+			                			<cell align="left">
+			                				<image content="@bind(searchedCustomer.profileImage.AImage)" width="32px" height="32px"/>
+			                			</cell>
+			                			<cell align="left">
+			                				<label value="@load(searchedCustomer.fullName)"/>
+			                			</cell>
+			                		</hbox>
+		                		</listcell>
+			                </listitem>
+			                </template>
+			            </listbox>
+			            
+			            <listbox height="100%" width="210px" mold="paging" pageSize="7"
+			                	onSelect="bd.value=self.selectedItem.label; bd.close();"
+			                	model="@load(searchBoxVm.searchedProducts)"
+			                	visible="@bind(searchBoxVm.showProductList)">
+			                <listhead>
+			                    <listheader label="Products" />
+			                </listhead>
+			                <template name="model" var="searchedProduct">
+			                <listitem>
+		                		<listcell onClick="@global-command('displayProductPage', product=searchedProduct)">
+		                			<hbox hflex="1">
+			                			<cell align="left">
+			                				<image content="@bind(searchedProduct.productImage.AImage)" width="32px" height="32px"/>
+			                			</cell>
+			                			<cell align="left">
+			                				<label value="@load(searchedProduct.prodName)"/>
+			                			</cell>
+			                		</hbox>
+		                		</listcell>
+			                </listitem>
+			                </template>
+			            </listbox>
+			            <include src="/unsecure/widgets/adsWidget/adsWidget.zul"/>
+					</bandpopup>
+				</bandbox>
+			</div>
+		</hbox>
+		<hbox hflex="1">
+			<div id="loginDiv" visible="@bind(indexVM.loginDivVisible)" style="float:right">
+				<html style="color:red" if="${not empty param.login_error}">
+			      <![CDATA[
+			        Your login attempt was not successful, try again.<br/><br/>
+			        Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+			       ]]>
+			    </html>
+			 
+			    <h:form id="f" name="f" action="j_spring_security_check" method="POST" xmlns:h="native">
+			       	<hbox style="margin:5px"><cell style="color:white" width="70px">Email:</cell><cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true" constraint="/.+@.+\.[a-z]+/: e-mail address only"/> </cell></hbox>
+				    <hbox style="margin:5px"><cell style="color:white" width="70px">Password:</cell><cell><textbox hflex="1" id="p" type="password" name="j_password"/> </cell></hbox>
+			    	<hbox width="100%" align="end" style="margin:5px">
+			    		<label value="Remember me" style="color:grey"/>
+			    		<checkbox />
+			    		<h:input type="submit" value="Log in" />
+			    	</hbox>
+			    	<hbox width="100%" align="end" style="margin:5px">
+			    		<label value="Forgot password" style="color:grey"/>
+			    		<space/>
+			    		<label value="Sign up" style="color:grey"/>
+			    	</hbox>
+			    </h:form>
+			</div>
+		</hbox>
+	</vbox>
+	<hbox style="margin:5px" visible="@bind(indexVM.profileHeaderVisible)" apply="org.zkoss.bind.BindComposer" viewModel="@id('personalProfileVm') @init('biz.sobie.web.personalprofile.PersonalProfileVm')">
+		<vbox align="center">
+			<image width="64px" height="64px"
+				content="@bind(personalProfileVm.sobieProfile.customer.profileImage.AImage)" tooltip="changeImagePopup" />
+				<popup id="changeImagePopup" >
+					<button id="btnUpload" label="Upload/Change" upload="true" onUpload="@command('uploadChangeProfileImage') @global-command('refreshPersonalProfile')" />
+				</popup>
+		</vbox>
+		<vbox>
+			<hbox>
+				<label value="@bind(personalProfileVm.sobieProfile.customer.fullName)"
+					style="color:orange;font-family:arial;font-size:16px"
+					onClick="@global-command('openMyAccount')" />
+			</hbox>
+			<hbox>
+				<label style="color:white">Profile:</label>
+				<hbox>
+					<label style="color:grey" value="@bind(personalProfileVm.sobieProfile.account.accountType)"/>
+					<label style="color:grey" value="@bind(personalProfileVm.sobieProfile.account.accountPackage)"/>
+				</hbox>
+			</hbox>
+			<!-- <hbox>
+				<hbox width="70px">Progress:</hbox>
+				<hbox width="100px">
+				<label style="color:grey">(0-100%)</label>
+				</hbox>
+				</hbox> -->
+			<hbox>
+				<hbox width="70px">
+					<a label="Logout"
+						visible="@bind(indexVM.logoutAVisible)"
+						href="/j_spring_security_logout" style="float:right;color:grey" />
+				</hbox>
+			</hbox>
+		</vbox>
+	</hbox>
+</zk>

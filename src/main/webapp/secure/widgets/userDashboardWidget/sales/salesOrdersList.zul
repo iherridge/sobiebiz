@@ -1,0 +1,83 @@
+<?page title="Sales Orders" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<!-- Sales Orders View -->
+<vbox width="100%">
+	<include hflex="1" src="/secure/widgets/userDashboardWidget/sales/salesOrdersView.zul"/>
+</vbox>
+<separator orient="horizontal" bar="true" />
+<!-- Sales Order List -->
+<vbox width="100%">
+	<hbox hflex="1">
+		<cell hflex="2">
+			<label value="Use this page to manage all your sales orders received from your store."/>
+		</cell>
+		<cell hflex="1" align="right">
+			<button label="Create Order from Quotation" />
+		</cell>
+		<cell>
+			<button label="Create New Order" />
+		</cell>
+	</hbox>
+	<div align="left" hflex="1">
+		<separator orient="horizontal" bar="true" />
+		<label value="Sales Orders" />
+		<separator orient="horizontal" bar="true" />
+	</div>
+	<grid id="myProductGrid" fixedLayout="true" hflex="1">
+		<columns  hflex="1">
+			<column label="#" hflex="min" />
+			<column label="Purchased From" />
+			<column label="Purchase Date" />
+			<column label="Bill to" />
+			<column label="Ship to" />
+			<column label="Total Cost" />
+			<column label="Shipping" hflex="min" />
+			<column label="Tax" hflex="min" />
+			<column label="Sub-Total" hflex="min" />
+			<column label="Status" hflex="min" />
+			<column label="Action" hflex="min" />
+		</columns>
+	</grid>
+</vbox>
+
+
+<!-- 	<window width="790px">
+		<label style="font-weight: bold">Sales Orders</label>
+		<vlayout>
+			<hbox width="650px">
+				Use this page to manage all your sales orders received from your store.
+			</hbox>
+			<hbox style="float:right;padding-right:10px">
+				<button label="Create Order from Quotation" />
+				<button label="Create New Order" />
+			</hbox>
+		</vlayout>
+		<space />
+		<div align="left">
+			<separator orient="horizontal" width="790px" bar="true" />
+		</div>
+		<label value="Sales Orders List" />
+			<div align="left">
+			<separator orient="horizontal" width="790px" bar="true" />
+			</div>
+			<space />
+				<grid id="myProductGrid" fixedLayout="true" width="790px">
+					<columns hflex="1">
+						<column label="#" width="30px" />
+						<column label="Purchased from" width="110px" />
+						<column label="Purchased on" width="110px"/>
+						<column label="Bill to" />
+						<column label="Ship to" />
+						<column label="Total Cost" width="90px"/>
+						<column label="Total Shipping" width="90px"/>
+						<column label="Tax" width="50px"/>
+						<column label="Sub-Total" width="90px"/>
+						<column label="Status" />
+						<column label="Action" />
+					</columns>
+				</grid>
+			<space />
+		<separator orient="horizontal" width="790px" bar="true" />	
+	</window> -->
+</zk>

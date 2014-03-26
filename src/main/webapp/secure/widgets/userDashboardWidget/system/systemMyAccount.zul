@@ -1,0 +1,180 @@
+<?page title="My Account" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+	<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('personalProfileVm') @init('biz.sobie.web.personalprofile.PersonalProfileVm')">
+		
+		<vbox hflex="1" style="border:none;margin:0px;padding:0px;">
+			<grid hflex="1" span="true">
+				<columns hflex="1">
+					<column label="" hflex="min" />
+					<column label="" hflex="1"/>
+				</columns>
+				<rows>
+					<row>
+						<cell>
+							<image width="128px" height="128px"
+									content="@bind(personalProfileVm.customer.profileImage.AImage)" tooltip="@bind(personalProfileVm.changeImagePopup)"/>
+								<popup id="changeImagePopup">
+									<button id="btnUpload" label="Upload/Change" upload="true" onUpload="@command('uploadChangeProfileImage') @global-command('refreshPersonalProfile')"/>
+								</popup>
+						</cell>
+						<cell style="margin:0px;padding:0px;">
+							<grid style="border:none;margin:0px;padding:0px;" width="100%">
+								<columns>
+									<column label="" hflex="min"/>
+									<column label="" />
+									<column label=""/>
+									<column label="" hflex="min" />
+								</columns>
+								<rows>
+									<row visible="true">
+										<cell>
+											<label value="Username:"/>
+										</cell>
+										<cell colspan="2">
+											<label value="Mr." style="color:grey;"/>
+											<label value="@bind(personalProfileVm.customer.fullName)" style="color:grey;"/>
+										</cell>
+										<cell align="center">
+											<label value="update" style="color:blue;" visible="@bind(personalProfileVm.personalProfile)"/>
+										</cell>
+									</row>
+									<row visible="false">
+										<cell>
+											<label value="Username:"/>
+										</cell>
+										<cell colspan="2">
+											<combobox>
+												<comboitem label="Mr."/>
+												<comboitem label="Mrs."/>
+												<comboitem label="Ds."/>
+												<comboitem label="Dr."/>
+												<comboitem label="Miss."/>
+											</combobox>
+											<textbox value="@bind(personalProfileVm.customer.custFirstName)" style="color:grey;"/>
+											<textbox value="@bind(personalProfileVm.customer.custLastName)" style="color:grey;"/>
+										</cell>
+										<cell align="center">
+											<label value="update" style="color:blue;"/>
+										</cell>
+									</row>
+									<row visible="@bind(personalProfileVm.personalProfile)">
+										<cell>
+											<label value="Sobie profile:"/>
+										</cell>
+										<cell>
+											<label value="@bind(personalProfileVm.sobieProfile.account.accountType)" style="color:grey;"/>
+										</cell>
+										<cell>
+											<label value="@bind(personalProfileVm.sobieProfile.account.accountPackage)" style="color:grey;"/>
+										</cell>
+										<cell align="center">
+											<label value="upgrade" style="color:blue;"/>
+										</cell>
+									</row>
+									<row>
+										<cell>
+											<label value="Badges received:"/>
+										</cell>
+										<cell >
+											<label value="email confirmed" style="color:grey;"/>
+										</cell>
+										<cell >
+											<label value="payment details confirmed" style="color:grey;"/>
+										</cell>
+										<cell >
+											<label value="trusted profile user" style="color:grey;"/>
+										</cell>
+									</row>
+									<row>
+										<cell>
+											<label value="Account progress:"/>
+										</cell>
+										<cell colspan="2" >
+											<progressmeter hflex="1" value="60" />
+										</cell>
+										<cell align="center">
+											<label value="0 - 100 %" style="color:grey;"/>
+										</cell>
+									</row>
+								</rows>
+							</grid>
+						</cell>
+					</row>
+					<row>
+						<cell colspan="1" align="center">
+							<label value="More / Less"/>
+						</cell>
+						<cell align="right" hflex="min">
+							<button label="More Details"/>
+						</cell>
+					</row>
+					<row width="100%">
+						<cell colspan="2" align="left" hflex="1">
+							<include src="@bind(personalProfileVm.displayEditNonEdit)"/>
+						</cell>
+					</row>
+				</rows>
+			</grid>
+			<div>
+				<separator orient="horizontal" width="100%" bar="true" />
+			</div>
+			
+			<grid hflex="1">
+				<columns>
+					<column label="Newsfeed" hflex="min"/>
+				</columns>
+				<rows>
+					<row >
+						<cell>
+							<image width="64px" height="64px" src="resources/img/defaults/logoImage.png" />
+						</cell>
+						<cell style="margin:0px;padding:0px;">
+							<grid style="border:none;margin:0px;padding:0px;" width="100%">
+								<columns>
+									<column label="" hflex="min"/>
+									<column label="" hflex="1"/>
+									<column label="" hflex="min"/>
+								</columns>
+								<rows>
+									<row>
+										<cell >
+											<label value="Name:"/>
+										</cell>
+										<cell >
+											<label value="news / comment / link / event / status / image / url" style="color:grey;"/>
+										</cell>
+										<cell >
+											<label value="Like / Share / Remove " style="color:blue;"/>
+										</cell>
+									</row>
+								</rows>
+							</grid>
+						</cell>
+					</row>
+				</rows>
+			</grid>
+		</vbox>
+	</div>
+</zk>

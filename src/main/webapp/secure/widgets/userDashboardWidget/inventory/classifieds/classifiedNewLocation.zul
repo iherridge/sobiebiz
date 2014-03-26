@@ -1,0 +1,181 @@
+<?page title="Classified Location" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none;margin:5px">
+	<grid hflex="1"  style="margin:0px;padding:0px;border:none;">
+		<columns hflex="1">
+			<column label="" hflex="1" />
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows hflex="1">
+			<row>
+				<cell>
+					<label value="Street name:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>
+				<cell>
+					<checkbox/><label value="Display Yes/No"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Suburb:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>
+				<cell>
+					<checkbox/><label value="Display Yes/No"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="City / Town:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>
+				<cell>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Country:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>
+				<cell>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="3">
+					<div align="left">
+						<separator orient="horizontal"  bar="true" />
+					</div>
+					<label value="FIND ON MAP" />
+					<div align="left">
+						<separator orient="horizontal"  bar="true" />
+					</div>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="3">
+				<label value="Click the following button to find the latitude and longitude from the information provided above:"/>
+				<button label="Search" />
+				</cell>
+			</row>
+			<row>
+				<cell >
+					<label value="Latitude:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>
+				<cell>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Longetude:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" />
+				</cell>
+				<cell>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="3">
+					<hbox height="350px" hflex="1">
+					<script content="zk.googleAPIkey='AIzaSyCO3ulxtceaClLfXN1EkIek7nBkxc_Lsaw'" />
+						
+						<gmaps id="storeLocator" width="650px" height="350px" showZoomCtrl="true"  showTypeCtrl="true" 
+							onMapDrop="@command('mapDropEvent')" >
+							<gmarker open="false" 
+								iconImage="/resources/img/sbeGooglePins/seller.png"/>
+						</gmaps>
+					</hbox>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+<!-- <vbox style="border:none;margin:5px">
+	<vbox>
+		<label value="Service Location and Range" />
+		<div align="left">
+			<separator orient="horizontal" width="600px" bar="true" />
+		</div>
+	</vbox>
+	<space/>
+	<hlayout>
+		<hbox width="200px">Street Address:</hbox>
+		<hbox>
+			<textbox width="250px" />
+			<checkbox/><label value="Display Yes/No"/>
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="200px">Suburb:</hbox>
+		<hbox>
+			<textbox width="250px" />
+			<checkbox/><label value="Display Yes/No"/>
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="200px">City / Town:</hbox>
+		<hbox>
+			<textbox width="250px" />
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="200px">Country:</hbox>
+		<hbox>
+			<textbox width="250px" />
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="200px">Coordinates:</hbox>
+		<hbox>
+			<textbox value="Latt" width="100px" />
+			<textbox value="Long" width="100px" />
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout width="700px" height="300px">
+		<hbox>
+			<script content="zk.googleAPIkey='ABQIAAAAyzTIYf0eTY4hnP9f0-xE_hT2JwPNsCeACyDpmMMjX1b3GwetTxTifiQT0OeRXLaMS099tAo_CnNwlg'" />
+			<gmaps ></gmaps>
+		</hbox>
+	</hlayout>
+</vbox> -->
+</zk>

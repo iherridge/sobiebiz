@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="username" value="root"></property>
+        <property name="password" value="sobiebiz"></property>
+        <property name="url" value="jdbc:mysql://localhost:9506/sbedev01">
+        </property>
+    </bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+	<bean id="myUserDetailsService" class="biz.sobie.web.security.MyUserDetailsService"> 
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+		
+	<bean id="productService" class="biz.sobie.web.services.ProductService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="customerAccountService" class="biz.sobie.web.services.CustomerAccountService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>	
+	
+	<bean id="messageService" class="biz.sobie.web.services.MessageService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>	
+
+	<bean id="orderService" class="biz.sobie.web.services.OrderService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>	
+	
+	<bean id="storeService" class="biz.sobie.web.services.StoreService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="serviceProviderService" class="biz.sobie.web.services.ServiceProviderService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="likeService" class="biz.sobie.web.likes.LikeService">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	</bean>
+	
+	<bean id="product" class="biz.sobie.web.beans.Product" />
+	<bean id="userWorkspace" class="biz.sobie.web.beans.UserWorkspace" />
+	<bean id="messageBoxBean" class="biz.sobie.web.beans.MessageBoxBean"/>
+</beans>

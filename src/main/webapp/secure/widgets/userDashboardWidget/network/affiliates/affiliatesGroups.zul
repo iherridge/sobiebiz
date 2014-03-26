@@ -1,0 +1,35 @@
+<?page title="Affiliate Groups" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+</style>
+<vbox width="100%">
+	<cell style="float:right;padding-right:1px" hflex="1">
+		<button zclass="sobie-button" label="Add New Affiliate Group"/>
+	</cell>						
+	<grid fixedLayout="true" width="100%" hflex="1">
+		<columns hflex="1">
+			<column label="All" hflex="min" />						
+			<column label="Group Name" />
+			<column label="Tax Classes" />
+			<column label="Action"/>
+			</columns>
+	</grid>
+</vbox>
+</zk>

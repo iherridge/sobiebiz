@@ -1,0 +1,37 @@
+<?page title="System Tabbed Panel" contentType="t	ext/html;charset=UTF-8"?>
+<zk>
+<div width="100%" align="left">
+	<vbox align="start"  >
+		<label style="font-weight: bold">System</label>
+		<hbox>
+			Use this page to view and configure your sytem information and settings
+		</hbox>
+	</vbox>
+	<div align="left" width="100%">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%" >
+		<tabs width="180px">
+			<tab label="My Account" />
+			<tab label="System Messages" />
+			<tab label="Task Notifications" />
+			<tab label="Users" />
+			
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/system/systemMyAccount.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/system/systemMessages.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/system/systemTaskNotifications.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/system/systemUsers.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</div>
+</zk>

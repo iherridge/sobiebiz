@@ -1,0 +1,110 @@
+<?page title="New Page Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Enter a descriptive name for this page:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeContentPageVm.addUpdateStoreContentPage.pageName)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Page Title:"/>
+				</cell>
+				<cell>
+					<textbox width="40%" value="@bind(storeContentPageVm.addUpdateStoreContentPage.pageTittle)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Select perant page:"/>
+				</cell>
+				<cell>
+					<combobox width="40%" >
+						<comboitem label="Perant page 01"/>
+						<comboitem label="Perant page 01"/>
+					</combobox>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<label value="Publish:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes/No" checked="@bind(storeContentPageVm.addUpdateStoreContentPage.pageEnabled)"/>
+				</cell>	
+			</row>
+		</rows>
+	</grid>
+
+
+
+<!-- 	<space/>
+	<hlayout>
+		<hbox width="250px">Enter a descriptive name for this page:</hbox>
+			<hbox>
+				<textbox width="250px" value="@bind(storeContentPageVm.addUpdateStoreContentPage.pageName)"/>
+			</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="250px">Enter a title for this page:</hbox>
+		<hbox>
+			<textbox width="250px" value="@bind(storeContentPageVm.addUpdateStoreContentPage.pageTittle)"/>
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="250px">Select Perant:</hbox>
+		<hbox>
+			<combobox width="200px" selectedItem="@bind(storeContentPageVm.addUpdateStoreContentPage.pageParentId)">
+				<template name="model">
+					<comboitem
+						label="Publish Immediately">
+					</comboitem>
+					<comboitem
+						label="Require Admin Approval">
+					</comboitem>
+				</template>
+			</combobox>
+		</hbox>
+	</hlayout>
+	<space/>
+	<hlayout>
+		<hbox width="250px">Enabled:</hbox>
+		<hbox>
+			<checkbox label="Yes/No" checked="@bind(storeContentPageVm.addUpdateStoreContentPage.pageEnabled)"/>
+		</hbox>
+	</hlayout>
+	<space/> -->
+</zk>

@@ -1,0 +1,100 @@
+<?page title="Add New Content Page" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('storeContentPageVm') @init('biz.sobie.web.store.StoreContentPageVm')">
+		<vlayout hflex="1">
+		<label style="font-weight: bold" value="Add New Content Page"/>
+		<hbox width="100%" >
+			<cell hflex="2">
+				<label value="Use this page create a new content page that will be displayed in your store."/>
+			</cell>
+			<cell hflex="1" align="right" >
+				<button label="Preview" onClick="@command('switchToPreviewContentPage')" visible="@bind(storeContentPageVm.previewContentPageButton)"/>
+				<button label="Edit" onClick="@command('switchToEditContentPage')" visible="@bind(storeContentPageVm.contentPageEditorButton)"/>
+				<button label="Save/Update" onClick="@command('addUpdateContentPage') @global-command('openStoreContentPages')"/>
+				<button label="Cancel" onClick="@global-command('openStoreContentPages')"/>
+			
+			</cell>
+		</hbox>
+	</vlayout>
+		
+		<!-- <label style="font-weight: bold">Add New Content Page</label>
+		<vlayout  width="1006px">
+			<hbox>
+				Use this page create a new content page that will be displayed in your store.
+			</hbox>
+			<hbox style="float:right;padding-right:1px">
+				<button label="Preview" onClick="@command('switchToPreviewContentPage')" visible="@bind(storeContentPageVm.previewContentPageButton)"/>
+				<button label="Edit" onClick="@command('switchToEditContentPage')" visible="@bind(storeContentPageVm.contentPageEditorButton)"/>
+				<button label="Save/Update" onClick="@command('addUpdateContentPage') @global-command('openStoreContentPages')"/>
+				<button label="Cancel" onClick="@global-command('openStoreContentPages')"/>
+			</hbox>
+		</vlayout> -->
+		<div hflex="1" visible="@bind(storeContentPageVm.contentPageEditorEnabled)">
+			<div align="left" hflex="1">
+				<separator orient="horizontal" hflex="1" bar="true" />
+			</div>
+			<tabbox orient="vertical" width="100%">
+				<tabs width="180px">
+					<tab label="Page Information" />
+					<tab label="Page Header" />
+					<tab label="SEO settings" />
+					<tab label="Page Content" />
+				</tabs>
+				<tabpanels >
+					<tabpanel >
+						<include src="/secure/widgets/userDashboardWidget/store/contentPageNewPageInformation.zul"/>
+					</tabpanel>
+					<tabpanel>
+						<include src="/secure/widgets/userDashboardWidget/store/contentPageNewPageHeader.zul"/>
+					</tabpanel>
+					<tabpanel>
+						<include src="/secure/widgets/userDashboardWidget/store/contentPageNewSeoSettings.zul"/>
+					</tabpanel>
+					<tabpanel>
+						<include src="/secure/widgets/userDashboardWidget/store/contentPageNewPageContent.zul"/>
+					</tabpanel>
+				</tabpanels>
+			</tabbox>
+		</div>
+		<cell hflex="1" visible="@bind(storeContentPageVm.previewContentPageEnabled)">
+			<borderlayout height="700px" width="100%">
+				<west collapsible="true" width="180px" title=" ">
+					<hbox width="180px">
+						<include src="/unsecure/widgets/storeMainLayoutWidget/storeBrowserWidget/storeBrowserLeftWidgetColumn.zul" />
+					</hbox >
+				</west>
+				<center hflex="1">
+					<hbox hflex="1">
+						<vbox width="100%" align="center">
+							<image width="670px" height="115px" content="@bind(storeContentPageVm.addUpdateStoreContentPage.storeContentPageHeaderImage.AImage)"/>
+							<window width="690px">
+								<html content="@bind(storeContentPageVm.addUpdateStoreContentPage.pageContent)" />
+							</window>
+						</vbox>
+					</hbox>
+				</center>
+			</borderlayout>	
+		</cell>
+<!-- 		<cell >
+			<window>
+				<borderlayout height="700px" width="880px">
+					<center>
+						<hbox style="margin-left:3px" width="690px">
+							<vbox width="100%" align="center">
+								<image width="670px" height="115px" content="@bind(storeContentPageVm.addUpdateStoreContentPage.storeContentPageHeaderImage.AImage)"/>
+								<window width="690px">
+									<html content="@bind(storeContentPageVm.addUpdateStoreContentPage.pageContent)" />
+								</window>
+							</vbox>
+						</hbox>
+					</center>
+					<east collapsible="true" width="180px" splittable="true">
+						<hbox style="margin-right:3px" width="180px">
+							<include src="/unsecure/widgets/storeMainLayoutWidget/storeBrowserWidget/storeBrowserLeftWidgetColumn.zul" />
+						</hbox >
+					</east>
+				</borderlayout>	
+			</window>
+		</cell> -->
+	</vbox>
+</zk>

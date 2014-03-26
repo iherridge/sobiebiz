@@ -1,0 +1,78 @@
+<?page title="Classified Price and Qty" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none; margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Price:"/>
+				</cell>
+				<cell>
+					<textbox width="60%" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Quantity Available:"/>
+				</cell>
+				<cell>
+					<textbox width="60%" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enable Add to cart:"/>
+				</cell>
+				<cell>
+					<checkbox label="" checked=""/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+<!-- <vbox style="border:none; margin:5px;">
+		<hlayout>
+			<hbox width="300px">Price:</hbox>
+			<hbox>
+				<doublebox width="100px" />
+			</hbox>									
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">Qty:</hbox>
+			<hbox>
+				<doublebox width="100px" />
+			</hbox>									
+		</hlayout>
+		<hlayout>
+			<hbox width="200px">
+				Enable Add to Chart:
+				<checkbox label="" />
+			</hbox>
+		</hlayout>
+	</vbox> -->
+</zk>

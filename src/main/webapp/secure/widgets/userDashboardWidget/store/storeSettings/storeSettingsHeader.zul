@@ -1,0 +1,65 @@
+<?page title="Store Header" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+	<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell colspan="2" width="100%" align="center" >
+					<image width="800px" height="120px" content="@bind(storeSettingsVm.storeSettings.storeIndexMainHeaderImage.AImage)"/>
+				</cell>	
+			</row>
+			<row>
+				<cell>
+					<button id="btnUpload"  label="Upload / Change" upload="true" onUpload="@command('uploadStoreIndexMainHeader')" />
+				</cell>
+				<cell>
+					<label value="Size: 800x120 pixels" style="color:grey;"/>
+					<space/>
+					<label value="Format: (.jpg, .gif, .png, .pdf)" style="color:grey;"/>
+				</cell>		
+			</row>
+		</rows>
+	</grid>
+
+<!-- 		<vbox >
+			<hbox>
+				<image width="650px" height="100px" content="@bind(storeSettingsVm.storeSettings.storeIndexMainHeaderImage.AImage)"/> 
+			</hbox>
+			<vbox width="650px">
+				<hbox>
+					<textbox width="200px" />
+					<button label="select" />
+					<button id="btnUpload"  label="Upload / Change" upload="true" onUpload="@command('uploadStoreIndexMainHeader')" />
+				</hbox>
+				<space />
+				<hbox>Size: 800x120 pixels</hbox>
+				<hbox>Format: (.jpg, .gif, .png, .pdf)</hbox>
+			</vbox>
+		</vbox> -->
+</zk>

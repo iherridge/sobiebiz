@@ -1,0 +1,15 @@
+<?page title="Welcome to Sobie.biz"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+		<borderlayout id="mainPage" apply="biz.sobie.web.controllers.IndexController" visible="false">
+			<west id="indexWest" border="0"/>
+	
+			<center apply="org.zkoss.bind.BindComposer" viewModel="@id('indexVM') @init('biz.sobie.web.viewmodel.IndexViewModel')">
+					<include id="centerPageLayout"
+						src="/unsecure/centerPageLayout/centerPageLayout.zul"/>
+			</center>
+	
+			<east id="indexEast" border="0"/>
+		</borderlayout>
+</zk>
+

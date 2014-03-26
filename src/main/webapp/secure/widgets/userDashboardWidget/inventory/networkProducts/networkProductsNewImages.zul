@@ -1,0 +1,14 @@
+<?page title="Product Images" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<groupbox>
+		<hlayout
+			children="@load(networkProductsVm.selectedProduct.imageCatalog) @template('greenBox')">
+			<template name="greenBox" var="productImage">
+				<image content="@load(productImage.AImage)"
+					width="100px" height="100px" />
+			</template>
+		</hlayout>
+	</groupbox>
+</vbox>
+</zk>

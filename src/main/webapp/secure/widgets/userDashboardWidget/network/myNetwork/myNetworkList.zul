@@ -1,0 +1,103 @@
+<?page title="My Network List" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<style>
+	 .sobie-buttonrnd {
+	display: block;
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #ffffff, #ffffff); 
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff); 
+  background-image: -ms-linear-gradient(top, #ffffff, #ffffff); 
+  background-image: -o-linear-gradient(top, #ffffff, #ffffff); 
+  color: #a7a7a7;
+  margin: 3px;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  box-shadow: 0px 1px 6px #aaa, inset 0px 1px 2px #fff;
+}
+.sobie-buttonrnd:hover {
+	text-decoration: none;
+  color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff); 
+}
+.sobie-buttonrnd:active {
+background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f9f9f9));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f9f9f9); 
+  background-image: -moz-linear-gradient(top, #fffffff, #f9f9f9); 
+  background-image: -ms-linear-gradient(top, #ffffff, #f9f9f9); 
+  background-image: -o-linear-gradient(top, #ffffff, #f9f9f9);
+	position:relative;
+	top:0px;
+   }
+.sobie-buttonrnd:before {
+content: "";
+  display: block;
+  background: #fff;
+  border-top: 2px solid #ddd;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  bottom: -7px;
+  right: -7px;
+  z-index: -1;
+  border-radius: 50%;
+  box-shadow: inset 0px 4px 12px #ddd;
+  }  
+  
+.sobie-buttonBG {
+  position: relative;
+  display: inline-block;
+  margin-right: -2px;
+} 
+
+.sobie-buttonBG:before {
+  content: "";
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  
+}
+</style>
+<vbox width="100%">						
+	<grid fixedLayout="true" hflex="1" height="100%">
+		<columns  hflex="1">
+			<column label="All" hflex="min" />			
+			<column label="Name" />
+			<column label="Email" />
+			<column label="Group" />
+			<column label="Location" />
+			<column label="Joined" />
+			<column label="Action" hflex="min" />
+		</columns>
+		<rows>					
+			<row>
+				<checkbox checked="false"/>
+				<label value="Name"/>
+				<label value="Email"/>
+				<label value="Group"/>
+				<label value="Location"/>
+				<label value="dd/mm/yyyy"/>				
+				<hbox><button zclass="sobie-buttonrnd"  tooltiptext="Send Message" label="" image="/resources/img/icons/sbe_messages16.png" />
+				<button zclass="sobie-buttonrnd" tooltiptext="View Profile" label="" image="/resources/img/icons/sbe_view16.png"/>
+				<button zclass="sobie-buttonrnd" tooltiptext="Request Affiliation" label="" image="/resources/img/icons/sbe_addaffiliate16.png"/>
+				</hbox>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+</zk>

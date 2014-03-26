@@ -1,0 +1,100 @@
+<?page title="Services" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- Tabbed Page -->
+	<div width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('inventoryServicesVm') @init('biz.sobie.web.inventoryservices.InventoryServicesVm')">
+		<vbox width="100%" visible="@bind(inventoryServicesVm.addUpdateService)">
+			<cell hflex="1" align="right">
+				<button label="Save" onClick="@command('saveUpdateService')"/>
+				<button label="Cancel" onClick="@command('cancelAddNewService')"/>
+			</cell>
+			<tabbox hflex="1" id="tb" orient="vertical">
+			    <tabs width="180px">
+			        <tab label="Service Information" />
+			        <tab label="SEO" />
+			        <tab label="Prices and Rates" />
+			        <tab label="Operating Hours" />
+			        <tab label="Location and Range" />
+			        <tab label="Images" />
+			        <tab label="Video" />
+			        <tab label="Description" />
+			        <tab label="Related Products" />
+			        <tab label="Related Services" />
+			    </tabs>
+			    <tabpanels hflex="1">
+			        <tabpanel>
+						<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewInformation.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewSeo.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewPrices.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewHours.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewLocation.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewImages.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewVideo.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewDescription.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewRelatedProducts.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/services/servicesNewRelatedServices.zul"/>
+			        </tabpanel>
+			    </tabpanels>
+			</tabbox>
+		</vbox>
+		<!-- Service List -->
+		<vbox width="100%">
+			<div align="left" hflex="1">
+				<separator orient="horizontal" bar="true" />
+				<label value="Service List" />
+				<separator orient="horizontal" bar="true" />
+			</div>
+			<hbox hflex="1">
+				<cell hflex="2">
+					<label value="Use this page to manage the services in your store."/>
+				</cell>
+				<cell hflex="1" align="right">
+					<button label="Add New Service" onClick="@command('addNewService')"/>
+				</cell>
+			</hbox>
+			<grid fixedLayout="true" hflex="1" model="@load(inventoryServicesVm.storeServices)">
+				<columns  hflex="1">
+					<column label="Service Name" />
+					<column label="Category" />
+					<column label="Location" />
+					<column label="Rate" />
+					<column label="Enabled" />
+					<column label="Action" hflex="min" />
+				</columns>
+				<rows>
+					<template name="model" var="storeService">
+						<row>
+							<label value="@load(storeService.servName)"/>
+							<label value="@load(storeService.servCategory)"/>
+							<label value="???"/>
+							<label value="@load(storeService.servFixedPrice)"/>
+							<label value="@load(storeService.servEnabled)"/>
+							<hbox>
+								<!-- <a label="@load(ownedProduct.prodStatusLinkName)" onClick="@command('activateProduct', product=ownedProduct)"/> / --> 
+								<a label="edit" onClick="@command('editService', service=storeService)"/> /
+								<a label="delete" onClick="@command('deleteService', service=storeService)" popup="Delete service from store?"/>
+							</hbox>
+						</row>
+					</template>
+				</rows>
+			</grid>
+		</vbox>
+	</div>
+</zk>

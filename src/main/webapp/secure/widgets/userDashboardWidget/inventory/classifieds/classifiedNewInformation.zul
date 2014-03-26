@@ -1,0 +1,151 @@
+<?page title="Classiefied Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none;margin:5px;">
+	<grid hflex="1">
+		<columns>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>	
+				<cell>
+					<label value="Select Package:"/>
+				</cell>	
+				<cell colspan="2">
+					<combobox width="60%" value="3 Classifieds/month">
+						<template name="model">
+							<comboitem label="Package 01" />
+							<comboitem label="Package 02" />
+						</template>
+					</combobox>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Start Date:"/>
+				</cell>	
+				<cell colspan="2">
+					<datebox width="60%" />
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Your add expires in "/><label value="(00)" style="color: grey;"/>days
+				</cell>	
+				<cell colspan="2">
+					<label value="dd/mm/yyyy hh:mm" style="color: grey;" width="60%" />
+				</cell>
+			</row>
+			<row>
+				<cell colspan="3">
+					<separator orient="horizontal" hflex="1" bar="true" />
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Classified name:"/>
+				</cell>	
+				<cell colspan="2">
+					<textbox width="60%" value=""/>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Reference #:"/>
+				</cell>	
+				<cell colspan="2">
+					<textbox width="60%" value=""/>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Select Category:"/>
+				</cell>	
+				<cell colspan="2">
+					<combobox width="60%">
+						<template name="model">
+							<comboitem label="Store Cat 01" />
+							<comboitem label="Store Cat 02" />
+						</template>
+					</combobox>
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value="Attributes:"/>
+				</cell>	
+				<hbox hflex="1">
+					<combobox value="Att Set" hflex="1">
+						<template name="model">
+							<comboitem label="Set 01" />
+							<comboitem label="Set 02" />
+						</template>
+					</combobox>
+					<combobox value="Option" hflex="1">
+						<template name="model">
+							<comboitem label="Option 01" />
+							<comboitem label="Option 02" />
+						</template>
+					</combobox>
+				</hbox>
+				<cell hflex="1" align="left">
+					<button label="-" />
+				</cell>
+			</row>
+			<row>	
+				<cell>
+					<label value=""/>
+				</cell>	
+				<hbox hflex="1">
+					<combobox value="Att Set" hflex="1">
+						<template name="model">
+							<comboitem label="Set 01" />
+							<comboitem label="Set 02" />
+						</template>
+					</combobox>
+					<combobox value="Option" hflex="1">
+						<template name="model">
+							<comboitem label="Option 01" />
+							<comboitem label="Option 02" />
+						</template>
+					</combobox>
+				</hbox>
+				<cell hflex="1" align="left">
+					<button label="+" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enabled:"/>
+				</cell>
+				<cell colspan="2" align="left">
+					<checkbox id="as" label="Yes/No"
+				checked="" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+</zk>

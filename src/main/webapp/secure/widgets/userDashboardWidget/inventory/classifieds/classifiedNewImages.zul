@@ -1,0 +1,71 @@
+<?page title="Classified Images" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+
+<vbox hflex="1" style="border:none;margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+		</columns>
+		<rows hflex="1">
+			<row>	
+				<cell hflex="1">
+					<label value="Upload a suitable mage for your service. Only JPG, GIF and PNG images
+					are supported. The file size should be less than 1.5MB. Your image will
+					automatically be scaled so it displays in the catalogue."/>
+				</cell>
+			</row>
+			<row>
+				<cell align="right" hflex="1">
+					<button label="Upload Now" upload="true" onUpload="" />
+				</cell>
+			</row>
+			<row>
+				<groupbox hflex="1">
+					<hlayout>
+						<template name="greenBox" var="">
+							<image width="100px" height="100px" />
+						</template>
+					</hlayout>
+				</groupbox>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+
+<!-- <vbox style="border:none;margin:5px;">
+<vlayout>
+	 Upload a suitable image for your product. Only JPG, GIF and PNG images are supported. The file size should be less than 1.5MB. Your image will automatically be scaled so it displays in the catalog
+	<button id="btnUpload" label="Upload Now" upload="true" onUpload="@command('uploadProductImage')" />
+	<space />
+	<groupbox>
+		<hlayout children="@load(inventoryProductsVm.addUpdateProduct.imageCatalog) @template('greenBox')">
+			<template name="greenBox" var="productImage">
+			    <image content="@load(productImage.AImage)" width="100px" height="100px"/>
+			</template>
+		</hlayout>
+	</groupbox>
+</vlayout>
+</vbox> -->
+</zk>

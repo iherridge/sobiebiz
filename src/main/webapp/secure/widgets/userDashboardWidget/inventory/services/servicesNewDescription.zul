@@ -1,0 +1,30 @@
+<?page title="Service Description" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<label>Full Service Description:</label>
+		<ckeditor
+			value="@bind(inventoryServicesVm.selectedService.servDesc)" />
+	
+		<space />
+		<vbox>
+			<label>Service Features:</label>
+			<label>
+				Add product features here to have a "Features" tab be
+				displayed on the product page
+			</label>
+		</vbox>
+		<ckeditor
+			value="@bind(inventoryServicesVm.selectedService.servFeatures)" />
+	
+		<space />
+		<vbox>
+			<label>Service Specification:</label>
+			<label>
+				Add product features here to have a "Specifications" tab be
+				displayed on the product page
+			</label>
+		</vbox>
+		<ckeditor
+			value="@bind(inventoryServicesVm.selectedService.servSpecification)" />
+</vbox>
+</zk>

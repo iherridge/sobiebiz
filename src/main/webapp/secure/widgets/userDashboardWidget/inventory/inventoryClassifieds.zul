@@ -1,0 +1,77 @@
+<?page title="Classiefieds List" contentType="text/html;charset=UTF-8"?>
+<zk>
+<!-- Tabbed Page -->
+	<div width="100%" >
+		<vbox width="100%">
+			<cell hflex="1" align="right">
+				<button label="Save" onClick=""/>
+				<button label="Cancel" onClick=""/>
+			</cell>
+			<tabbox hflex="1" id="tb" orient="vertical">
+			    <tabs width="180px" >
+			        <tab label="Classified Information" />
+			        <tab label="SEO" />
+			        <tab label="Price and Qty" />
+			        <tab label="Location" />
+			        <tab label="Shipping" />
+			        <tab label="Images" />
+			        <tab label="Video" />
+			        <tab label="Description" />
+			    </tabs>
+			    <tabpanels hflex="1" vflex="1">
+			        <tabpanel>
+						<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewInformation.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewSeo.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewPriceQty.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewLocation.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewShipping.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewImages.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewVideo.zul"/>
+			        </tabpanel>
+			        <tabpanel>
+			        	<include src="/secure/widgets/userDashboardWidget/inventory/classifieds/classifiedNewDescription.zul"/>
+			        </tabpanel>
+			    </tabpanels>
+			</tabbox>
+		</vbox>
+		<!-- Classified List -->
+		<vbox width="100%">
+			<div align="left" hflex="1">
+				<separator orient="horizontal"  bar="true" />
+				<label value="Classifieds List" />
+				<separator orient="horizontal"  bar="true" />
+			</div>
+				<hbox hflex="1">
+					<cell hflex="1">
+						<label value="Use this page to manage the Classified Ads."/>
+					</cell>
+					<cell align="right" hflex="1">
+						<button label="Add New Classified" />
+					</cell>
+				</hbox>
+			<grid fixedLayout="true" hflex="1">
+				<columns  hflex="1">
+					<column label="#" hflex="min"/>
+					<column label="Name" />
+					<column label="Location" />
+					<column label="Price" />
+					<column label="Qty" />
+					<column label="Enabled" />
+					<column label="Action" hflex="min"/>
+				</columns>
+			</grid>
+		</vbox>
+	</div>
+</zk>

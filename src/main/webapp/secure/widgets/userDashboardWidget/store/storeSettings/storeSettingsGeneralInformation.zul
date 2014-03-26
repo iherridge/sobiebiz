@@ -1,0 +1,139 @@
+<?page title="General Information" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<grid width="100%" style="margin:0px;padding:0px;border:none;">
+		<columns>
+			<column label="" hflex="min"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell style="margin:0px;padding:0px;border:none;">
+					<grid style="margin:0px;padding:0px;">
+						<columns>
+							<column label="" hflex="min"/>
+						</columns>
+						<rows>
+							<row>
+								<cell>
+									<vbox align="center">
+										<image width="128px" height="128px" content="@bind(storeSettingsVm.storeSettings.storeLogo.AImage)"/>
+										<label value="Store logo"/>
+										<button id="btnUpload" label="Upload / Change" upload="true" onUpload="@command('uploadStoreLogo')" />
+									</vbox>								
+								</cell>	
+							</row>
+						</rows>
+					</grid>
+				</cell>
+				<cell style="margin:0px;padding:0px;border:none;" >
+					<grid width="100%" style="margin:0px;padding:0px;border:none;">
+						<columns>
+							<column label="" hflex="min"/>
+							<column label="" hflex="1"/>
+						</columns>
+						<rows>
+							<row>
+								<cell>
+									<label value="Store name:"/>
+								</cell>
+								<cell>
+									<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeName)"/>
+								</cell>	
+							</row>
+							<row>
+								<cell>
+									<label value="Telephone number:"/>
+								</cell>
+								<cell>
+									<textbox width="150px" value="@bind(storeSettingsVm.storeSettings.storeTel)"/>
+								</cell>	
+							</row>
+							<row>
+								<cell>
+									<label value="Fax number:"/>
+								</cell>
+								<cell>
+									<textbox width="150px" value="@bind(storeSettingsVm.storeSettings.storeFax)"/>
+								</cell>	
+							</row>
+							<row>
+								<cell>
+									<label value="Store Description:"/>
+								</cell>
+								<cell>
+									<textbox width="200px" height="85px" value="@bind(storeSettingsVm.storeSettings.storeDesc)"/>
+								</cell>	
+							</row>
+						</rows>
+					</grid>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+
+<!-- <vbox align="start" style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="200px">Store Name:</hbox>
+		<hbox>
+			<textbox width="200px" value="@bind(storeSettingsVm.storeSettings.storeName)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Telephone Number:</hbox>
+		<hbox>
+			<textbox width="150px" value="@bind(storeSettingsVm.storeSettings.storeTel)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Fax Number:</hbox>
+		<hbox>
+			<textbox width="150px" value="@bind(storeSettingsVm.storeSettings.storeFax)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="200px">Store Description:</hbox>
+		<hbox>
+			<textbox width="200px" height="80px" value="@bind(storeSettingsVm.storeSettings.storeDesc)"/>
+		</hbox>
+	</hlayout>
+		<div align="left">
+		<separator orient="horizontal" width="624px" bar="true" />
+	</div>
+		<hlayout>
+			<hbox>
+				<image width="128px" height="128px" content="@bind(storeSettingsVm.storeSettings.storeLogo.AImage)"/> 
+			</hbox>
+			<vbox>
+				<hbox>
+					<textbox width="200px" />
+					<button label="select" />
+					<button id="btnUpload" label="Upload / Change" upload="true" onUpload="@command('uploadStoreLogo')" />
+				</hbox>
+				<hbox>Size: 128x128 pixels</hbox>
+				<hbox>Format: (.jpg, .gif, .png, .pdf)</hbox>
+			</vbox>
+		</hlayout>
+</vbox> -->
+</zk>

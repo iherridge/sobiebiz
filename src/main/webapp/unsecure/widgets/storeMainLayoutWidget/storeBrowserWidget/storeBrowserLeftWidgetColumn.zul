@@ -1,0 +1,49 @@
+<?page title="Store Widget Column" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox align="center">
+		<hbox >
+			<listbox style="border-radius:4px;" width="173px"  >
+				<listhead>
+					<listheader label="" sort="auto" />					
+				</listhead>
+				<listitem >
+					<listcell label="Category 01" />					
+				</listitem>
+				<listitem>
+					<listcell label="Category 02" />					
+				</listitem>
+				<listitem>
+					<listcell label="Category 03" />					
+				</listitem>
+				<listitem>
+					<listcell label="Category 04" />					
+				</listitem>
+				<listitem>
+					<listcell label="Category 05" />					
+				</listitem>
+				<listitem>
+					<listcell label="Category 06" />					
+				</listitem>
+			</listbox>
+		</hbox>
+		<separator/>
+		<hbox >
+			<groupbox  width="175px" height="100%">
+				<label value="Subscribe to our Newsletters"/>
+					<combobox  width="162px">
+						<comboitem label="Newsletter 01"/>
+						<comboitem label="Newsltter 02"/>
+					</combobox>
+				<button style="float:right;margin:3px" label="Subscribe" onClick="" />
+			</groupbox>
+		</hbox>
+		<separator/>
+		<hbox>
+			<calendar style="border-radius:4px;"  name="Events Calendar" width="175px" />
+		</hbox>
+		<separator/>
+		<hbox>
+			
+		</hbox>
+	</vbox>
+</zk>

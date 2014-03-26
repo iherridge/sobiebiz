@@ -1,0 +1,179 @@
+<?page title="Product Shipping" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none; margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Enable free shipping:"/>
+				</cell>
+				<cell>
+					<checkbox width="60%" label="Check this box to enable free shipping for this product. All other shipping rules will be ignored." checked="@bind(inventoryProductsVm.addUpdateProduct.prodFreeShipping)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Ship Seperately:"/>
+				</cell>
+				<cell>
+					<checkbox width="60%" label="Check this box to calculate shipping cost on this item separately from other items in the cart." checked="@bind(inventoryProductsVm.addUpdateProduct.prodShipSeperate)"/>
+				</cell>
+			</row>
+			<row>
+				<cell >
+					<label value="Shipping type:"/>
+				</cell>
+				<cell>
+					<combobox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodShippingTypeId)"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<label value="Leave blank if this does not apply. Note that the weight can be used to determine shipping cost. This is especially important for oversize items like furniture." style="color:grey;"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Weight:"/>
+				</cell>
+				<cell>
+					<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodWeight)"/> kg
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Height:"/>
+				</cell>
+				<cell>
+					<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodHeight)"/> cm
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Width:"/>
+				</cell>
+				<cell>
+					<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodWidth)"/> cm
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Length:"/>
+				</cell>
+				<cell>
+					<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodLenght)"/> cm
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Enable shipping for this product:"/>
+				</cell>
+				<cell>
+					<checkbox label="Yes / No" checked="@bind(inventoryProductsVm.addUpdateProduct.prodShippingEnabled)"/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+
+
+<!-- 	<vbox style="border:none;margin:5px;">
+		<hlayout>
+			<hbox width="250px">
+				Enable Free Shipping:
+			</hbox>
+			<hbox width="300px">
+				<checkbox label="Check this box to enable free shipping for this product. All other shipping rules will be ignored." checked="@bind(inventoryProductsVm.addUpdateProduct.prodFreeShipping)"/>
+			</hbox>
+		</hlayout>
+		
+		<hlayout>
+			<hbox width="250px">
+				Ship Separately:
+			</hbox>
+			<hbox width="300px">
+				<checkbox label="Check this box to calculate shipping cost on this item separately from other items in the cart." checked="@bind(inventoryProductsVm.addUpdateProduct.prodShipSeperate)"/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="350px">
+				Shipping Type:
+			</hbox>
+			<hbox>
+				<combobox width="150px" value="@bind(inventoryProductsVm.addUpdateProduct.prodShippingTypeId)"/>
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="300px">
+				Leave blank if this does not apply. Note that the weight can be used to determine shipping cost. This is especially important for oversize items like furniture.
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="350px">
+				Weight:
+			</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodWeight)"/> kg
+			</hbox>
+		</hlayout>
+		
+		<hlayout>
+			<hbox width="350px">
+				Height:
+			</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodHeight)"/> cm
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="350px">
+				Width:
+			</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodWidth)"/> cm
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="350px">
+				Lenght:
+			</hbox>
+			<hbox>
+				<doublebox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodLenght)"/> cm
+			</hbox>
+		</hlayout>
+		<hlayout>
+			<hbox width="200px">
+				Enable Shipping for this product:
+			</hbox>
+			<hbox>
+				<checkbox label="Yes / No" checked="@bind(inventoryProductsVm.addUpdateProduct.prodShippingEnabled)"/>
+			</hbox>
+		</hlayout>
+	</vbox> -->
+</zk>

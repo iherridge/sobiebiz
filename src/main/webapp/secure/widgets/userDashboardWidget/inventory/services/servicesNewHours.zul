@@ -1,0 +1,92 @@
+<?page title="Service Operating Hours" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none; margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Days of the week:"/>
+				</cell>
+				<cell>
+					<hbox>
+			   			<radio label="Mon" value="@bind(inventoryServicesVm.selectedService.servOhDaysMon)"/>
+			   			<radio label="Tue" value="@bind(inventoryServicesVm.selectedService.servOhDaysTue)"/>
+			   			<radio label="Wed" value="@bind(inventoryServicesVm.selectedService.servOhDaysWed)"/>
+			   			<radio label="Thu" value="@bind(inventoryServicesVm.selectedService.servOhDaysThu)"/>
+			   			<radio label="Fri" value="@bind(inventoryServicesVm.selectedService.servOhDaysFri)"/>
+			   			<radio label="Sat" value="@bind(inventoryServicesVm.selectedService.servOhDaysSat)"/>
+			   			<radio label="Sun" value="@bind(inventoryServicesVm.selectedService.servOhDaysSun)"/>
+			   		</hbox>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Time start:"/>
+				</cell>
+				<cell>
+					<timebox  value="@bind(inventoryServicesVm.selectedService.servStartTime)" width="100px" />
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Time end:"/>
+				</cell>
+				<cell>
+					<timebox  value="@bind(inventoryServicesVm.selectedService.servEndTime)" width="100px" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	
+	<div align="left" hflex="1">
+		<separator orient="horizontal"  bar="true" />
+		<label value="Availability" />
+		<separator orient="horizontal"  bar="true" />
+	</div>
+	<grid fixedLayout="true" hflex="1">
+		<columns hflex="1">
+			<column label="" />
+			<column label="" />
+			<column label="" />
+		</columns>
+		<rows hflex="1">
+			<row>
+				<cell hflex="1">
+					<calendar hflex="1"  />
+				</cell>
+				<cell hflex="1">
+					<calendar hflex="1" />
+				</cell>
+				<cell hflex="1">
+					<calendar hflex="1" />
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+</zk>

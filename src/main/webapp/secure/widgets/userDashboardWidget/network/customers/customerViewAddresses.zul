@@ -1,0 +1,288 @@
+<?page title="View Customer Addresses" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+
+<vbox width="100%">
+	<cell align="right">
+		<label style="color:blue" value="edit"/>
+	</cell>
+	<cell>
+	<grid hflex="1">
+		<columns >
+			<column label=" Billing Address"/>
+			<column label=" Shipping Address"/>
+		</columns>
+		<rows>
+			<row hflex="1">
+				<cell width="100%">
+				<grid hflex="1">
+					<columns>
+						<column label="" hflex="1"/>
+						<column label="" hflex="2"/>
+					</columns>
+					<rows>
+						<row>
+							<cell>
+								<label value="Address:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Address)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Suburb:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Suburb)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="City / Town:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(City / Town)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Region / Province:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Region / Province)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label  value="Country:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Country)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Contact Number:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Number)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Fax Number:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Number)" style="color:grey;"/>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+				</cell>
+				<cell width="100%">
+				<grid hflex="1">
+					<columns>
+						<column label="" hflex="1"/>
+						<column label="" hflex="2"/>
+					</columns>
+					<rows>
+						<row>
+							<cell>
+								<label value="Address:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Address)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Suburb:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Suburb)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="City / Town:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(City / Town)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Region / Province:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Region / Province)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Country:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Country)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Contact Number:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Number)" style="color:grey;"/>
+							</cell>
+						</row>
+						<row>
+							<cell>
+								<label value="Fax Number:"/>
+							</cell>	
+							<cell>
+								<label width="80%" value="(Number)" style="color:grey;"/>
+							</cell>
+						</row>
+					</rows>
+				</grid>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+	</cell>
+</vbox>
+
+
+<!-- 	<hbox align="center">
+		<vbox width="100%" style="border:1px">
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hbox width="290px">
+				<label value="Billing Address" />
+				<label style="color:blue">edit</label>
+			</hbox>
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hlayout>
+				<hbox width="100px">Address:*</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(address)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">City/Town:*</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(city/town)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Region/Province:</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(region/province)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Country:*</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(country)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Tel:</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(0000 000 0000000)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Fax:</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(0000 000 0000000)</label>
+				</hbox>
+			</hlayout>
+			<space />			
+		</vbox>
+		<space/>
+		<vbox width="100%" style="border:1px">
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hbox>
+				<label value="Shipping Address" />
+				<checkbox />Same as Billing Address
+				<label style="color:blue">edit</label>
+			</hbox>
+			<div align="left">
+				<separator orient="horizontal" width="290px" bar="true" />
+			</div>
+			<hlayout>
+				<hbox width="100px">Address:*</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(address)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">City/Town:*</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(city/town)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Region/Province:</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(region/province)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Country:*</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(country)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Tel:</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(0000 000 0000000)</label>
+				</hbox>
+			</hlayout>
+			<space />
+			<hlayout>
+				<hbox width="100px">Fax:</hbox>
+				<hbox width="180px">
+					<label style="color:grey">(0000 000 0000000)</label>
+				</hbox>
+			</hlayout>
+			<space />
+		</vbox>
+	</hbox> -->
+</zk>

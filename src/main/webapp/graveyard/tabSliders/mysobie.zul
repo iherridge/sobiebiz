@@ -1,0 +1,31 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<window id="mySobieWin" position="center" title="My Sobie" border="0" stubonly="true"
+	apply="biz.sobie.web.controllers.MySobieController" width="1000px">
+	<include id="popupInc"/>
+	<hbox style="color:white;background:#808080">
+		<space/>
+		<vbox>
+		<space/>
+		<div >
+			<hbox>
+				<label value="Dashboard"/>
+				<space/><space/><space/><space/><space/><space/><space/><space/><space/>
+				<space/><space/><space/><space/><space/><space/><space/><space/><space/>
+				<hbox style="float: right;">
+					<button id="networkBtn" image="/resources/img/tabs/mySobie/network.png" style="background:#808080"/>
+					<button id="calendarBtn" image="/resources/img/tabs/mySobie/calendar.png" style="background:#808080"/>
+					<button id="ordersBtn" image="/resources/img/tabs/mySobie/orders.png" style="background:#808080"/>
+					<button id="inventoryBtn" image="/resources/img/tabs/mySobie/inventory.png" style="background:#808080"/>
+					<button id="marketingBtn" image="/resources/img/tabs/mySobie/marketing.png" style="background:#808080"/>
+					<button id="storeBtn" image="/resources/img/tabs/mySobie/store.png" style="background:#808080"/>
+					<button id="applicationsBtn" image="/resources/img/tabs/mySobie/applications.png" style="background:#808080"/>
+					<button id="settingsBtn" image="/resources/img/tabs/mySobie/settings.png" style="background:#808080"/>
+				</hbox>
+			</hbox>
+		</div>
+		<include id="mySobieInc" src="/secure/tabSliders/mySobie/network.zul" />
+		</vbox>
+		<space/>
+	</hbox>
+</window >

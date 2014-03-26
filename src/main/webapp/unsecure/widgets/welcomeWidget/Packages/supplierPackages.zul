@@ -1,0 +1,483 @@
+<?page title="Supplier Packages" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+background: transparent;
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+}
+
+.z-borderlayout { background-color : transparent; padding:0px; margin:0px; }
+
+.z-north, .z-south, .z-west, .z-center, .z-east {
+background-color : transparent;
+border:0 none; padding:0px; margin:0px; }
+
+/*********************** IMAGE BOX *********************/
+
+.imgbox{
+	border: 1px solid #ddd;
+	margin: 3px;
+	color: #555;
+  background-color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -moz-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -ms-linear-gradient(top, #f9f9f9, #ffffff); 
+  background-image: -o-linear-gradient(top, #f9f9f9, #ffffff);
+border-radius: 4px;
+box-shadow: inset 0px 2px 12px #ddd;
+width: 105px;
+height: 105px;
+}
+
+.img{
+align:middel;
+display: block;
+border:1px #cccccc;
+margin: auto;
+padding:3px;
+max-width: 100px;
+max-height: 100px;
+vertical-align: middle;
+
+}
+
+/*********************** B U T T O N S *********************/
+
+.buttonRed {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#BC1815;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:2px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonRed:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonBlue {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#22C3EB;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:2px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonBlue:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonGreen {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:#67B600;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:2px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonGreen:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+
+.buttonOrange {
+  -webkit-box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  -webkit-user-select:none;
+  background-color:orange;
+  border:none;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  box-shadow:rgba(0, 0, 0, 0.45098) 0 -2px 1px inset, rgba(0, 0, 0, 0.247059) 0 1px 1px;
+  color:#FFFFFF;
+  margin-right:2px;
+  padding:4px 3px 4px;
+  position:relative;
+  text-shadow:rgba(0, 0, 0, 0.498039) 1px 1px 0;
+  width:100%;
+}
+
+.buttonOrange:active { position: relative; top: 3px;
+    -webkit-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0px -2px 1px rgba(255, 255, 255, 1), inset 0 0px 2px rgba(0, 0, 0, 0.9);
+}
+</style>
+<vbox width="100%" style="border:none;margin:0px;padding:0px;">
+	<hbox hflex="1">
+		<cell hflex="1">
+			<vbox>
+				<label value="Supplier packages" style="color:orange;font-family:arial;font-size:16px"/>
+				<label value="With the Sobie.biz Supplier profile you will be able to sell any goods or services. Manage your sales and get real time statistics. Create events, Manage documents etc."/>
+			</vbox>
+		</cell>
+	</hbox>
+	<hbox hflex="1">
+		<cell hflex="1" align="left">
+			<grid hflex="1" >
+			<columns hflex="1">
+				<column label="Register here!" hflex="1"/>
+				<column label="" hflex="1"/>
+			</columns>
+			<rows hflex="1">
+				<row>
+					<cell>
+						<label value="First name:"/>
+					</cell>
+					<cell>
+						<textbox hflex="1" id="custFirstName"
+						value="@bind(vm.customer.custFirstName)" />
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Surname:"/>
+					</cell>
+					<cell>
+						<textbox hflex="1" id="custLastName"
+						value="@bind(vm.customer.custLastName)" />
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Email:"/>
+					</cell>
+					<cell>
+						<textbox hflex="1" id="custEmail"
+						value="@bind(vm.customer.custEmail)" />
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Password:"/>
+					</cell>
+					<cell>
+						<textbox hflex="1" id="custPassword" type="password"
+						value="@bind(vm.customer.custPassword)" />
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Confirm Password:"/>
+					</cell>
+					<cell>
+						<textbox hflex="1" id="custRetypePassword" type="password"
+						value="@bind(vm.customer.custRetypePassword)" />
+					</cell>
+				</row>
+				<row>
+					<cell align="center" colspan="2">
+						<button width="180px" sclass="buttonOrange" label="Register Supplier Profile"
+					onClick="@command('registerNewAccount') @validator(vm.requiredFieldValidator)" />
+					</cell>
+				</row>
+			</rows>
+			</grid>
+		</cell>
+		<cell hflex="2" align="left">
+			<radiogroup id="accountType"/>
+			<grid hflex="1" >
+			<columns hflex="1">
+				<column label="" hflex="1" style="background:none;border:0px;"/>
+				<column label="Basic" hflex="1" align="center"/>
+				<column label="Novice" hflex="1" align="center"/>
+				<column label="Pro" hflex="1" align="center"/>
+			</columns>
+			<rows hflex="1">
+				<row>
+					<cell>
+						<label value="Price:"/>
+					</cell>
+					<cell align="center">
+						<label value="NAD 750 pm"/>
+					</cell>
+					<cell align="center">
+						<label value="NAD 1200 pm"/>
+					</cell>
+					<cell align="center">
+						<label value="NAD 2500 pm"/>
+					</cell>
+				</row>
+				<row>
+					<cell >
+						<label value="Storage:"/>
+					</cell>
+					<cell align="center">
+						<label value="600 Mb"/>
+					</cell>
+					<cell align="center">
+						<label value="800 Mb"/>
+					</cell>
+					<cell align="center">
+						<label value="1600 Mb"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Bandwidth:"/>
+					</cell>
+					<cell align="center">
+						<label value="4000 Mb"/>
+					</cell>
+					<cell align="center">
+						<label value="8000 Mb"/>
+					</cell>
+					<cell align="center">
+						<label value="16000 Mb"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Sales Management:"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="User Management:"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Marketing Management:"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Online Store:"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+					<cell align="center">
+						<label value="check"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Product Listings:"/>
+					</cell>
+					<cell align="center">
+						<label value="350"/>
+					</cell>
+					<cell align="center">
+						<label value="2500"/>
+					</cell>
+					<cell align="center">
+						<label value="Unlimited"/>
+					</cell>
+				</row>
+				<row>
+					<cell>
+						<label value="Select package:"/>
+					</cell>
+					<cell>
+						<radio onClick="@command('registerSupplierBasic')" radiogroup="accountType" checked="true"/>
+					</cell>
+					<cell>
+						<radio onClick="@command('registerSupplierNovice')" radiogroup="accountType"/>
+					</cell>
+					<cell>
+						<radio onClick="@command('registerSupplierPro')" radiogroup="accountType"/>
+					</cell>
+				</row>
+			</rows>
+			</grid>
+		</cell>
+	</hbox>
+</vbox>
+
+
+
+<!-- 	<hlayout>
+		<div class="contentarea"
+			style="padding:5px">
+			<html>
+				<label
+					style="color:red;font-family:arial;font-size:16px">
+					Supplier
+				</label>
+				<p
+					style="color:#606060;font-family:arial;font-size:12px">
+					Supplier package description...
+				</p>
+			</html>
+			<space />
+			<vlayout>
+				<hlayout>
+				<textbox id="custFirstName"
+				value="@bind(vm.customer.custFirstName)" />
+				<label>First Name*</label>
+				</hlayout>
+				
+				<hlayout>
+				<textbox id="custLastName"
+				value="@bind(vm.customer.custLastName)" />
+				<label>Surname*</label>
+				</hlayout>
+				
+				<hlayout>
+				<textbox id="custEmail"
+				value="@bind(vm.customer.custEmail)" type="email" constraint="/.+@.+\.[a-z]+/: e-mail address only"/>
+				<label>Email*</label>
+				</hlayout>
+				
+				<hlayout>
+				<textbox id="custPassword" type="password"
+				value="@bind(vm.customer.custPassword)" />
+				<label>Password*</label>
+				</hlayout>
+				
+				<hlayout>
+				<textbox id="custRetypePassword" type="password"
+				value="@bind(vm.customer.custRetypePassword)" />
+				<label>Confirm Password*</label>
+				</hlayout>
+				
+				<hlayout>
+				<button label="Register"
+				onClick="@command('registerNewAccount') @validator(vm.requiredFieldValidator)" />
+				</hlayout>
+			</vlayout>
+		</div>
+		<div class="contentarea"
+			style="padding:5px">
+			<radiogroup id="accountType"/>			
+			<grid hflex="1">
+				<columns style="color:white;background:orange">
+					<column width="160px"></column>
+					<column width="100px">Basic</column>
+					<column width="100px">Novice</column>
+					<column width="100px">Pro</column>
+				</columns>
+				<rows>
+					<row>
+						<label value="Price" />
+						<label value="NAD 750" />
+						<label value="NAD 1200" />
+						<label value="NAD 2500" />
+					</row>
+					<row>
+						<label value="Product Listings" />
+						<label value="5000" />
+						<label value="10000" />
+						<label value="20000" />
+					</row>
+					<row>
+						<label value="Product Categories" />
+						<label value="Yes" />
+						<label value="Yes" />
+						<label value="Yes" />
+					</row>
+					<row>
+						<label value="Network Listings" />
+						<label value="350" />
+						<label value="1500" />
+						<label value="10000" />
+					</row>
+					<row>
+						<label value="Sales Leads" />
+						<label value="500" />
+						<label value="2500" />
+						<label value="5000" />
+					</row>
+					<row>
+						<label value="Service Listings" />
+						<label value="0" />
+						<label value="0" />
+						<label value="0" />
+					</row>
+					<row>
+						<label value="Classifieds" />
+						<label value="0" />
+						<label value="0" />
+						<label value="0" />
+					</row>
+					<row>
+						<label value="" />
+						<radio onClick="@command('registerSupplierBasic')" radiogroup="accountType" checked="true"/>
+						<radio onClick="@command('registerSupplierNovice')" radiogroup="accountType"/>
+						<radio onClick="@command('registerSupplierPro')" radiogroup="accountType"/>						
+					</row>
+				</rows>
+			</grid>
+		</div>
+	</hlayout> -->
+</zk>

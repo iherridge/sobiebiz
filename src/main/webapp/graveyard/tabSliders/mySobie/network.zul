@@ -1,0 +1,25 @@
+<?page title="Network" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div>
+		<tabbox id="networkTabbox">
+			<tabs >
+				<tab id="networkOverviewTab" label="Overview"/>
+				<tab id="networkMessagesTab" label="Messages" apply="biz.sobie.web.controllers.NetworkMessagesController"/>
+				<tab id="networkProfileTab" label="Profile" />
+				<tab id="networkPreferencesTab" label="Preferences" />
+				<tab id="networkMyNetworkTab" label="My Network" />
+				<tab id="networkDirectoryTab" label="Directory" />
+				<tab id="networkHelpTab" label="Help" />
+			</tabs>
+			<tabpanels height="300px">
+				<tabpanel><include id="networkOverviewInc" src="/secure/tabSliders/mySobie/network/networkOverview.zul" /></tabpanel>
+				<tabpanel><include id="networkMessagesInc" /></tabpanel>
+				<tabpanel><include id="networkProfileInc" src="/secure/tabSliders/mySobie/network/networkProfile.zul" fulfill="networkProfileTab.onSelect"/></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+			</tabpanels>
+		</tabbox>
+	</div>
+</zk>

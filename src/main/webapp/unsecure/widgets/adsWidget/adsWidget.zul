@@ -1,0 +1,11 @@
+<?page title="Ads Widgets" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox>
+		<cell>
+			<image src="/resources/img/defaults/defaultProductImage200x200.png"/>
+		</cell>
+		<cell align="center">
+			<label value="Add Space"/>
+		</cell>
+	</vbox>
+</zk>

@@ -1,0 +1,707 @@
+<?component
+	name="MenuItem"
+	class="biz.sobie.web.composite.MenuItem" ?>
+<?page title="Sobie Panel Menu Items" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/* ----------------------------------------------------------------------- */
+/* Entire Page                                                             */
+/* ----------------------------------------------------------------------- */
+body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.z-page {
+  font-family: 'Helvetica';
+  background: #F8F8F8;
+}
+
+.z-west, .z-center {
+	border: none;
+}
+
+.z-borderlayout {
+	background: none;
+}
+
+.z-image.icon {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+div.z-listbox,
+div.z-listbox-header th.z-listheader,
+td.z-listcell {
+	border: none;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Customize Notification                                                  */
+/* ----------------------------------------------------------------------- */
+.z-notification .z-notification-cl {
+	padding-left: 5px;
+}
+
+.z-notification-info {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.z-notification-info .z-notification-cl {
+	background: #ededed;
+	color: black;
+}
+
+.z-notification-info .z-notification-cnt {
+	position: relative;
+	/* left: -15px; */
+	text-align: center;
+}
+
+.z-notification-info .z-notification-pointer-l {
+	border-right-color: #ededed;
+}
+
+.z-notification-info .z-notification-pointer-r {
+	border-left-color: #ededed;
+}
+
+.z-notification-info .z-notification-pointer-u {
+	border-bottom-color: #ededed;
+}
+
+.z-notification-info .z-notification-pointer-d {
+	border-top-color: #ededed;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Menu Panel Sidebar                                                      */
+/* ----------------------------------------------------------------------- */
+.menuPanel {
+	line-height: 18px;
+	font-size: 16px;
+}
+
+/* Hide collapse icon */
+.menuPanel .z-borderlayout-icon {
+	display: none;
+}
+
+.menuPanel .z-west-header {
+	padding: 0px;
+	border-bottom: none;
+
+	line-height: 24px;
+}
+
+.menuPanel .z-west-body {
+	background: #002B37;
+}
+
+/* Left-align back-button */
+.menuPanel .z-caption td {
+	text-align: left;
+}
+
+.menuPanel .z-listitem {
+	line-height: 24px;
+}
+
+.menuPanel .z-listheader-cnt  {
+	<!-- color: #7A8292; -->
+	background-color: #403833;
+}
+
+.menuPanel .z-listcell-cnt {
+	color: #C4CCDA;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
+	vertical-align: middle;
+}
+
+.menuPanel .z-listhead.menu-category {
+	text-shadow: 1px 1px 1px black;
+	vertical-align: middle;
+	height: 38px;
+}
+
+
+.menuPanel .menuitem,
+.menuPanel .contact {
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	<!-- background-color: #002B37; -->
+	background-image:url('resources/img/testImages/bg012dark.png');
+	background-repeat:repeat;
+	border-bottom: 1px solid #211915;
+}
+
+
+.menuPanel    .z-listcell.menuitem .z-image.mi-icon,
+.contentPanel .z-listcell.contact  .z-image.contact-picture {
+	display: inline-block;
+	margin-left: 2px;
+}
+
+.z-label.mi-title,
+.z-label.contact-name {
+	display: inline-block;
+	padding: 3px 0 0px 8px;
+	vertical-align: middle;
+	text-overflow: ellipsis;
+}
+
+<!-- .z-label.mi-title {
+	width: 150px;
+} -->
+
+.z-label.contact-name {
+	width: 170px;
+}
+
+.menuPanel .z-label {
+	font-weight: bold;
+}
+
+.menuPanel .menuitem .mi-count {
+	border-top: 1px solid #505A63;
+	color: #BFC5D2;
+	padding: 1px 3px 3px 4px;
+	min-width: 11px;
+	text-align: center;
+}
+
+.contentPanel {
+	background: #C4CDE0;
+}
+
+.contentPanel .z-center-header {
+	padding: 0;
+	border-bottom: none;
+}
+
+.contentPanel .z-center-header .z-image:active {
+	-webkit-filter: invert(1);
+	-moz-filter: invert(1);
+	filter: invert(1);
+}
+
+.contentPanel .z-center-header button.z-button-os {
+	border: none;
+}
+
+.contentPanel .z-listcell.contact  .z-label.contact-status {
+	display: inline-block;
+	padding-right: 6px;
+}
+
+.newsfeedPanel .z-center-header {
+    background: #E1E1E1;
+}
+
+.newsfeedPanel .z-caption-l {
+	display: none;
+}
+
+.newsfeedPanel .toolbar table {
+	width: 100%;
+}
+
+.newsfeedPanel .z-center-body {
+	background: #F8F8F8;
+}
+
+.newsfeedPanel .z-toolbarbutton-cnt {
+	text-shadow: none;
+}
+
+.post {
+	background: #ffffff;
+	border-radius: 5px;
+	margin: 20px 20px 0px 20px;
+}
+
+.newsfeedPanel .z-vlayout-inner:last-child .post {
+	margin-bottom: 20px;
+}
+
+.z-image.post-avatar {
+	width: 24px;
+	height: 24px;
+}
+
+.z-label.post-author {
+	color: #576B95;
+	font-weight: bold;
+	line-height: 17px;
+	font-size: 13px;
+}
+
+.z-label.post-time {
+	color: #BBB;
+	font-size: 12px;
+	line-height: 15px;
+}
+
+.z-html.post-article {
+	display: inline;
+	font-size: 14px;
+	width: 100%;
+}
+
+.post .z-html.post-article iframe {
+	width: 250px;
+	height: 200px;
+}
+
+.post .z-html.post-article img {
+	width: 80%;
+}
+
+.feedback .z-center-body {
+	background: #FFFFFF;
+}
+
+.feedback .z-button-os {
+	background: blue;
+}
+
+.comment .z-html.post-article {
+	display: inline-block;
+	font-size: 12px;
+	width: 85%;
+}
+
+.comment .z-html.post-article iframe {
+	width: 250px;
+	height: 200px;
+}
+
+.comment .z-html.post-article img {
+	width: 80%;
+}
+
+.contact-picture,
+.mi-icon {
+	width: 16px;
+}
+
+.like-area {
+	margin-top: 10px;
+	position: relative;
+	padding: 2px 5px;
+	background: #DBDDE0;
+	border-radius: 2px;
+	vertical-align: middle;
+}
+
+.like-area::before {
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	top: -13px;
+	left: 20px;
+	border-top: 7px solid transparent;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #DBDDE0;
+}
+
+.left { 
+	float: left;
+}
+
+.right { 
+	float: right; 
+} 
+
+.textCenter {
+	text-align: center; 
+}
+
+.modal {
+	width: 100%;
+	height: 100%;
+	position: absolute;	
+	top: 0px;
+	left: 0;
+	filter: alpha(opacity=70);
+	opacity: .7;
+	zoom: 1;
+	background: #E0E1E3;
+	z-index: 1800;
+	cursor: pointer;
+}
+
+.z-popup.feedback { 
+	width: 210px;
+
+}
+
+.z-popup.feedback .z-popup-cnt {
+	padding: 0px;
+}
+
+.z-popup.feedback .z-center-header {
+	background: #008AB4;
+}
+
+.z-popup.feedback .z-center-body {
+
+}
+
+.z-textbox.commentInput {
+	width: 180px;
+}
+
+.post {
+	padding: 10px 10px;
+}
+
+.comment .z-center-body > .z-vlayout {
+	padding: 5px 5px;
+}
+
+.z-image.post-avatar {
+	margin-right: 10px;
+	width: 50px;
+	height: 50px;
+}
+
+.valign-middle {
+	vertical-align: center;
+}
+
+</style>
+
+	<vbox width="100%">
+		<div apply="org.zkoss.bind.BindComposer" viewModel="@id('notificationWidgetVm') @init('biz.sobie.web.notifications.NotificationWidgetVm')"  style="margin-left:0px">
+			<listbox sclass="menuPanel" >
+				<listhead sclass="z-listheader">
+					<listheader label="Notifications" />
+				</listhead>
+				<MenuItem visible="@bind(indexVM.sobieUserMenuBarVisible)"
+					icon="resources/img/icons/panel/sbe_panelMessage.png" title="Messages"
+					count="0" 
+					onClick="@global-command('openNetworkMessages')" />
+					
+				<MenuItem icon="resources/img/icons/panel/sbe_panelMessage.png"
+					title="System Messages" 
+					count="0" />
+					
+				<MenuItem visible="@bind(indexVM.sobieUserMenuBarVisible)"
+					icon="resources/img/icons/panel/sbe_panelComments.png" title="Comments"
+					count="0" />
+					
+				<MenuItem icon="resources/img/icons/panel/sbe_panelCart24.png" 
+					title="Shopping Cart" 
+					count="@bind(notificationWidgetVm.shoppingCartTotalItems)"
+					onClick="@global-command('openShoppingCart')" />
+					
+				<MenuItem icon="resources/img/icons/panel/sbe_panelGift.png"
+					title="Wishlist" 
+					count="0" />
+			</listbox>
+		</div>
+		<space/>
+		<div style="margin-left:0px">
+			<listbox visible="@bind(indexVM.sobieUserMenuBarVisible)"  onClick="@command('open', pos='end_center')" sclass="menuPanel">
+				<listhead>
+				<listheader label="DashBoard" style="z-listhead" />
+				</listhead>
+				<MenuItem icon="resources/img/icons/panel/sbe-panelSettings.png"
+						  title="System" 
+						  count="0"
+						  onClick="@command('openSystemMenuItem')"/>
+					<listitem visible="@bind(indexVM.systemMenuItemOpen)" >
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel" >
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="My Account" count="0"
+									onClick="@global-command('openMyAccount')" />
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="System Messages" count="0" 
+									onClick="@global-command('openSystemMessages')" />
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Task Notifications" count="0" 
+									onClick="@global-command('openTaskNotifications')" />
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Users" count="0" 
+									onClick="@global-command('openUsers')" />
+							</listbox>
+						</listcell>
+					</listitem>
+				
+				<MenuItem icon="resources/img/icons/panel/sbe_panelHome.png"
+						  title="Store" 
+						  count="0" 
+						  onClick="@command('openStoreMenuItem')"
+						  visible="@bind(indexVM.dashboardPrivileges.dashboardStoreVisible)"/>
+					<listitem visible="@bind(indexVM.storeMenuItemOpen)" >
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel" >
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Store Settings" count="0"
+									onClick="@global-command('openStoreSettings')" />
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Store Content" count="0" 
+									onClick="@global-command('openStoreContentPages')" />
+							</listbox>
+						</listcell>
+					</listitem>
+					
+				<MenuItem icon="resources/img/icons/panel/sbe_panelNetwork.png"
+						  title="Network" 
+						  count="0" 
+						  onClick="@command('openNetworkMenuItem')"/>
+					<listitem visible="@bind(indexVM.networkMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Customers" count="0"
+									onClick="@global-command('openNetworkCustomers')"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Affiliates" count="0" 
+									onClick="@global-command('openNetworkAffiliates')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardNetworkAffiliatesVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="My Network" count="0" 
+									onClick="@global-command('openNetworkNetwork')"/>
+							</listbox>
+						</listcell>
+					</listitem>
+				
+				<MenuItem icon="resources/img/icons/panel/sbe_panelInventory.png"
+						  title="Inventory" 
+						  count="0" 
+						  onClick="@command('openInventoryMenuItem')"/>
+					<listitem visible="@bind(indexVM.inventoryMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Categories" count="0"
+									onClick="@global-command('openInventoryCategories')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardInventoryCategoriesVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Products" count="0"
+									onClick="@global-command('openInventoryProduct')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardInventoryProductsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Network Products" count="0" 
+									onClick="@global-command('openInventoryNetworkProduct')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardInventoryNetworkProductsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Services" count="0" 
+									onClick="@global-command('openInventoryServices')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardInventoryServicesVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Classifieds" count="0" 
+									onClick="@global-command('openInventoryClassifieds')"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Attributes" count="0" 
+									onClick="@global-command('openInventoryAttributes')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardInventoryAttributesVisible)"/>
+							</listbox>
+						</listcell>
+					</listitem>		  
+				
+				<MenuItem icon="resources/img/icons/panel/sbe_panelDollar.png"
+						  title="Sales" 
+						  count="0" 
+						  onClick="@command('openSalesMenuItem')"/>
+					<listitem visible="@bind(indexVM.salesMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+										  title="Orders" count="0"
+										  onClick="@global-command('openSalesOrders')"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Manange Quotations" count="0"
+									onClick=""
+									visible="@bind(indexVM.dashboardPrivileges.dashboardSalesManageQuotationsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Manage Invoices" count="0" 
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Manage Shipments" count="0" 
+									onClick=""
+									visible="@bind(indexVM.dashboardPrivileges.dashboardSalesShipmentsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Manage Returns" count="0" 
+									onClick=""
+									visible="@bind(indexVM.dashboardPrivileges.dashboardSalesReturnsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Billing Agreements" count="0" 
+									onClick=""
+									visible="@bind(indexVM.dashboardPrivileges.dashboardSalesBillingAgreementsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Terms and Conditions" count="0" 
+									onClick=""
+									visible="@bind(indexVM.dashboardPrivileges.dashboardSalesTermsAndConditionsVisible)"/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Tax (VAT)" count="0" 
+									onClick=""
+									visible="@bind(indexVM.dashboardPrivileges.dashboardSalesTaxVisible)"/>
+							</listbox>
+						</listcell>
+					</listitem>
+					
+				<MenuItem icon="resources/img/icons/panel/sbe_panelPurchase.png"
+						  title="Purchases" 
+						  count="0" 
+						  onClick="@command('openPurchasesMenuItem')"/>
+					<listitem visible="@bind(indexVM.purchasesMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+										  title="Orders" count="0"
+										  onClick="@command('openPurchasesOrdersMenuItem')"/>
+									<listitem visible="@bind(indexVM.purchasesOrdersMenuItemOpen)">
+										<listcell sclass="z-listcell" style="padding:0px;border:none;">
+											<listbox sclass="menuPanel">
+												<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+													title="Quotations" count="0"
+													onClick=""/>
+													
+												<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+													title="Invoices" count="0"
+													onClick=""/>
+													
+												<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+													title="Shipment" count="0" 
+													onClick=""/>
+													
+												<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+													title="Returns" count="0" 
+													onClick=""/>
+											</listbox>
+										</listcell>
+									</listitem>
+									
+								<MenuItem icon="resources/img/icons/sbe_store16.png"
+									title="Billing Agreements" count="0"
+									onClick=""/>
+							</listbox>
+						</listcell>
+					</listitem>
+						  
+				<MenuItem icon="resources/img/icons/panel/sbe_panelMarketing.png"
+						  title="Marketing" 
+						  count="0" 
+						  onClick="@command('openMarketingMenuItem')"/>
+					<listitem visible="@bind(indexVM.marketingMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Banners" count="0"
+									onClick="@global-command('openMarketingBanners')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardMarketingBannersVisible)"/>
+									
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Coupons" count="0"
+									onClick="@global-command('openMarketingCoupons')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardMarketingCouponsVisible)"/>
+									
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Newsletters" count="0" 
+									onClick="@global-command('openMarketingNewsletters')"
+									visible="@bind(indexVM.dashboardPrivileges.dashboardMarketingNewslettersVisible)"/>
+									
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Classifieds" count="0" 
+									onClick=""/>
+									
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Comments and Ratings" count="0" 
+									onClick="@global-command('openMarketingCommentsRatings')"/>
+							</listbox>
+						</listcell>
+					</listitem>		  
+						  
+				<MenuItem icon="resources/img/icons/panel/sbe_panelSettings2.png"
+						  title="Applications" 
+						  count="0"  
+						  onClick="@command('openApplicationsMenuItem')"/>
+					<listitem visible="@bind(indexVM.applicationsMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Installed Apps" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="App Store" count="0"
+									onClick=""/>
+							</listbox>
+						</listcell>
+					</listitem>		
+						  
+				<MenuItem icon="resources/img/icons/panel/sbe_panelFile.png"
+						  title="Reports" 
+						  count="0"  
+						  onClick="@command('openReportsMenuItem')"
+						  visible="@bind(indexVM.dashboardPrivileges.dashboardReportsVisible)"/>
+					<listitem visible="@bind(indexVM.reportsMenuItemOpen)">
+						<listcell sclass="z-listcell" style="padding:0px;border:none;">
+							<listbox sclass="menuPanel">
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="> Orders" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Invoices" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Quotations" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Expenses" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Service Requests" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Most Frequent Customers" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Top Spending Customers" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Top Earning Products" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Order Picklist" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Activity Log" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Coupon Usage" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="Sales Tax" count="0"
+									onClick=""/>
+								<MenuItem icon="resources/img/icons/panel/sbe_subMenu.png"
+									title="> Supplier List" count="0"
+									onClick=""/>
+							</listbox>
+						</listcell>
+					</listitem>
+				</listbox>
+			</div>
+			<space/>
+			<!-- <div style="margin-left:0px">
+			<listbox visible="@bind(indexVM.sobieUserMenuBarVisible)" sclass="menuPanel">
+				<listhead>
+					<listheader label="Newsfeed" />
+				</listhead>
+				<MenuItem icon="resources/img/icons/sbe_addaffiliate16.png"
+					title="Messages" count="0" />
+				<MenuItem icon="resources/img/icons/sbe_addaffiliate16.png"
+					title="Shopping Cart" count="0" />
+			</listbox>
+		</div> -->
+
+	</vbox>
+</zk>

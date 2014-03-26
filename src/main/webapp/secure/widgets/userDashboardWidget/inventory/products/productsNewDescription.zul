@@ -1,0 +1,41 @@
+<?page title="Product Description" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<label>Full Product Description:</label>
+	<ckeditor
+		value="@bind(inventoryProductsVm.addUpdateProduct.prodDesc)" />
+
+	<space />
+	<vbox>
+		<label>Product Features:</label>
+		<label>
+			Add product features here to have a "Features" tab be
+			displayed on the product page
+		</label>
+	</vbox>
+	<ckeditor
+		value="@bind(inventoryProductsVm.addUpdateProduct.prodFeatures)" />
+
+	<space />
+	<vbox>
+		<label>Product Specification:</label>
+		<label>
+			Add product features here to have a "Specifications" tab be
+			displayed on the product page
+		</label>
+	</vbox>
+	<ckeditor
+		value="@bind(inventoryProductsVm.addUpdateProduct.prodSpecification)" />
+
+	<space />
+	<vbox>
+		<label>Product Shipping Information:</label>
+		<label>
+			Add product features here to have a "Shipping Information"
+			tab be displayed on the product page
+		</label>
+	</vbox>
+	<ckeditor
+		value="@bind(inventoryProductsVm.addUpdateProduct.prodShippingInfo)" />
+</vbox>
+</zk>

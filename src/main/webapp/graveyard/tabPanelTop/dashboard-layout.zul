@@ -1,0 +1,33 @@
+<?page title="Dashboard Layout" contentType="text/html;charset=UTF-8"?>
+<zk>
+<div>
+<grid width="890px" style="padding:5px; background-image:url('resources/img/bg_mySobie.png');border-radius:10px;border:1px solid #c4c8cc">
+		<columns>
+			
+		</columns>
+		<rows>
+			<row align="right" height="80px">
+			<include src="tabPanelTop/dashboard_menu.zul"/>	
+			</row>
+			<row>
+			<menubar>
+	<menu label="File">
+		<menupopup>
+			<menuitem label="New" />
+			<menuseparator />
+			<menuitem label="Open" />
+		</menupopup>
+	</menu>
+	<menuitem label="About" />
+</menubar>
+			</row>
+			<row height="250px">
+			<include src="secure/mySobie/store/storeOverview.zul"/>
+			</row>
+			<row align="right">
+			Dash board (x)
+			</row>
+		</rows>
+	</grid>
+	</div>
+</zk>

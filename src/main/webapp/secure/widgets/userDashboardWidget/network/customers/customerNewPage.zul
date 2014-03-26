@@ -1,0 +1,34 @@
+<?page title="New Customer Tabbed Panel" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox width="100%">
+	<vlayout hflex="1">
+		<label style="font-weight: bold" value="Add New Customer"/>
+		<hbox width="100%" >
+			<cell hflex="2">
+				<label value="To create a new customer please complete the following forms to and complete all the required fields."/>
+			</cell>
+			<cell hflex="1" align="right" >
+				<button label="Save" />
+				<button label="Cancel" onClick="@global-command('openNetworkCustomers')"/>
+			</cell>
+		</hbox>
+	</vlayout>
+	<div align="left">
+		<separator orient="horizontal" width="100%" bar="true" />
+	</div>
+	<tabbox orient="vertical" width="100%">
+		<tabs width="180px">
+			<tab label="Account Information" />
+			<tab label="Billing n Shipping Address" />
+		</tabs>
+		<tabpanels >
+			<tabpanel >
+				<include src="/secure/widgets/userDashboardWidget/network/customers/customerNewAccountInformation.zul"/>
+			</tabpanel>
+			<tabpanel>
+				<include src="/secure/widgets/userDashboardWidget/network/customers/customerNewAddresses.zul"/>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+</vbox>
+</zk>

@@ -1,0 +1,50 @@
+<?page title="Multiple Sobie Profiles" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+
+</style>
+
+
+<window mode="modal"  action="show: slideDown;hide: slideUp" id="multipleSobieProfilesWin" apply="biz.sobie.web.multiplesobieprofiles.MultipleSobieProfilesCtrl"
+			  position="center,center" zclass="sobie-boxcontainer"
+			 width="350px">
+	<vlayout>
+ 		<groupbox><label>It seems that there are multiple users using Sobie.biz on your desktop or within your home/work network?</label></groupbox>
+ 		<groupbox>		
+		 		<label>If you do not own a Sobie.biz account, please proceed by clicking on the Skip button.</label>
+		 		<space/><button label="Skip" id="skipBtn" sclass="sobie-button" width="100px"/>
+	 	</groupbox>
+		<groupbox>
+ 			<label>Or simply login, and we'll take you straight to your lobby.</label>
+  		</groupbox>
+	    <h:form id="f" name="f" action="j_spring_security_check" method="POST" xmlns:h="native">
+	       	<grid>
+	       		<rows>
+	       			<row><html style="color:red" if="${not empty param.login_error}">
+					      <![CDATA[
+					        Your login attempt was not successful, try again.<br/><br/>
+					        Reason: ${SPRING_SECURITY_LAST_EXCEPTION.message}
+					       ]]></html>
+	    			</row>
+	       			<row>Email <textbox id="u" name="j_username" focus="true" type="email" constraint="/.+@.+\.[a-z]+/: e-mail address only"/></row>
+		       		<row>Password <textbox id="p" type="password" name="j_password"/></row>
+					<row><space/><h:input type="submit" value="Log in"/></row>
+	       		</rows>
+			</grid>
+	    </h:form>
+	<!-- <div apply="org.zkoss.bind.BindComposer" viewModel="@id('mspVm') @init('biz.sobie.web.multiplesobieprofiles.MultipleSobieProfilesVm')">
+		<combobox id="multipleUsersBox" width="150px" model="@load(mspVm.multipleSobieProfiles.sobieProfiles)" value="select your profile">
+			<template name="model" var="sobieProfile">
+				<comboitem label="@load(sobieProfile.account.accName))"></comboitem>
+			</template>
+		</combobox>
+	</div> -->
+	</vlayout>
+</window>
+</zk>

@@ -1,0 +1,46 @@
+<?page title="Product Inventory" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="300px">
+			Quantity Imediately Available:
+		</hbox>
+		<hbox>
+			<intbox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodQtyImedAvail)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Minimum Purchase Quantity:
+		</hbox>
+		<hbox>
+			<intbox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodMinPurchaseQty)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Enter the minimum quantity that can be
+			selected when adding an item to the
+			cart.
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Maximum Purchase Quantity:
+		</hbox>
+		<hbox>
+			<intbox width="100px"
+				value="@bind(networkProductsVm.selectedProduct.prodMaxPurchaseQty)" />
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Enter the maximum quantity that can be
+			selected when adding an item ti the
+			cart. This value is required.
+		</hbox>
+	</hlayout>
+</vbox>
+</zk>

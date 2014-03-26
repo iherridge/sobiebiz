@@ -1,0 +1,51 @@
+<?page title="Content Pages" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<vbox width="100%" apply="org.zkoss.bind.BindComposer" viewModel="@id('storeContentPageVm') @init('biz.sobie.web.store.StoreContentPageVm')">		
+		<hbox hflex="1">
+			<vbox hflex="2">
+				<label style="font-weight: bold">Content Pages</label>
+				<label value="Use this page to add and manage your store pages using the HTML editor"/>
+			</vbox>
+			<cell hflex="1" align="right">
+				<button label="Add New Page" onClick="@global-command('openAddNewContentPage')"/>
+			</cell>
+		</hbox>
+		<div align="left">
+			<separator orient="horizontal" width="100%" bar="true" />
+		<label value="Pages" />
+			<separator orient="horizontal" width="100%" bar="true" />
+		</div>
+		
+	<hbox hflex="1">
+		<cell align="start" width="100%" style="border: none;">
+			<paging mold="default" pageSize="10" style="background:none; border:none;"/>
+		</cell>
+	</hbox>
+		
+		<grid fixedLayout="true" width="100%" model="@load(storeContentPageVm.storeContentPages)">
+			<columns hflex="1">
+				<column label="Menu Order" />
+				<column label="Page Name"/>
+				<column label="Description" />
+				<column label="Perant" />
+				<column label="Enabled"  />
+				<column label="Action"  />
+			</columns>
+			<rows>
+				<template name="model" var="storeContentPage">
+					<row>
+						<label value="0"/>
+						<label value="@load(storeContentPage.pageTittle)"/>
+						<label value="@load(storeContentPage.pageName)"/>
+						<label value="@load(storeContentPage.pageParentId)"/>
+						<image src="@load(storeContentPage.pageEnabledImage)"/>
+						<hbox>
+							<a label="edit" onClick="@global-command('editContentPage', contentPage=storeContentPage)"/>
+							<a label="delete" onClick="@command('deleteContentPage', storeContentPageId=storeContentPage.pageId)"/>
+						</hbox>
+					</row>
+				</template>
+			</rows>
+		</grid>
+	</vbox>
+</zk>

@@ -1,0 +1,33 @@
+<?page title="Create New Message" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="createNewMessageWin" position="center" title="Create New Message" border="0" stubonly="true"
+	 	closable="true" apply="biz.sobie.web.controllers.NetworkMessagesController" width="735px">
+	<hbox style="color:white;background:#808080">
+		<space/>
+		<vbox>
+			<space/>
+			<hbox>
+			 	<button id="sendBtn" label="Send" width="50px" height="78px"/>
+				 <vbox>
+			 		<vbox>
+				 		<label id="toLbl"/>
+				 		<combobox focus="true" mold="rounded" buttonVisible="false" id="userSearchComboBox" apply="biz.sobie.web.controllers.TextboxSearchController" autodrop="true" width="650px"/>
+			 		</vbox>
+		 			<vbox>
+				 		<label id="ccLbl"/>
+				 		<textbox width="645px"/>
+			 		</vbox>
+				 	<vbox>
+					 	<label id="bccLbl"/>
+					 	<textbox width="645px" />
+				 	</vbox>
+				 	<hbox><label value="Subject:"/><space/><textbox id="subjectTextbx" width="580px" /></hbox>
+				 </vbox>
+				 <space/>
+			 </hbox>
+			 <textbox id="contentTextbx" height="300px" width="700px"/>
+			<space/>
+		</vbox>
+	</hbox>
+</window>
+</zk>

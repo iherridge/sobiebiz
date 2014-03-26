@@ -1,0 +1,58 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+	<borderlayout apply="biz.sobie.web.controllers.IndexController">
+		<north id="sobieHeaderNorth" flex="true">
+			<div>
+				<include id="sobieHeader" src="/unsecure/centerPageLayout/sobieHeader.zul" width="1040px"/>
+				<include id="welcomeWidget" src="/unsecure/widgets/welcomeWidget/welcomeWidget.zul" width="1040px"/>
+			</div>		
+		</north>
+		
+		<center id="WidgetContentArea" autoscroll="true">
+			<div style="padding:5px; background-image:url('resources/img/bg_mySobielight.png');opacity:0.8;border-radius:10px;border:1px solid #c4c8cc">
+				<label id="ipTest"/>
+				<!-- The blog widget must only desplayed when a user is logged in, thus the source is set to null -->
+				<include id="blogWidget"/>
+				<include id="productDisplay" width="100%"/>
+				<include id="userDashboardWidget" width="100%"/>
+				<include id="shoppingCartWidget" width="100%"/>
+				<include id="browserWidget" width="100%"/>
+				<include id="storeWidget"  width="100%"/>
+			</div>
+		</center>
+		
+		<east id="eastWidgetContainer" width="200px">
+			<div style="padding:5px; background-image:url('resources/img/bg_mySobielight.png');opacity:0.8;border-radius:10px;border:1px solid #c4c8cc">
+				<groupbox id="userDashboardBtn">
+					<vlayout>
+						<div align="center"><label value="Dashboard"/></div>
+						<hlayout>Messages: <label value="0"/></hlayout>
+						<hlayout>Connections: <label value="0"/></hlayout>
+						<hlayout>Orders: <label value="0"/></hlayout>
+					</vlayout>
+				</groupbox>
+				<groupbox id="shoppingCartBtn">
+					<vlayout>
+						<div align="center"><label value="Shopping Cart"/></div>
+						<hlayout>Items: <label value="@bind(shoppingCartVM.shoppingCart.totalItems)" apply="org.zkoss.bind.BindComposer" viewModel="@id('shoppingCartVM') @init('biz.sobie.web.viewmodel.ShoppingCartViewModel')"/></hlayout>
+						<hlayout>Total: <label value="@bind(shoppingCartVM.shoppingCart.grandTotal) @converter('formatedNumber', format='NAD ###,##0.00')" apply="org.zkoss.bind.BindComposer" viewModel="@id('shoppingCartVM') @init('biz.sobie.web.viewmodel.ShoppingCartViewModel')"/></hlayout>
+					</vlayout>
+				</groupbox>
+				<groupbox id="wishlistBtn">
+					<vlayout>
+						<div align="center"><label value="Wishlist"/></div>
+						<hlayout>Items: <label value="0"/></hlayout>
+						<hlayout>Total: <label value="NAD 0.00"/></hlayout>
+					</vlayout>
+				</groupbox>
+			</div>
+		</east>
+		
+		<south id="sobieFooter">
+			<div>
+				<include src="/unsecure/centerPageLayout/sobieFooter.zul"/>
+			</div>	
+		</south>
+	</borderlayout>
+</zk>

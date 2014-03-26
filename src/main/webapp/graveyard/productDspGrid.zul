@@ -1,0 +1,82 @@
+<?page title="Product Grid Display" contentType="text/html;charset=UTF-8"?>
+<zk>
+<grid width="575px" height="100%">
+		<columns>
+			<column label=""/>
+			<column label=""/>
+			<column label=""/>
+			<column label=""/>
+			<column label=""/>
+		</columns>
+		<rows>
+			<row>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>	
+			</row>
+			<row>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			</row>
+			<row>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			</row>
+			<row>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			</row>
+		</rows>		
+	</grid>
+	<grid width="575px" height="100%">
+		<columns>
+			<column label=""/>
+			<column label=""/>
+			<column label=""/>
+			<column label=""/>
+			<column label=""/>
+		</columns>
+		<rows>
+			<row>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>
+			 <div align="center"><image src="/resources/img/defaults/product_img100.png"/></div>	
+			</row>
+			<row>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			 <div align="center">Product Name</div>
+			</row>
+			<row>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			 <div align="center">N$ 00.00</div>
+			</row>
+			<row>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			 <div align="center"><button label="Add to cart" onClick="" /></div>
+			</row>
+		</rows>		
+	</grid>
+	
+</zk>

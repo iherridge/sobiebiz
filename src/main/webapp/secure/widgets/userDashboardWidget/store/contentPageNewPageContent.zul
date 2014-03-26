@@ -1,0 +1,4 @@
+<?page title="New Page Content" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<ckeditor hflex="1" value="@bind(storeContentPageVm.addUpdateStoreContentPage.pageContent)"/>
+</zk>

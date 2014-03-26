@@ -1,0 +1,82 @@
+<?page title="Index Test" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+<style>
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+background: transparent;
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+}
+
+/*********************** L I S T B O X *********************/
+
+<!-- /* Even rows in a listbox */
+tr.z-listitem,tr.z-row td.z-row-inner,tr.z-row td.z-group-inner,tr.z-row td.z-group-foot-inner,tr.z-row
+	{
+	background: none repeat scroll 0 0;
+}
+
+/* Odd rows in a listbox */
+tr.odd td.gc,tr.odd,tr.z-listbox-odd,tr.z-grid-odd td.z-row-inner,tr.z-grid-odd
+	{
+	background: none repeat scroll 0 0;
+} -->
+
+/* Unselected rows with the mouse hovering over them */
+tr.overd,td.overd,tr.z-listitem-over {
+	color: #373534;
+background: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#eaeaea));
+background: -moz-linear-gradient(top,  #fefefe,  #eaeaea);
+filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefefe', endColorstr='#eaeaea');
+}
+
+/* Selected rows in a listbox */
+tr.seld,td.seld,tr.z-listitem-seld {
+	background: none repeat scroll 0 0;
+}
+
+/* Selected rows with the mouse hovering over them */
+tr.overseld,td.overseld,tr.z-listitem-over-seld {
+	background: none repeat scroll 0 0;
+}
+</style>
+
+	<hbox width="100%">
+		<cell align="left" width="90%" style="border: none;" hflex="1">
+			<paging mold="default" pageSize="20" style="background:none; border:none;min-width:200px;"/>
+		</cell>
+		<cell align="right" width="10%" style="border: none;" hflex="min">
+			<image src="@bind(browserWidgetVm.productListView)" onClick="@command('changeBrowserViewLayout')"/>
+		</cell>
+	</hbox>
+	
+	<listbox width="100%" height="100%" model="@load(browserWidgetVm.storeList)"  >
+		<template name="model" var="store" hflex="1">
+			<listitem hflex="1">
+				<listcell hflex="1">
+						<include src="/unsecure/widgets/browserWidget/storeDisplayList.zul"/>
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+	
+	<hbox width="100%">
+		<cell align="left" width="90%" style="border: none;" hflex="1">
+			<paging mold="default" pageSize="20" style="background:none; border:none;min-width:200px;margin-top:6px"/>
+		</cell>
+		<cell align="right" width="10%" style="border: none;" hflex="min">
+			<image src="@bind(browserWidgetVm.productListView)" onClick="@command('changeBrowserViewLayout')"/>
+		</cell>
+	</hbox>
+</zk>

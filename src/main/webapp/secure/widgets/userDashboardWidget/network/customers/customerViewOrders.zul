@@ -1,0 +1,34 @@
+<?page title="View Customer Orders" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none;
+} 
+
+</style>
+	<grid fixedLayout="true" width="100%">
+		<columns hflex="1">
+			<column label="#" hflex="min" />			
+			<column label="Purchase date" />
+			<column label="Bill to Name" />
+			<column label="Dispatch to Name" />
+			<column label="Order Total" />
+			<column label="Action" hflex="min" />
+		</columns>
+	</grid>
+</zk>

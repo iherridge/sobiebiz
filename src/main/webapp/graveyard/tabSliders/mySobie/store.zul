@@ -1,0 +1,26 @@
+<?page title="Network" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div>
+		<tabbox id="storeTabbox">
+			<tabs >
+				<tab id="storeOverviewTab" label="Overview"/>
+				<tab id="storeCustomizeTab" label="Customize" />
+				<tab id="storeEditDesignTab" label="Edit Design" />
+				<tab id="storeUploadDownloadTab" label="Upload/Download" />
+				<tab id="storeDesignLibraryTab" label="Design Library" />
+				<tab id="storeCustomPagesTab" label="Custom Pages" />
+				<tab id="storeMenusTab" label="Menus" />
+				<tab id="storeFilesTab" label="Files" />
+			</tabs>
+			<tabpanels height="300px">
+				<tabpanel><include id="storeOverviewInc" src="/secure/tabSliders/mySobie/store/storeOverview.zul" /></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+				<tabpanel></tabpanel>
+			</tabpanels>
+		</tabbox>
+	</div>
+</zk>

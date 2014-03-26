@@ -1,0 +1,113 @@
+<?page title="Product Inventory" contentType="text/html;charset=UTF-8"?>
+<zk>
+<style>
+
+/*********************** G R I D S T Y L E *********************/
+ tr.z-row-over > td.z-row-inner, tr.z-row-over > .z-cell {
+         background-image: none;
+      }
+
+ 
+ .GridLayoutNoBorder tr.z-row td.z-row-inner, tr.z-row .z-cell,div.z-grid 
+{ 
+border: none; 
+overflow: hidden; 
+zoom: 1; 
+<!-- background: white;  -->
+border-top: 1px; 
+border-left: none; 
+border-right: none; 
+border-bottom: none; 
+} 
+
+</style>
+<vbox width="100%" style="border:none; margin:5px;">
+	<grid hflex="1">
+		<columns hflex="1">
+			<column label="" hflex="1"/>
+			<column label="" hflex="1"/>
+		</columns>
+		<rows>
+			<row>
+				<cell>
+					<label value="Quantity Immediately Available:"/>
+				</cell>
+				<cell>
+					<intbox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodQtyImedAvail)"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Minimum purchase quantity:"/>
+				</cell>
+				<cell>
+					<intbox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodMinPurchaseQty)"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<label value="Enter the minimum quantity that can be
+			selected when adding an item to the
+			cart." style="color:grey;"/>
+				</cell>
+			</row>
+			<row>
+				<cell>
+					<label value="Maximum purchase quantity:"/>
+				</cell>
+				<cell>
+					<intbox width="60%" value="@bind(inventoryProductsVm.addUpdateProduct.prodMaxPurchaseQty)"/>
+				</cell>
+			</row>
+			<row>
+				<cell colspan="2">
+					<label value="Enter the maximum quantity that can be
+			selected when adding an item ti the
+			cart. This value is required." style="color:grey;"/>
+				</cell>
+			</row>
+		</rows>
+	</grid>
+</vbox>
+
+<!-- <vbox style="border:none;margin:5px;">
+	<hlayout>
+		<hbox width="300px">
+			Quantity Immediately Available:
+		</hbox>
+		<hbox>
+			<intbox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodQtyImedAvail)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Minimum Purchase Quantity:
+		</hbox>
+		<hbox>
+			<intbox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodMinPurchaseQty)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Enter the minimum quantity that can be
+			selected when adding an item to the
+			cart.
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Maximum Purchase Quantity:
+		</hbox>
+		<hbox>
+			<intbox width="100px" value="@bind(inventoryProductsVm.addUpdateProduct.prodMaxPurchaseQty)"/>
+		</hbox>
+	</hlayout>
+	<hlayout>
+		<hbox width="300px">
+			Enter the maximum quantity that can be
+			selected when adding an item ti the
+			cart. This value is required.
+		</hbox>
+	</hlayout>
+</vbox> -->
+</zk>
