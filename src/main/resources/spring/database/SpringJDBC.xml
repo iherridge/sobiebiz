@@ -8,8 +8,8 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="username" value="root"></property>
-        <property name="password" value="sobiebiz"></property>
-        <property name="url" value="jdbc:mysql://localhost:9506/sbedev01">
+        <property name="password" value="mastermind"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/sbedev01">
         </property>
     </bean>
 	
