@@ -283,7 +283,7 @@ content: "";
 						<include src="/unsecure/centerPageNorthArea.zul"/>
 						<!-- South Center Page Area -->
 						<include src="@bind(indexVM.centerPageArea)" sclass="sobie-boxcontainer" />
-						<include src="@bind(indexVM.multipleSobieProfilesPopup)"/>
+						<!-- <include src="@bind(indexVM.multipleSobieProfilesPopup)"/> -->
 					</vbox>
 				</center>
 			</borderlayout>
