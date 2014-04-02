@@ -91,12 +91,13 @@
 			    		<!-- SOBIE-11 <label value="Remember me" style="color:grey"/><checkbox /> -->
 			    		<h:input type="submit" value="Log in" />
 			    	</hbox>
-			    	
+			    	<!-- 
+			    	SOBIE-12
 			    	<hbox width="100%" align="end" style="margin:5px">
 			    		<label value="Forgot password" style="color:grey"/>
 			    		<space/>
 			    		<label value="Sign up" style="color:grey"/>
-			    	</hbox>
+			    	</hbox> -->
 			    </h:form>
 			</div>
 		</hbox>
