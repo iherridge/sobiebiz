@@ -1,5 +1,0 @@
-<?page title="Center Page North Area" contentType="text/html;charset=UTF-8"?>
-<zk>
-	<include src="@bind(indexVM.infoPageArea)" sclass="sobie-boxcontainer" hflex="1"/>
-	<include src="/unsecure/breadcrumb.zul" sclass="sobie-boxcontainer" hflex="1"/>
-</zk>

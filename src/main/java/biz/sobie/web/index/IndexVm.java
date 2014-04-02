@@ -26,7 +26,6 @@ public class IndexVm {
 
 	private String centerPageArea;
 	private String multipleSobieProfilesPopup;
-	private String infoPageArea;
 	private String menuPopupPosition;
 	private boolean homeAVisible;
 	private boolean logoutAVisible;
@@ -66,7 +65,7 @@ public class IndexVm {
 			loginDivVisible = true;
 			anonymousMenuBarVisible = true;
 			sobieUserMenuBarVisible = false;
-			infoPageArea = "/unsecure/widgets/welcomeWidget/welcomeWidget.zul";
+			
 			if(Executions.getCurrent().getSession().getAttribute("sobieProfile") == null) {
 				/**
 				 * Checks if known IP address, if IP address exists then display relevant information about related IP, 
@@ -131,7 +130,6 @@ public class IndexVm {
 			profileHeaderVisible = true;
 			anonymousMenuBarVisible = false;
 			sobieUserMenuBarVisible = true;
-			infoPageArea = null;
 			SobieProfile sobieProfile = (SobieProfile) Executions.getCurrent().getDesktop().getSession().getAttribute("sobieProfile");
 			if(sobieProfile == null || sobieProfile.isLoggedIn() == false) {
 				/**
@@ -695,14 +693,6 @@ public class IndexVm {
 
 	public void setSobieUserMenuBarVisible(boolean sobieUserMenuBarVisible) {
 		this.sobieUserMenuBarVisible = sobieUserMenuBarVisible;
-	}
-
-	public String getInfoPageArea() {
-		return infoPageArea;
-	}
-
-	public void setInfoPageArea(String infoPageArea) {
-		this.infoPageArea = infoPageArea;
 	}
 
 	public Breadcrump getBreadcrump() {

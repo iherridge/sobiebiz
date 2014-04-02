@@ -280,7 +280,7 @@ content: "";
 				<center autoscroll="true" border="0" hflex="1" sclass="sobie-maincontainer">
 					<vbox  align="center" width="100%" >
 						<!-- North Center Page Area -->
-						<include src="/unsecure/centerPageNorthArea.zul"/>
+						<include src="/unsecure/breadcrumb.zul" sclass="sobie-boxcontainer" hflex="1"/>
 						<!-- South Center Page Area -->
 						<include src="@bind(indexVM.centerPageArea)" sclass="sobie-boxcontainer" />
 						<!-- <include src="@bind(indexVM.multipleSobieProfilesPopup)"/> -->
