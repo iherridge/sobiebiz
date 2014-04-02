@@ -47,7 +47,6 @@ public class IndexVm {
 	private boolean purchasesOrdersMenuItemOpen = false;
 	private boolean systemMenuItemOpen = false;
 	private SobieProfile sobieProfile;
-	private Breadcrump breadcrump;
 	private DashboardPrivileges dashboardPrivileges;
 	@WireVariable CustomerAccountService customerAccountService;
 	
@@ -57,7 +56,6 @@ public class IndexVm {
 		Executions.getCurrent().getDesktop().getSession().setAttribute("addUpdateNewContentPage", "0");
 		Executions.getCurrent().getDesktop().getSession().setAttribute("browserWidget", null);
 		centerPageArea = "/unsecure/widgets/browserWidget/browserWidget.zul";
-		setBreadcrump(new Breadcrump());
 		if(SecurityContextHolder.getContext().getAuthentication().getPrincipal().equals("anonymousUser")){
 			homeAVisible = false;
 			logoutAVisible = false;
@@ -188,11 +186,9 @@ public class IndexVm {
 	}
 	
 	@GlobalCommand
-	@NotifyChange({"centerPageArea","breadcrump"})
+	@NotifyChange("centerPageArea")
 	public void openShoppingCart(){
 		setCenterPageArea("/unsecure/widgets/shoppingCartWidget/shoppingCartWidget.zul");
-		getBreadcrump().resetBreadcrump();
-		getBreadcrump().setBreadcrumpShoppingCartVisible(true);
 	}
 	
 	@GlobalCommand
@@ -208,10 +204,9 @@ public class IndexVm {
 	}
 	
 	@GlobalCommand
-	@NotifyChange({"centerPageArea","breadcrump"})
+	@NotifyChange("centerPageArea")
 	public void displayBrowserWidget(){
 		setCenterPageArea("/unsecure/widgets/browserWidget/browserWidget.zul");
-		getBreadcrump().resetBreadcrump();
 		Executions.getCurrent().getDesktop().getSession().setAttribute("browserWidget", null);
 	}
 	
@@ -259,38 +254,33 @@ public class IndexVm {
 		
 	
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openMyAccount(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/system/systemMyAccount.zul");
-			getBreadcrump().resetBreadcrump();
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openSearchedAccount(@BindingParam("customer") Customer searchedCustomer){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/system/systemMyAccount.zul");
-			getBreadcrump().resetBreadcrump();
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openSystemMessages(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/system/systemMessages.zul");
-			getBreadcrump().resetBreadcrump();
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openTaskNotifications(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/system/systemTaskNotifications.zul");
-			getBreadcrump().resetBreadcrump();
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openUsers(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/system/systemUsers.zul");
-			getBreadcrump().resetBreadcrump();
 		}
 		
 		
@@ -322,37 +312,37 @@ public class IndexVm {
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openInventoryCategories(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/inventory/inventoryCategories.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openInventoryProduct(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/inventory/inventoryProducts.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openInventoryNetworkProduct(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/inventory/inventoryNetworkProducts.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openInventoryServices(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/inventory/inventoryServices.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openInventoryClassifieds(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/inventory/inventoryClassifieds.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openInventoryAttributes(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/inventory/inventoryAttributes.zul");
 		}
@@ -371,31 +361,31 @@ public class IndexVm {
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkMessages(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/networkMessages.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openContactUs(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/networkMessages.zul");
 		}
 				
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkCustomers(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/customers/customerPage.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkAffiliates(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/affiliates/affiliatesManage.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkNetwork(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/myNetwork/myNetworkManage.zul");
 		}
@@ -405,7 +395,7 @@ public class IndexVm {
 			 */
 		
 				@GlobalCommand
-				@NotifyChange({"centerPageArea","breadcrump"})
+				@NotifyChange("centerPageArea")
 				public void openCreateNewCustomer(){
 					setCenterPageArea("/secure/widgets/userDashboardWidget/network/customers/customerNewPage.zul");
 				}
@@ -415,19 +405,19 @@ public class IndexVm {
 			 */
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkSellers(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/sellers/sellerList.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkSuppliers(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/suppliers/supplierList.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openNetworkShippers(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/network/shippers/shipperList.zul");
 		}
@@ -436,29 +426,27 @@ public class IndexVm {
 		 * Store Menu Item Controls
 		 */
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openStoreSettings(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/store/storeSettings/storeSettingsTabbedPanel.zul");
-			getBreadcrump().resetBreadcrump();
-			getBreadcrump().setBreadcrumpStoreSettingsVisible(true);
 		}		
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openStoreContentPages(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/store/contentPages.zul");
 			Executions.getCurrent().getDesktop().getSession().setAttribute("addUpdateNewContentPage", "1");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openAddNewContentPage(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/store/contentPagesEditPage.zul");
 			Executions.getCurrent().getDesktop().getSession().setAttribute("addUpdateNewContentPage", "2");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void editContentPage(@BindingParam("contentPage") StoreContentPage storeContentPage){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/store/contentPagesEditPage.zul");
 			Executions.getCurrent().getDesktop().getSession().setAttribute("addUpdateNewContentPage", "3");
@@ -491,31 +479,31 @@ public class IndexVm {
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openSalesOrders(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/sales/salesOrdersList.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openViewSalesInvoices(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/sales/salesOrdersViewInvoices.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openViewSalesQuotations(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/sales/salesOrdersViewQuotations.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openViewSalesShipment(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/sales/salesOrdersViewShipment.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openViewSalesReturns(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/sales/salesOrdersViewCreditMemo.zul");
 		}
@@ -559,25 +547,25 @@ public class IndexVm {
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openMarketingBanners(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/marketing/bannerAds/bannerAds.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openMarketingCoupons(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/marketing/coupons/coupons.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openMarketingNewsletters(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/marketing/newsletters/newsletters.zul");
 		}
 		
 		@GlobalCommand
-		@NotifyChange({"centerPageArea","breadcrump"})
+		@NotifyChange("centerPageArea")
 		public void openMarketingCommentsRatings(){
 			setCenterPageArea("/secure/widgets/userDashboardWidget/marketing/commentsRatings/commentsRatings.zul");
 		}
@@ -695,13 +683,13 @@ public class IndexVm {
 		this.sobieUserMenuBarVisible = sobieUserMenuBarVisible;
 	}
 
-	public Breadcrump getBreadcrump() {
+	/*public Breadcrump getBreadcrump() {
 		return breadcrump;
 	}
 
 	public void setBreadcrump(Breadcrump breadcrump) {
 		this.breadcrump = breadcrump;
-	}
+	}*/
 
 	public boolean isShowModal() {
 		return showModal;
