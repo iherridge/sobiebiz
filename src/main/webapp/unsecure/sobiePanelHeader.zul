@@ -85,8 +85,7 @@
 				    </hbox>
 			    	
 			    	<hbox width="100%" align="end" style="margin:5px">
-			    		<label value="Remember me" style="color:grey"/>
-			    		<checkbox />
+			    		<!-- SOBIE-11 <label value="Remember me" style="color:grey"/><checkbox /> -->
 			    		<h:input type="submit" value="Log in" />
 			    	</hbox>
 			    	
