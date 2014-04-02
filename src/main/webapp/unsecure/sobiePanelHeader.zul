@@ -12,6 +12,9 @@
 			<div apply="org.zkoss.bind.BindComposer" viewModel="@id('searchBoxVm') @init('biz.sobie.web.searchbox.SearchBoxVm')">
 				<!-- <combobox style="border-radius:3px;background:none;color:white;" buttonVisible="false" id="searchComboBox" autodrop="false" width="210px" value="Search" /> -->
 				<bandbox id="bd"  mold="rounded" autodrop="true" width="210px" onChanging="@command('onChanging')">
+					<!--
+					SOBIE-10
+					 
 					<bandpopup>
 						<listbox height="100%" width="210px" mold="paging" pageSize="7"
 			                	onSelect="bd.value=self.selectedItem.label; bd.close();"
@@ -59,7 +62,7 @@
 			                </template>
 			            </listbox>
 			            <include src="/unsecure/widgets/adsWidget/adsWidget.zul"/>
-					</bandpopup>
+					</bandpopup> -->
 				</bandbox>
 			</div>
 		</hbox>
