@@ -73,13 +73,23 @@
 			    </html>
 			 
 			    <h:form id="f" name="f" action="j_spring_security_check" method="POST" xmlns:h="native">
-			       	<hbox style="margin:5px"><cell style="color:white" width="70px">Email:</cell><cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true" constraint="/.+@.+\.[a-z]+/: e-mail address only"/> </cell></hbox>
-				    <hbox style="margin:5px"><cell style="color:white" width="70px">Password:</cell><cell><textbox hflex="1" id="p" type="password" name="j_password"/> </cell></hbox>
+			       	<hbox style="margin:5px">
+				       	<cell style="color:white" width="70px">Email:</cell>
+				       	<!-- SOBIE-9 - removed email validation <cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true" constraint="/.+@.+\.[a-z]+/: e-mail address only"/></cell> -->
+				       	<cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true"/></cell>
+				     </hbox>
+				     
+				    <hbox style="margin:5px">
+				    	<cell style="color:white" width="70px">Password:</cell>
+				    	<cell><textbox hflex="1" id="p" type="password" name="j_password"/> </cell>
+				    </hbox>
+			    	
 			    	<hbox width="100%" align="end" style="margin:5px">
 			    		<label value="Remember me" style="color:grey"/>
 			    		<checkbox />
 			    		<h:input type="submit" value="Log in" />
 			    	</hbox>
+			    	
 			    	<hbox width="100%" align="end" style="margin:5px">
 			    		<label value="Forgot password" style="color:grey"/>
 			    		<space/>
