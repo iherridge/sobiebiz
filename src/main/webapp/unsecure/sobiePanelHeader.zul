@@ -2,9 +2,9 @@
 <zk>
 	<hlayout height="40px"
 		style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;">
-		<image id="sobieLogo" style="margin:5px; margin-top:5px;"
+		<!-- <image id="sobieLogo" style="margin:5px; margin-top:5px;" align="center"
 			border="0" src="resources/img/sobieLogo.png" width="101"
-			height="30px" onClick="@global-command('refreshPage')" />
+			height="30px" onClick="@global-command('refreshPage')" /> -->
 	</hlayout>
 	<!-- Login -->
 	<vbox width="100%">

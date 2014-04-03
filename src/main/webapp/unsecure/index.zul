@@ -294,7 +294,7 @@ content: "";
 				</center>
 			</borderlayout>
 		</center>
-		<east width="220px" visible="@bind(indexVM.showEastPanel)" border="0" >
+		<!-- <east width="220px" visible="@bind(indexVM.showEastPanel)" border="0" >
 			<borderlayout hflex="1">
 				<north border="0">
 					<include src="/unsecure/sobieEastPanelHeader.zul" hflex="min" sclass="westPanelBox"/>
@@ -303,6 +303,6 @@ content: "";
 					<include src="/unsecure/sobieEastPanelMenuItems.zul" hflex="min"/>
 				</center>
 			</borderlayout>
-		</east>
+		</east> -->
 	</borderlayout>
 </zk>

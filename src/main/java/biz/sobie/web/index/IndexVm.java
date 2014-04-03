@@ -55,7 +55,7 @@ public class IndexVm {
 	public void init() {
 		Executions.getCurrent().getDesktop().getSession().setAttribute("addUpdateNewContentPage", "0");
 		Executions.getCurrent().getDesktop().getSession().setAttribute("browserWidget", null);
-		centerPageArea = "/unsecure/widgets/browserWidget/browserWidget.zul";
+		//centerPageArea = "/unsecure/widgets/browserWidget/browserWidget.zul";
 		if(SecurityContextHolder.getContext().getAuthentication().getPrincipal().equals("anonymousUser")){
 			homeAVisible = false;
 			logoutAVisible = false;
