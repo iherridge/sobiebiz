@@ -268,7 +268,7 @@ content: "";
 					<include src="/unsecure/sobiePanelHeader.zul" hflex="min" sclass="westPanelBox"/>
 				</north>
 				<center autoscroll="true" border="0" sclass="westPanelBox">
-					<include src="/unsecure/sobiePanelMenuItems.zul" hflex="min"/>
+					<include src="/unsecure/sobieWestSliderMenuItems.zul" hflex="min"/>
 				</center>
 			</borderlayout>
 		</west>
