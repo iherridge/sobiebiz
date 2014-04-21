@@ -268,17 +268,17 @@ content: "";
 					<include src="/unsecure/sobiePanelHeader.zul" hflex="min" sclass="westPanelBox"/>
 				</north>
 				<center autoscroll="true" border="0" sclass="westPanelBox">
-					<include src="/unsecure/sobiePanelMenuItems.zul" hflex="min"/>
+					<include src="/unsecure/sobieWestSliderMenuItems.zul" hflex="min"/>
 				</center>
 			</borderlayout>
 		</west>
-		<center border="0"  >
+		<center border="0" vflex="1">
 			<borderlayout  hflex="1" >
 				<north border="0" hflex="1">
 					<include  id="sobieHeader" src="/unsecure/centerPageLayout/sobieHeader.zul" width="100%"/>
 				</north>
 				<center autoscroll="true" border="0" hflex="1" sclass="sobie-maincontainer">
-					<vbox  align="center" width="100%" >
+					<vbox  align="center" hflex="1" vflex="1">
 						<!-- North Center Page Area -->
 						
 						<!-- 
@@ -288,13 +288,14 @@ content: "";
 						-->
 						
 						<!-- South Center Page Area -->
-						<include src="@bind(indexVM.centerPageArea)" sclass="sobie-boxcontainer" />
+						<!-- <include src="@bind(indexVM.centerPageArea)" sclass="sobie-boxcontainer" /> -->
+						<iframe  sclass="sobie-boxcontainer" src="http://www.sirenkiteboarding.co.za/" hflex="1" vflex="1"/>
 						<!-- <include src="@bind(indexVM.multipleSobieProfilesPopup)"/> -->
 					</vbox>
 				</center>
 			</borderlayout>
 		</center>
-		<east width="220px" visible="@bind(indexVM.showEastPanel)" border="0" >
+		<!-- <east width="220px" visible="@bind(indexVM.showEastPanel)" border="0" >
 			<borderlayout hflex="1">
 				<north border="0">
 					<include src="/unsecure/sobieEastPanelHeader.zul" hflex="min" sclass="westPanelBox"/>
@@ -303,6 +304,6 @@ content: "";
 					<include src="/unsecure/sobieEastPanelMenuItems.zul" hflex="min"/>
 				</center>
 			</borderlayout>
-		</east>
+		</east> -->
 	</borderlayout>
 </zk>
