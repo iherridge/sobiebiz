@@ -17,7 +17,11 @@
 			onClick="@global-command('showModel')" />
 		</cell>
 		<cell align="center" width="80%">
-			<image
+		<image id="sobieLogo" style="margin:5px; margin-top:5px;" align="center"
+			border="0" src="resources/img/sobieLogo.png" width="101"
+			height="30px" onClick="@global-command('refreshPage')" />
+			
+			<!-- <image
 				style="margin-top:9px;margin-right:9px;margin-left:3px"
 				src="/resources/img/icons/sbe_networknotificatio.png"
 				sclass="touchable icon" />
@@ -28,12 +32,12 @@
 			<image
 				style="margin-top:9px;margin-right:9px;margin-left:3px"
 				src="/resources/img/icons/sbe_newsfeednotificatio.png" 
-				sclass="touchable icon"/>
+				sclass="touchable icon"/> -->
 		</cell>
 		<cell align="right" width="10%" style="border: none;" >
-		<image style="margin-top:9px;margin-right:9px;margin-left:3px"
+		<!-- <image style="margin-top:9px;margin-right:9px;margin-left:3px"
 			src="/resources/img/icons/sbe_modalnet.png" onClick="@global-command('showEastPanel')"
-			 />
+			 /> -->
 		</cell>
 	</hbox>
 </zk>

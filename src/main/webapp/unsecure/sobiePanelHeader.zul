@@ -2,9 +2,9 @@
 <zk>
 	<hlayout height="40px"
 		style="background-image:url('resources/img/headerBack.png');background-repeat:repeat-x;">
-		<image id="sobieLogo" style="margin:5px; margin-top:5px;"
+		<!-- <image id="sobieLogo" style="margin:5px; margin-top:5px;" align="center"
 			border="0" src="resources/img/sobieLogo.png" width="101"
-			height="30px" onClick="@global-command('refreshPage')" />
+			height="30px" onClick="@global-command('refreshPage')" /> -->
 	</hlayout>
 	<!-- Login -->
 	<vbox width="100%">
@@ -12,6 +12,9 @@
 			<div apply="org.zkoss.bind.BindComposer" viewModel="@id('searchBoxVm') @init('biz.sobie.web.searchbox.SearchBoxVm')">
 				<!-- <combobox style="border-radius:3px;background:none;color:white;" buttonVisible="false" id="searchComboBox" autodrop="false" width="210px" value="Search" /> -->
 				<bandbox id="bd"  mold="rounded" autodrop="true" width="210px" onChanging="@command('onChanging')">
+					<!--
+					SOBIE-10
+					 
 					<bandpopup>
 						<listbox height="100%" width="210px" mold="paging" pageSize="7"
 			                	onSelect="bd.value=self.selectedItem.label; bd.close();"
@@ -59,7 +62,7 @@
 			                </template>
 			            </listbox>
 			            <include src="/unsecure/widgets/adsWidget/adsWidget.zul"/>
-					</bandpopup>
+					</bandpopup> -->
 				</bandbox>
 			</div>
 		</hbox>
@@ -73,18 +76,28 @@
 			    </html>
 			 
 			    <h:form id="f" name="f" action="j_spring_security_check" method="POST" xmlns:h="native">
-			       	<hbox style="margin:5px"><cell style="color:white" width="70px">Email:</cell><cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true" constraint="/.+@.+\.[a-z]+/: e-mail address only"/> </cell></hbox>
-				    <hbox style="margin:5px"><cell style="color:white" width="70px">Password:</cell><cell><textbox hflex="1" id="p" type="password" name="j_password"/> </cell></hbox>
+			       	<hbox style="margin:5px">
+				       	<cell style="color:white" width="70px">Email:</cell>
+				       	<!-- SOBIE-9 - removed email validation <cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true" constraint="/.+@.+\.[a-z]+/: e-mail address only"/></cell> -->
+				       	<cell><textbox hflex="1" id="u" type="email" name="j_username" focus="true"/></cell>
+				     </hbox>
+				     
+				    <hbox style="margin:5px">
+				    	<cell style="color:white" width="70px">Password:</cell>
+				    	<cell><textbox hflex="1" id="p" type="password" name="j_password"/> </cell>
+				    </hbox>
+			    	
 			    	<hbox width="100%" align="end" style="margin:5px">
-			    		<label value="Remember me" style="color:grey"/>
-			    		<checkbox />
+			    		<!-- SOBIE-11 <label value="Remember me" style="color:grey"/><checkbox /> -->
 			    		<h:input type="submit" value="Log in" />
 			    	</hbox>
+			    	<!-- 
+			    	SOBIE-12
 			    	<hbox width="100%" align="end" style="margin:5px">
 			    		<label value="Forgot password" style="color:grey"/>
 			    		<space/>
 			    		<label value="Sign up" style="color:grey"/>
-			    	</hbox>
+			    	</hbox> -->
 			    </h:form>
 			</div>
 		</hbox>
