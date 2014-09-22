@@ -6,4 +6,7 @@
     <language-config>
         <addon-uri>/WEB-INF/gmapsz-bind-addon.xml</addon-uri>
     </language-config>
+    <system-config>
+    <id-generator-class>org.zkoss.zk.ui.impl.StaticIdGenerator</id-generator-class>
+</system-config>
 </zk>
