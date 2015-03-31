@@ -1,22 +1,4 @@
 <?page title="Welcome to Sobie.biz" contentType="text/html;charset=UTF-8"?>
-<!-- <?link rel="stylesheet" type="text/css"	
-	href="//bootstrap/css/bootstrap.css" ?>
-<?link rel="stylesheet" type="text/css" 
-	href="//css/index.css.dsp" ?>
-<?link rel="stylesheet" type="text/css"
-	href="//css/user-nav.css.dsp" ?>
-<?link rel="stylesheet" type="text/css"
-	href="//css/sidebar.css.dsp" ?>
-<?link rel="stylesheet" type="text/css"
-	href="//css/search.css.dsp" ?>
-<?link rel="stylesheet" type="text/css"
-	href="//css/content-header.css.dsp" ?>
-<?link id="theme" rel="stylesheet" type="text/css"
-	href="//css/grey.css.dsp"  if="${param.theme eq 'grey' or empty param.theme}"?>
-<?link id="theme" rel="stylesheet" type="text/css"
-	href="//css/red.css.dsp"  if="${param.theme eq 'red'}"?>
-<?link id="theme" rel="stylesheet" type="text/css"
-	href="//css/light-blue.css.dsp"  if="${param.theme eq 'light-blue'}"?> -->
 <?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?> 
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 
@@ -39,13 +21,13 @@ width: 10px;
 height: 10px;
 }
 
-
+<!--
 ::-webkit-scrollbar-button:start:decrement,
 ::-webkit-scrollbar-button:end:increment  {
 height: 0px;
 display: block;
 background-color: transparent;
-}
+} -->
 
 ::-webkit-scrollbar-track-piece  {
 background-color: #3b3b3b;
@@ -76,7 +58,7 @@ margin-left:10px;
 margin-right:10px;
 margin-top:5px;
 padding:3px;
-min-width: 880px; Max width of boxcontainer
+min-width: 880px; <!-- Max width of boxcontainer -->
 
 }
 
@@ -242,14 +224,14 @@ content: "";
 
 
 .westPanelBox{
-	-o-box-shadow: inset 0 0 10px #3b3937;
+<!-- 	-o-box-shadow: inset 0 0 10px #3b3937;
 	-moz-box-shadow: inset 0 0 10px #3b3937;
 	-webkit-box-shadow: inset 0 0 10px #3b3937;
 	box-shadow: inset 0 0 10px #3b3937;
-	overflow: hidden;
+	overflow: hidden; -->
 	background-image:url('resources/img/testImages/bg012dark.png');
 	background-repeat:repeat;
-	background-color:#3b3937;
+	<!-- background-color:#3b3937; -->
 	margin:0px;
 	padding:0px;
 }
@@ -279,7 +261,6 @@ content: "";
 
 
 </style>
-
 	<borderlayout hflex="1" apply="org.zkoss.bind.BindComposer" viewModel="@id('indexVM') @init('biz.sobie.web.index.IndexVm')">
 		<west width="220px" visible="@bind(indexVM.showModal)" border="0">
 			<borderlayout>
@@ -288,7 +269,6 @@ content: "";
 				</north>
 				<center autoscroll="true" border="0" sclass="westPanelBox">
 					<include src="/unsecure/sobieWestSliderMenuItems.zul" hflex="min"/>
-					
 				</center>
 			</borderlayout>
 		</west>
@@ -306,46 +286,12 @@ content: "";
 							SOBIE-7 disabled this functionality
 						<include src="/unsecure/breadcrumb.zul" sclass="sobie-boxcontainer" hflex="1"/> 
 						-->
-						<!-- <window mode="modal">MISHA IS FOKKEN COOL</window> -->
 						
 						<!-- South Center Page Area -->
 						<!-- <include src="@bind(indexVM.centerPageArea)" sclass="sobie-boxcontainer" /> -->
 						<iframe  sclass="sobie-boxcontainer" src="http://www.sirenkiteboarding.co.za/" hflex="1" vflex="1"/>
-						<window id="modalDialog" title="Coffee Order" border="normal" width="460px"
-
-    position="center,center" closable="true"
-    mode="embedded">
-    <vlayout>
-        <grid>
-            <columns>
-                <column hflex="1" label="Name" />
-                <column hflex="2" label="Coffee Type" align="center" />
-                <column hflex="1" label="Quantity" align="center" />
-            </columns>
-            <rows>
-                <row>
-                    <label value="Evan" />
-                    <label value="Java" />
-                    <label value="2" />
-                </row>
-                <row>
-                    <label value="Billy" />
-                    <label value="Latte" />
-                    <label value="3" />
-                </row>
-                <row>
-                    <label value="Roger" />
-                    <label value="Americano" />
-                    <label value="6" />
-                </row>
-            </rows>
-        </grid>
-        <button id="closeBtn" hflex="1" label="close"/>
-    </vlayout>
-</window>
 						<!-- <include src="@bind(indexVM.multipleSobieProfilesPopup)"/> -->
 					</vbox>
-					
 				</center>
 			</borderlayout>
 		</center>

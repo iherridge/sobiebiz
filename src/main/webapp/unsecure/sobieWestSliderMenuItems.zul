@@ -376,7 +376,7 @@ td.z-listcell {
 }
 
 </style>
-	<!-- <vbox width="100%">
+	<vbox width="100%">
 		<div style="margin-left:0px">
 			<listbox sclass="menuPanel" >
 				<listhead sclass="z-listheader">
@@ -384,23 +384,5 @@ td.z-listcell {
 				</listhead>
 			</listbox>
 		</div>
-	</vbox> -->
-	<navbar orient="vertical" sclass="sidebar">
-						<navitem iconSclass="icon icon-white icon-home" label="Dashboard" selected="true"/>
-						<nav iconSclass="icon icon-white icon-th-list" label="Form elements" badgeText="3">
-							<navitem label="Common elements"/>
-							<navitem label="Validation"/>
-							<navitem label="Wizard"/>
-						</nav>
-						<navitem iconSclass="icon icon-white icon-tint" label="Buttons &amp; icons"/>
-						<navitem iconSclass="icon icon-white icon-pencil" label="Interface elements"/>
-						<navitem iconSclass="icon icon-white icon-th" label="Tables"/>
-						<navitem iconSclass="icon icon-white icon-th-list" label="Grid Layout"/>
-						<nav iconSclass="icon icon-white icon-file" label="Sample pages" badgeText="4">
-							<navitem label="Invoice"/>
-							<navitem label="Support chat"/>
-							<navitem label="Calendar"/>
-							<navitem label="Gallery"/>
-						</nav>
-					</navbar>
+	</vbox>
 </zk>
