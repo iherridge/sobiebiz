@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zk>
-	<language-config> 
-		<addon-uri>/WEB-INF/ckez-bind-addon.xml</addon-uri> 
+	<language-config>
+		<addon-uri>/WEB-INF/ckez-bind-addon.xml</addon-uri>
 	</language-config>
-    <language-config>
-        <addon-uri>/WEB-INF/gmapsz-bind-addon.xml</addon-uri>
-    </language-config>
-    <system-config>
-    <id-generator-class>org.zkoss.zk.ui.impl.StaticIdGenerator</id-generator-class>
-</system-config>
+	<language-config>
+		<addon-uri>/WEB-INF/gmapsz-bind-addon.xml</addon-uri>
+	</language-config>
+	<system-config>
+		<id-generator-class>org.zkoss.zk.ui.impl.StaticIdGenerator
+		</id-generator-class>
+	</system-config>
+	<library-property>
+		<name>org.zkoss.theme.preferred</name>
+		<value>atlantic</value>
+	</library-property>
 </zk>

@@ -12,9 +12,35 @@
 		<org.springframework-version>3.1.2.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
-		<zk.version>7.0.3</zk.version>
-		<zkel.version>1.1.0</zkel.version>			
+		<zk.version>7.0.0</zk.version>
+		<zkel.version>1.1.0</zkel.version>
 	</properties>
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE, Version 3</name>
+			<url>http://www.gnu.org/licenses/lgpl.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<repositories>
+		<repository>
+			<id>ZK CE</id>
+			<name>ZK CE Repository</name>
+			<url>http://mavensync.zkoss.org/maven2</url>
+		</repository>
+		<repository>
+			<id>ZK EVAL</id>
+			<name>ZK Evaluation Repository</name>
+			<url>http://mavensync.zkoss.org/eval</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>zkmaven</id>
+			<name>ZK Maven Plugin Repository</name>
+			<url>http://mavensync.zkoss.org/maven2/</url>
+		</pluginRepository>
+	</pluginRepositories>
 	<dependencies>
 		<!-- ZK Dependencies -->
 		<dependency>
@@ -58,6 +84,11 @@
 			<version>${zk.version}</version>
 		</dependency>
 		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zkmax</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.zkoss.zkforge</groupId>
 			<artifactId>gmapsz</artifactId>
 			<version>2.0.51</version>
@@ -74,7 +105,7 @@
 			<version>3.0</version>
 		</dependency>
 		<!-- ZK Dependencies -->
-	
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -85,7 +116,7 @@
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
-				 </exclusion>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -109,13 +140,10 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>3.0.7.RELEASE</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aspects</artifactId>
-			<version>3.1.2.RELEASE</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-aspects</artifactId> 
+			<version>3.1.2.RELEASE</version> </dependency> -->
 		<!-- Spring -->
-		
+
 		<!-- JSON -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
@@ -123,7 +151,7 @@
 			<version>1.1.1</version>
 		</dependency>
 		<!-- JSON -->
-		            		
+
 		<!-- Camel -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
@@ -135,15 +163,15 @@
 			<artifactId>camel-spring</artifactId>
 			<version>2.9.2</version>
 		</dependency>
-        <!-- Camel -->    
+		<!-- Camel -->
 
-        <!-- JDBC Connector -->    		
-        <dependency>
+		<!-- JDBC Connector -->
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.11</version>
 		</dependency>
-		
+
 		<!-- Commons -->
 		<dependency>
 			<groupId>commons-collections</groupId>
@@ -151,25 +179,25 @@
 			<version>3.2.1</version>
 		</dependency>
 		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-		    <version>2.4</version>
-		</dependency>	
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 			<type>jar</type>
 			<scope>compile</scope>
-		</dependency>		
-				
+		</dependency>
+
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
-		</dependency>	
-		
+		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -219,7 +247,7 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-				
+
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -244,7 +272,7 @@
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -287,7 +315,8 @@
 		</plugins>
 		<pluginManagement>
 			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -321,10 +350,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<repositories>
-	   <repository>
-	     <id>zk repository</id>
-	     <url>http://mavensync.zkoss.org/maven2</url>
-	   </repository>
-	 </repositories>
 </project>
